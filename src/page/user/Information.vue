@@ -2,6 +2,7 @@
     .book-div{
         margin-top: 3%;
         height: 90vh;
+        overflow: scroll;
     }
     .left-div{
         height: 90%;
@@ -15,7 +16,7 @@
         line-break:inherit;
         background: linear-gradient(to right, black , rgb(50, 50, 50) , rgb(0, 0, 0) );
         color: white;
-        
+        overflow: scroll;
         padding-left: 10%;
     }
     #name{
@@ -26,7 +27,7 @@
     }
     .information-group-1{
         margin-top: 50%;
-        line-height: 6em;
+        line-height: 1em;
     }
 </style>
 
@@ -43,7 +44,6 @@
                         <div class="information-group-1">
                             <p>RAKOTOMANANA Andriniaina Fabien</p>
                             <p>Ivato K1 309 Antananarivo, Madagascar</p>
-                            <p>Github</p>
                         </div>
                     </div>
                 </div>
