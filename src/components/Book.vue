@@ -28,15 +28,6 @@
             <img src="/9.jpg">
         </div>
         <div class="contenu" @click="e => this.turn(e)">
-            <img src="/planete1.jpg">
-        </div>
-        <div class="contenu" @click="e => this.turn(e)">
-            <img src="/planete2.jpg">
-        </div>
-        <div class="contenu" @click="e => this.turn(e)">
-            <img src="/planete3.jpg">
-        </div>
-        <div class="contenu" @click="e => this.turn(e)">
             <img src="/1.jpg">
         </div>
     </div>
