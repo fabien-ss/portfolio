@@ -33,7 +33,7 @@
             <img class="image" src="/5.jpg">
         </div>
         <div class="contenu" @click="this.turn">    
-            <img class="image" src="/7.jpg">
+            <ThreeDScene/>
         </div>
         <div class="contenu" @click="this.turn">
             <BlankPage />
@@ -50,7 +50,6 @@
         <div class="contenu" @click="this.turn">
             <Presentation />
         </div>
-
         <div class="contenu" @click="this.turn">
             <Couverture />
         </div>
@@ -65,6 +64,7 @@
     import Outils from "./Outils.vue";
     import Realisation from "./Realisation.vue";
     import Couverture from "./Couverture.vue";
+    import ThreeDScene from "./ThreeDScene.vue";
     export default{
         name: "Book",
         data(){
@@ -86,7 +86,8 @@
             Competence,
             Outils,
             Realisation,
-            Couverture
+            Couverture,
+            ThreeDScene
         },
         methods:{
             lumiere(){
@@ -240,5 +241,19 @@
         50% {
             box-shadow: 0 0 20px #ffff, 0 0 40px #ffff, 0 0 60px #ffff, 0 0 60px #ffff;
         }
+    }
+
+    .test {
+        width: 100%;
+        height: 950px;
+        background-color: transparent;
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(0, 56px);
+        border: 1px solid white;
+    }
+    .test_child {
+        position: relative;
+        transform: translate(0 ,950px);
     }
 </style>

@@ -35,6 +35,7 @@
     }
     .texte{
         font-weight:lighter;
-        color: white;
+        color: black;
+        background-color: white;
     }
 </style>
