@@ -67,7 +67,6 @@
     import Outils from "./Outils.vue";
     import Realisation from "./Realisation.vue";
     import Couverture from "./Couverture.vue";
-    import ThreeDScene from "./ThreeDScene.vue";
     export default{
         name: "Book",
         data(){
@@ -92,8 +91,7 @@
             Competence,
             Outils,
             Realisation,
-            Couverture,
-            ThreeDScene
+            Couverture
         },
         methods:{
             revelerTexte() {
