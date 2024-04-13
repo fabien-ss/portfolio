@@ -3,17 +3,18 @@
         <div class="image_profil">
         </div>
         <div class="case">
-            <br>
+            <br />
+            <br />
             <h2 v-text="name"></h2>
+            <hr>
+            <p class="texte" v-text="texte"></p>
+            <Button class="open">
+                <img src="/cursor/arrow.png" width="50px">
+            </Button>
         </div>
-        <p class="texte" v-text="texte"></p>
-        <Button class="open">
-            <img src="/cursor/arrow.png" width="50px">
-        </Button>
     </div>
 </template>
 
-/freepik/cadre-v1.0.1.png
 <script>
 export default {
     name: "Couverture",
@@ -45,10 +46,6 @@ export default {
     .couverture{
         width: 100%; 
         height: 100%; 
-        
-        background-image: url("/freepik/fond.jpeg");
-        background-repeat: no-repeat;
-        background-size: cover;
     }
     .case{
         height: 15%;
@@ -77,12 +74,12 @@ export default {
     .open{
         transform: translate(350%, -110%);
         background-color: white;
-        color: black;
+        color: #d18d64;
         border-radius: 50%;
         min-width: 70px;
         min-height: 70px;
     }
     .open:hover{
-        border: 2px solid rgb(77, 72, 72);
+        border: 5px solid #d18d64;
     }
 </style>

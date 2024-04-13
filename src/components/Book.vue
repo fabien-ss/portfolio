@@ -168,7 +168,7 @@
         transform: translate(266px, -32px);
     }
     :root{
-        --page-background-color: #003140;;
+        --page-background-color: white;;
     }
     .image {
         width: 100%;
@@ -176,8 +176,8 @@
     }
     .contenu{
         border-left: 1px solid black;
-        width: 600px;
-        height: 800px;
+        width: 50%;
+        height: 100%;
         position: absolute; 
         box-shadow: 0px 1px;
         background-color: rgb(255, 255, 255);
@@ -289,7 +289,7 @@
 
     .livre{
         position: relative;
-        width: 1200px;
+        width: 80%;
         margin: auto;
         height: 800px;
         margin-top: 4vh;   
