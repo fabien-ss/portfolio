@@ -1,51 +1,54 @@
 <template>
-    <div class="lumiere_container" style="width: 100%; text-align: center; display: flex;">
-        <div class="lanterne" @click="lumiere" id="lumiere">Cliquez pour éclaircir!</div>
+    <div class="lumiere_container" >
+        <div class="lanterne" @click="lumiere" id="lumiere" style="display: flex; align-items: center; justify-content: center; gap: 10px;"> 
+            <span v-if="!this.light" style="align-items: center; justify-content: center;">
+                    LIGHT -
+                    <svg
+                    class="slider"
+                    viewBox="0 0 512 512"
+                    height="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                    d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"
+                    style="fill: white;" ></path>
+                </svg>
+            </span>   
+            <span v-if="this.light" style="color: black; font-weight: bold; align-items: center; justify-content: center;">
+                    LIGHT -
+                    <svg
+                        class="slider"
+                        viewBox="0 0 512 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                    <path
+                    d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"
+                    ></path>
+                </svg>
+            </span>    
+        </div>
+    
     </div>
     <div class="livre" id="livre">
-        <div class="contenu" @click="this.turn" >
+        <div class="description">
+            <p v-text="texte"></p>
+        </div>
+        <div class="contenu" @click="this.turn">
             <img src="/1.jpg" width="100.5%" height="100.5%">
         </div>
-        <div class="contenu" @click="this.turn" style="background-color: wheat; ">
-            <h1>MBA RECRUTEO FA TT</h1>
-        </div>
-        <div class="contenu" @click="this.turn">
-            <!--
-                <img class="image" src="/2.jpg">
-            -->
-            <video width="90%" height="40%" controls>
-                <source src="/s.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-
-            <video width="90%" height="40%" controls>
-                <source src="/video.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="contenu" @click="this.turn">
-            <img class="image" src="/6.jpg">
-        </div>
-        <div class="contenu" @click="this.turn">
-            <img class="image" src="/4.jpg">
-        </div>
-        <div class="contenu" @click="this.turn">
-            <img class="image" src="/5.jpg">
-        </div>
+      
         <div class="contenu" @click="this.turn">    
-            <ThreeDScene/>
+            <BlankPage/>
         </div>
         <div class="contenu" @click="this.turn">
-            <BlankPage />
-        </div>
-        <div class="contenu" @click="this.turn">
-            <Realisation />
+            <Competence :title="OK"/>
         </div>
         <div class="contenu" @click="this.turn">
             <Outils />
         </div>
         <div class="contenu" @click="this.turn">
-            <Competence :title="OK"/>
+            <Realisation />
         </div>
         <div class="contenu" @click="this.turn">
             <Presentation />
@@ -69,16 +72,19 @@
         name: "Book",
         data(){
             return {
-                isMoving: true,
+                isMoving: false,
                 scale: "30deg",
-                light: false
+                light: false,
+                texte: "Hello I'm an IT Student from Madagascar, I invite you to open the book.",
             }
         },
         mounted(){
             this.livre = document.getElementById("livre");
-            this.texte = "ATTENTION !",
+            this.texte = "",
             this.lampe = document.getElementById("lumiere");
             this.livre = document.getElementById("livre");
+            this.lumiere();
+            this.revelerTexte();
         },
         components:{
             BlankPage,
@@ -90,10 +96,22 @@
             ThreeDScene
         },
         methods:{
+            revelerTexte() {
+                const texteFinal = "Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite =>.";
+                let index = 0;
+                const interval = setInterval(() => {
+                    if (index < texteFinal.length) {
+                        this.texte += texteFinal.charAt(index);
+                        index++;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 25);
+            },
             lumiere(){
                 this.light = !this.light;
                 if(this.light){
-                    this.livre.style.filter = "brightness(0.8)";
+                    this.livre.style.filter = "brightness(1)";
                     this.lampe.classList.add("lumiere");
                 }else{
                     this.livre.style.filter = "brightness(0.5)";
@@ -101,7 +119,6 @@
                 }
             },
             turn(event){
-                console.log("event: ", event)
                 var page1 = this.getContenu(event.target);
                 page1.removeEventListener("click", this.turn);
                 page1.addEventListener("click", this.previous);
@@ -110,7 +127,6 @@
                 this.livre.appendChild(page1);
             },
             previous(event){
-                console.log("event: ", event)
                 var page1 = this.getContenu(event.target);
                 page1.removeEventListener("click", this.previous);
                 page1.addEventListener("click", this.turn);
@@ -136,6 +152,26 @@
 </script>
 
 <style>
+    .description{
+        width: 600px;
+        position: absolute;
+        transform: translate(-600px, 0);
+        height: 800px;
+        color: white;
+        text-align: left;
+    }
+
+    .description p{
+        margin-right: 15%;
+    }
+
+    .next {
+        position: fixed;
+        transform: translate(266px, -32px);
+    }
+    :root{
+        --page-background-color: #003140;;
+    }
     .image {
         width: 100%;
         height: 100%;
@@ -146,7 +182,7 @@
         height: 800px;
         position: absolute; 
         box-shadow: 0px 1px;
-        background-color: rgb(58, 49, 49);
+        background-color: rgb(255, 255, 255);
         text-align: center;
         overflow: scroll;
     }
@@ -154,14 +190,12 @@
         transform: rotateY(180deg) ;
         animation: turnPage 1s linear;
         transform-origin: left;
+        border: 1px solid black;
+        background-color: var(--page-background-color);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-
-    .page-previous {
-        transform: rotateY(0deg) ;
-        animation: turnPage-previous 1s linear;
-        transform-origin: left;
-    }
-
+    
     @keyframes turnPage {
         0%{
             transform: rotateY(0deg) ;   
@@ -172,22 +206,82 @@
             transform: rotateY(90deg) skewY(-30deg);    
             box-shadow: 0px 0px;
             opacity: 100%;
+            background-color: var(--page-background-color);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 1px solid black;
         }
         100%{
             transform: rotateY(180deg) ;     
             box-shadow: 0px 0px;
+            background-color: var(--page-background-color);
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 100%;
+            border: 1px solid black;
+        }
+    }
+
+    .page * {
+        animation: hideChildren 1s linear forwards;
+    }
+
+    @keyframes hideChildren {
+        0% {
+            opacity: 100%;
+        }
+        30% {
+            opacity: 100%;
+        }
+        31%{
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .page-previous {
+        transform: rotateY(0deg) ;
+        animation: turnPage-previous 1s linear;
+        transform-origin: left;
+    }
+
+    .page-previous * {
+        animation: hideChildren-previous 1s linear forwards;
+    }
+
+    @keyframes hideChildren-previous {
+        0% {
+            opacity: 0%;
+        }
+        30% {
+            opacity: 0%;
+        }
+        31%{
+            opacity: 100%;
+        }
+        100% {
             opacity: 100%;
         }
     }
+
 
     @keyframes turnPage-previous {
         0%{
             transform: rotateY(180deg) ;   
             box-shadow: 0px 0px;
+            background-color: var(--page-background-color);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         30%{
             transform: rotateY(90deg) skewY(-30deg);    
             box-shadow: 0px 0px;
+
+            background-color: var(--page-background-color);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         100%{
             transform: rotateY(0deg) ;     
@@ -200,7 +294,7 @@
         width: 1200px;
         margin: auto;
         height: 800px;
-        margin-top: 5vh;   
+        margin-top: 4vh;   
         filter: brightness(0.5);
         transform: translate(600px, 0);
     }
@@ -215,12 +309,12 @@
         }
     }
     .lanterne{
-        width: 200px;
-        height: 20px;
-        border-radius: 20%; 
+        width: 10%;
+        height: 40px;
+        border-radius: 50px; 
         margin: auto;
-        background-color: black;
-        border: 0.5px solid white;
+        background-color: #0b0c0d;
+        border: 0.5px white;
         color: white;
         font-size: small;
     }
@@ -256,4 +350,19 @@
         position: relative;
         transform: translate(0 ,950px);
     }
+
+    #arrow{
+        transform: translate(560px, -2px);
+        animation: arrowUp 1s infinite;
+    }
+
+    @keyframes arrowUp {
+        0%{
+            transform: translate(551px, -50px);
+        }
+        100%{
+            transform: translate(551px, -2px);
+        }
+    }
+
 </style>

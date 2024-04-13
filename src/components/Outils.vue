@@ -1,12 +1,8 @@
 <template>
-    <div class="presentation">
+    <div class="outils">
         <br>
         <div class="header">
             <h1>Outils</h1>
-            <p>
-                Je trouve que l'utilisation d'outils est très bénefique dans l'avancement d'un projet,
-                faut accepter de ravaler sa fièreté et demander à ChatGpt quand il y a un grand bloquage x) .
-            </p>
 
             <p>
                 <ul>
@@ -53,8 +49,16 @@
 </script>
 
 <style>
-    .presentation{
+    .outils{
+        width: 100%;
+        height: 100%;
+        /*
+        background-image: url("/freepik/tech.jpeg");*/
+        background-color: rgb(98, 143, 171);
+        background-repeat: no-repeat;
+        background-size: cover;
         text-align: left;
+        color: white;
     }
     .bold{
         font-weight: bold;

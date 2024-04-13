@@ -1,5 +1,5 @@
 <template>
-    <div class="presentation">
+    <div class="competence">
         <br>
         <div class="header" style="height: auto;">
             <h1>{{this.title}}</h1>
@@ -12,8 +12,10 @@
                 <li class="">
                     Côté back:
                     <ul>
-                        <li>c#: dotnet mvc, dotnet webapi</li>
-                        <li>java: spring-boot api, java web application (jsp)</li>
+                        <li>
+                            c#: dotnet mvc, dotnet webapi
+                        </li>
+                        <li>java: spring-boot, java web application (jsp)</li>
                         <li>nodejs: nestjs, express</li>
                         <li>python: django web, django rest</li>
                     </ul>
@@ -43,14 +45,9 @@
                     </ul>
                 </li>
                 
-                <li >
-                    Non relationnelle:
-                    <ul>
-                        <li>MongoDb</li>
-                    </ul>
-                </li>
             </ul>
         </p>
+        <img src="/gif/dev.gif" style="transform: translate(150px, -250px);"/>
     </div>
 </template>
 
@@ -59,7 +56,7 @@
         name: "Competence",
         data(){
             return {
-                title: "Competence",
+                title: "Compétences",
             }
         }
     }
@@ -67,7 +64,13 @@
 
 
 <style>
-    .presentation{
+    .competence{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: white;    
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .bold{
         font-weight: bold;

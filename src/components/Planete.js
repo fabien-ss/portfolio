@@ -9,7 +9,7 @@ export default class Planete{
 
     getMesh(){
         if(this.mesh === undefined || this.mesh.length === null){
-            const sphere = new THREE.SphereGeometry(this.radius);
+            const sphere = new THREE.BoxGeometry(this.radius, this.radius);
             const texture = new THREE.TextureLoader().load(this.textureFile);
             const material = new THREE.MeshBasicMaterial({ map: texture});
             this.mesh = new THREE.Mesh(sphere, material);
