@@ -35,7 +35,7 @@
             <p v-text="texte"></p>
         </div>
         <div class="contenu" @click="this.turn">
-            <img src="/1.jpg" width="100.5%" height="100.5%">
+            <img src="/freepik/tech.jpeg" width="100.5%" height="100.5%">
         </div>
       
         <div class="contenu" @click="this.turn">    
