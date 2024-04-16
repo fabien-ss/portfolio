@@ -34,18 +34,34 @@
         <div class="description">
             <p v-text="texte"></p>
         </div>
+
         <div class="contenu" @click="this.turn">
-            <img src="/freepik/tech.jpeg" width="100.5%" height="100.5%">
+            <Education />
+        </div>
+
+        <div class="contenu" @click="this.turn">
+            <Education />
+        </div>
+
+        <div class="contenu" @click="this.turn">
+            <Education />
+        </div>
+        <div class="contenu" @click="this.turn">
+            <Education />
+        </div>
+        <div class="contenu" @click="this.turn">
+            <Education />
         </div>
       
         <div class="contenu" @click="this.turn">    
             <BlankPage/>
         </div>
-        <div class="contenu" @click="this.turn">
-            <Competence :title="OK"/>
-        </div>
+        
         <div class="contenu" @click="this.turn">
             <Outils />
+        </div>
+        <div class="contenu" @click="this.turn">
+            <Competence :title="OK"/>
         </div>
         <div class="contenu" @click="this.turn">
             <Realisation />
@@ -67,6 +83,7 @@
     import Outils from "./Outils.vue";
     import Realisation from "./Realisation.vue";
     import Couverture from "./Couverture.vue";
+    import Education from "./Education.vue";
     export default{
         name: "Book",
         data(){
@@ -84,6 +101,9 @@
             this.livre = document.getElementById("livre");
             this.lumiere();
             this.revelerTexte();
+            this.contenus = document.getElementsByClassName("contenu");
+          //  this.debut();
+          //  this.fin()
         },
         components:{
             BlankPage,
@@ -91,11 +111,36 @@
             Competence,
             Outils,
             Realisation,
-            Couverture
+            Couverture,
+            Education
         },
         methods:{
+            debut(){
+                let index = 0;
+                const interval = setInterval(() => {
+                    if (index < this.contenus.length) {
+                        this.contenus[this.contenus.length -index - 1].classList.remove("page-previous");
+                        this.contenus[this.contenus.length -index - 1].classList.add("page");
+                        index++;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 1000);
+            },
+            fin(){
+                let index = 0;
+                const interval = setInterval(() => {
+                    if (index < this.contenus.length) {
+                        this.contenus[index].classList.remove("page");
+                        this.contenus[index].classList.add("page-previous");
+                        index++;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 1000);
+            },
             revelerTexte() {
-                const texteFinal = "Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite =>.";
+                const texteFinal = "Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite.";
                 let index = 0;
                 const interval = setInterval(() => {
                     if (index < texteFinal.length) {
@@ -118,7 +163,9 @@
             },
             turn(event){
                 var page1 = this.getContenu(event.target);
+                console.log(page1.classList.contains("page"))
                 page1.removeEventListener("click", this.turn);
+                console.log("turning");
                 page1.addEventListener("click", this.previous);
                 page1.classList.add("page");
                 page1.classList.remove("page-previous");
@@ -151,12 +198,14 @@
 
 <style>
     .description{
-        width: 600px;
+        width: 50%;
         position: absolute;
-        transform: translate(-600px, 0);
+        transform: translate(-100%, 0);
         height: 800px;
         color: white;
         text-align: left;
+        align-items: center;
+        justify-content: center;
     }
 
     .description p{
@@ -175,7 +224,6 @@
         height: 100%;
     }
     .contenu{
-        border-left: 1px solid black;
         width: 50%;
         height: 100%;
         position: absolute; 
@@ -183,12 +231,15 @@
         background-color: rgb(255, 255, 255);
         text-align: center;
         overflow: scroll;
+        border-left: 1px solid #c9cfcf;
+    }
+    .contenu:hover{
+        cursor: pointer;
     }
     .page {
         transform: rotateY(180deg) ;
-        animation: turnPage 1s linear;
+        animation: turnPage 0.5s linear;
         transform-origin: left;
-        border: 1px solid black;
         background-color: var(--page-background-color);
         background-repeat: no-repeat;
         background-size: cover;
@@ -207,7 +258,6 @@
             background-color: var(--page-background-color);
             background-repeat: no-repeat;
             background-size: cover;
-            border: 1px solid black;
         }
         100%{
             transform: rotateY(180deg) ;     
@@ -216,12 +266,11 @@
             background-repeat: no-repeat;
             background-size: cover;
             opacity: 100%;
-            border: 1px solid black;
         }
     }
 
     .page * {
-        animation: hideChildren 1s linear forwards;
+        animation: hideChildren 0.5s linear forwards;
     }
 
     @keyframes hideChildren {
@@ -241,12 +290,12 @@
 
     .page-previous {
         transform: rotateY(0deg) ;
-        animation: turnPage-previous 1s linear;
+        animation: turnPage-previous 0.5s linear;
         transform-origin: left;
     }
 
     .page-previous * {
-        animation: hideChildren-previous 1s linear forwards;
+        animation: hideChildren-previous 0.5s linear forwards;
     }
 
     @keyframes hideChildren-previous {
@@ -289,7 +338,7 @@
 
     .livre{
         position: relative;
-        width: 80%;
+        width: 1200px;
         margin: auto;
         height: 800px;
         margin-top: 4vh;   
@@ -351,7 +400,7 @@
 
     #arrow{
         transform: translate(560px, -2px);
-        animation: arrowUp 1s infinite;
+        animation: arrowUp 0.5s infinite;
     }
 
     @keyframes arrowUp {

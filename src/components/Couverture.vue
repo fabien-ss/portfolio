@@ -1,6 +1,6 @@
 <template>
     <div class="couverture">
-        <div class="image_profil">
+        <div class="image_profil cadre">
         </div>
         <div class="case">
             <br />
@@ -8,7 +8,7 @@
             <h2 v-text="name"></h2>
             <hr>
             <p class="texte" v-text="texte"></p>
-            <Button class="open">
+            <Button class="open" @click="turn">
                 <img src="/cursor/arrow.png" width="50px">
             </Button>
         </div>
@@ -27,6 +27,10 @@ export default {
     mounted() {
     },
     methods: {
+        turn(){
+            console.log("turn");
+            this.$emit("turnPage");
+        }
     },
 };
 </script>
@@ -35,7 +39,7 @@ export default {
 <style>
     .image_profil{
         position: relative;
-        background-image: url("/freepik/Fond/cadre2.jpeg");
+        background-image: url("/freepik/Fond/cadre.jpeg");
         background-size: cover;
         width: 100%;
         height: 75%;
@@ -46,6 +50,7 @@ export default {
     .couverture{
         width: 100%; 
         height: 100%; 
+        overflow: hidden;
     }
     .case{
         height: 15%;
@@ -60,7 +65,6 @@ export default {
         text-align: center;
     }
     .cadre{
-       /* animation: rotateCadre 10s linear infinite;*/
        filter: sepia(142%);
     }
     @keyframes rotateCadre {

@@ -1,95 +1,118 @@
 <template>
     <div class="realisation">
         <h1 style="color: white">TOP PROJET</h1>
-        <p id="description">1) Gestion allimentation, coupure de Panneau solaire</p>
-        <p>
-            <ul>
-                <li>Java web application</li>
-            </ul>
-        </p>
+        <Projet     
+            :-titre="'1) Gestion allimentation, coupure de Panneau solaire'" 
+            :-languages="['Java Server Page']"
+            :-lien="not "
+        />
         
-        <p id="description">2) Etat, localisation, évaluation, prioritisation, prestation pour les routes endommagées</p>
-        <ul>
-            <li>Python tk-inter</li>
-        </ul>
+        <Projet 
+            :-titre="'2) Etat, localisation, évaluation, prioritisation, prestation pour les routes endommagées'",
+            :-languages="['Python tkinter']"
+        />
+
+        <Projet 
+            :-titre="'3) Gestion de stock fifo-lifo'",
+            :-languages="['ASP.NET MVC']"
+        />
         
-        <p id="description">3) Gestion de stock fifo-lifo</p>
-        <p>
-            <ul>
-                <li>ASP.NET MVC</li>
-            </ul>
-        </p>
+        <Projet 
+            :-titre="'4) Matching couple, site pour correspondre deux individus'",
+            :-languages="['Java Server Page']"
+        />
+
+        <Projet 
+            :-titre="'3) Gestion de stock fifo-lifo'",
+            :-languages="['ASP.NET MVC']"
+        />
         
-        <p id="description">4) Matching couple, site pour correspondre deux individus</p>
-        <p>
-            <ul>
-                <li>Java web application</li>
-            </ul>
-        </p>
+        <Projet 
+            :-titre="'4) Matching couple, site pour correspondre deux individus'",
+            :-languages="['Java Server Page']"
+        />
+
+        <Projet 
+            :-titre="'3) Gestion de stock fifo-lifo'",
+            :-languages="['ASP.NET MVC']"
+        />
         
-        <p id="description">5) Vente de voiture d'occasion, web & mobile</p>
-        <ul>
-            <li>React native</li>
-            <li>Ionic</li>
-            <li>Spring-boot api</li>
-        </ul>
+        <Projet 
+            :-titre="'4) Matching couple, site pour correspondre deux individus'",
+            :-languages="['Java Server Page']"
+        />
+
+        <Projet 
+            :-titre="'3) Gestion de stock fifo-lifo'",
+            :-languages="['ASP.NET MVC']"
+        />
         
-        <p id="description">6) Clinique véterinaire</p>
-        <ul>
-            <li>Django</li>
-            <li>Angular</li>
-        </ul>
+        <Projet 
+            :-titre="'4) Matching couple, site pour correspondre deux individus'",
+            :-languages="['Java Server Page']"
+        />
+
+        <Projet 
+            :-titre="'3) Gestion de stock fifo-lifo'",
+            :-languages="['ASP.NET MVC']"
+        />
         
-        <p id="description">7) Reverse enginering, Multi-language CRUD generator</p>
-        <ul>
-            <li>Java</li>
-        </ul>
+        <Projet 
+            :-titre="'4) Matching couple, site pour correspondre deux individus'",
+            :-languages="['Java Server Page']"
+        />
+
+        <Projet 
+            :-titre="'3) Gestion de stock fifo-lifo'",
+            :-languages="['ASP.NET MVC']"
+        />
         
-        <p id="description">8) Gestion des ressources humaines</p>
-        <ul>
-            <li>ASP.NET mvc</li>
-        </ul>
-        
-        <p id="description">9) Processus achat dans une entreprise</p>
-        <ul>
-            <li>ASP.NET mvc</li>
-        </ul>
-        
-        <p id="description">10) Gestion des immobilisations d'une entreprise</p>
-        <ul>
-            <li>Java web application</li>
-        </ul>
-        
-        <p id="description">11) Billard, jeux desktop</p>
-        <ul>
-            <li>Java</li>
-        </ul>
-        
-        <p id="description">12) Takalo, site échange d'objet</p>
-        <ul>
-            <li>Codeigniter PHP</li>
-        </ul>
-        
+        <Projet 
+            :-titre="'4) Matching couple, site pour correspondre deux individus'",
+            :-languages="['Java Server Page']"
+        />
     </div>
 </template>
 
 <script>
+    import Projet from "./competence/Projet.vue";
+    import axios from 'axios';
+
     export default{
         name: "Realisation",
         data(){
-            return {}
+            return {
+                gitRepository: null,
+            }
+        },
+        mounted(){
+          //  this.getGitRepository();
+        },
+        methods:
+        {
+            getGitRepository(){
+                const token = "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";
+                const response = axios.get("https://api.github.com/users/fabien-ss/repos", {
+                    headers: {
+                        Authorization: `token ${token}`,
+                    }       
+                })
+                console.log("respones ",response);
+            }
+        },
+        components:{
+            Projet
         }
     }
 </script>
 
 <style>
-    #description{
-        color: white;
-    }
+   
     .realisation{
         overflow-y: scroll;
-        background-image: url("/freepik/paysageRose.jpg");
-        background-size: cover;
+        height: 100%;
+        background-image: url("/freepik/fond.jpeg");
         background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>

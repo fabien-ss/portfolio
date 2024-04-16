@@ -6,7 +6,6 @@
             <p style="font-style: italic;" v-text="position"></p>
             <p v-text="salutation"></p>
             <p v-text="intro"></p>
-            <img src="/freepik/garsbiz.jpeg" width="100%">
         </div>
         <div class="contact">
             <p><span class="bold">Numéro: </span>+261 34 75 197 55</p>

@@ -3,8 +3,6 @@
         <br>
         QUELLES SERONT NOS PROCHAINS CONTENUS?
         <br>
-
-        <img src="/gif/totoro.gif" class="totoro"/>
         ...
     </div>
 </template>
