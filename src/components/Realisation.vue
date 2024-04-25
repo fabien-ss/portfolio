@@ -24,11 +24,11 @@
             }
         },
         mounted(){
-            this.getGitRepository();
+            //this.getGitRepository();
         },
         methods:
         {
-            async getGitRepository(){
+            /*async getGitRepository(){
                 const token = "";
                 const response = await axios.get("https://api.github.com/users/fabien-ss/repos", {
                     headers: {
@@ -37,7 +37,7 @@
                 })
                 this.gitRepository = response.data;
                 console.log("respones ",response);
-            }
+            }*/
         },
         components:{
             Projet
