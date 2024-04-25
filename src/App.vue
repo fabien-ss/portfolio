@@ -5,7 +5,12 @@ import Book from './components/Book.vue';
 </script>
 
 <template>
-  <div>
+  <div id="app">
     <Book />
   </div>
 </template>
+<style>
+  #app{
+    cursor: url("/public/madagascar.jpg"), auto;
+  }
+</style>

@@ -62,10 +62,10 @@
             <Outils />
         </div>
         <div class="contenu" @click="this.turn">
-            <Competence :title="OK"/>
+            <Realisation />
         </div>
         <div class="contenu" @click="this.turn">
-            <Realisation />
+            <Competence :title="OK"/>
         </div>
         <div class="contenu" @click="this.turn">
             <Presentation />
@@ -111,7 +111,7 @@
             this.index = 0;
           //  this.debut();
           //  this.fin()
-            this.initCamera()
+          //  this.initCamera()
             
         },
         components:{
