@@ -29,7 +29,7 @@
         methods:
         {
             async getGitRepository(){
-                const token = process.env.VUE_APP_GIT_SECRET;
+                const token = "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";
                 const response = await axios.get("https://api.github.com/users/fabien-ss/repos", {
                     headers: {
                         Authorization: `token ${token}`,
