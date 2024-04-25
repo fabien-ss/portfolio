@@ -11,6 +11,9 @@
             <p><span class="bold">Numéro: </span>+261 34 75 197 55</p>
             <p><span class="bold">Email: </span>fabrakoto0987@gmail.com</p>
             <p><span class="bold">LiknDin: </span><a href=#>http://www.linkdIn.com</a></p>
+            <Button class="open" @click="turn">
+                <img src="/cursor/arrow.png" width="50px">
+            </Button>
         </div>
     </div>
 </template>

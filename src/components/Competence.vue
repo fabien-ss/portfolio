@@ -13,11 +13,14 @@
                     Côté back:
                     <ul>
                         <li>
-                            c#: dotnet mvc, dotnet webapi
+                            Dotnet
                         </li>
-                        <li>java: spring-boot, java web application (jsp)</li>
-                        <li>nodejs: nestjs, express</li>
-                        <li>python: django web, django rest</li>
+                        <li>
+                            Java
+                        </li>
+                        <li>
+                            Node
+                        </li>
                     </ul>
                 </li>
             
@@ -25,9 +28,6 @@
                     Côté front:
                     <ul>
                         <li>VueJs</li>
-                        <li>React native</li>
-                        <li>Ionic</li>
-                        <li>Angular</li>
                     </ul>
                 </li>
             </ul>

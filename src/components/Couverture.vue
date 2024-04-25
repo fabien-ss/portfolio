@@ -1,6 +1,7 @@
 <template>
     <div class="couverture">
         <div class="image_profil cadre">
+            <div class="image_profil2"></div>
         </div>
         <div class="case">
             <br />
@@ -28,7 +29,6 @@ export default {
     },
     methods: {
         turn(){
-            console.log("turn");
             this.$emit("turnPage");
         }
     },
@@ -37,15 +37,23 @@ export default {
 
 
 <style>
+
     .image_profil{
         position: relative;
         background-image: url("/freepik/Fond/cadre.jpeg");
         background-size: cover;
         width: 100%;
+        align-items: center; 
+        justify-content: center;
         height: 75%;
     }
-    .image_profil img{
-        transform: translate(0, 48px);
+    .image_profil div{
+        height: 56.5%;
+        width: 56.5%;
+        margin: auto;
+        transform: translate(0, 38%);
+        background-image: url("/profil.jpg");
+        background-size: cover;
     }
     .couverture{
         width: 100%; 
@@ -65,7 +73,6 @@ export default {
         text-align: center;
     }
     .cadre{
-       filter: sepia(142%);
     }
     @keyframes rotateCadre {
         0%{
@@ -82,8 +89,11 @@ export default {
         border-radius: 50%;
         min-width: 70px;
         min-height: 70px;
+        border: none;
+        overflow: hidden;
     }
-    .open:hover{
+    .open img:hover{
         border: 5px solid #d18d64;
+        border-radius: 50px;
     }
 </style>

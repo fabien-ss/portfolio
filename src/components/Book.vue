@@ -1,5 +1,6 @@
 <template>
     <div class="lumiere_container" >
+       
         <div class="lanterne" @click="lumiere" id="lumiere" style="display: flex; align-items: center; justify-content: center; gap: 10px;"> 
             <span v-if="!this.light" style="align-items: center; justify-content: center;">
                     LIGHT -
@@ -32,7 +33,7 @@
     </div>
     <div class="livre" id="livre">
         <div class="description">
-            <p v-text="texte"></p>
+            <p v-text="texte" style=""></p>
         </div>
 
         <div class="contenu" @click="this.turn">
@@ -73,7 +74,10 @@
             <Couverture />
         </div>
     </div>
+    <video class="hide" id="myCam" ></video>
 
+    <canvas class="hide" id="videoCanvas"></canvas>
+    <canvas class="hide" id="blendCanvas"></canvas>
 </template>
 
 <script>
@@ -91,10 +95,12 @@
                 isMoving: false,
                 scale: "30deg",
                 light: false,
-                texte: "Hello I'm an IT Student from Madagascar, I invite you to open the book.",
+                texte: "Hello I'm an IT Student from Madagascar, I invite you to open the book.",   
             }
         },
         mounted(){
+            this.canTurn = true;
+            this.firstPage = false;
             this.livre = document.getElementById("livre");
             this.texte = "",
             this.lampe = document.getElementById("lumiere");
@@ -102,8 +108,11 @@
             this.lumiere();
             this.revelerTexte();
             this.contenus = document.getElementsByClassName("contenu");
+            this.index = 0;
           //  this.debut();
           //  this.fin()
+            this.initCamera()
+            
         },
         components:{
             BlankPage,
@@ -115,32 +124,134 @@
             Education
         },
         methods:{
-            debut(){
-                let index = 0;
-                const interval = setInterval(() => {
-                    if (index < this.contenus.length) {
-                        this.contenus[this.contenus.length -index - 1].classList.remove("page-previous");
-                        this.contenus[this.contenus.length -index - 1].classList.add("page");
-                        index++;
-                    } else {
-                        clearInterval(interval);
-                    }
-                }, 1000);
+            initCamera(){
+                this.video = document.getElementById("myCam");
+                this.videoCanvas = document.getElementById("videoCanvas");
+                this.videoContext = videoCanvas.getContext("2d");
+
+                this.blendCanvas = document.getElementById("blendCanvas");
+                this.blendContext = blendCanvas.getContext("2d");
+
+                this.lastImageData = null;
+
+                // Instantiate navigator
+                navigator.mediaDevices.getUserMedia({video: true})
+                    .then(this.gotStream)
+                    .catch(this.noStream);
+
+                    console.log("got stream ", navigator)
             },
-            fin(){
+            sendForm(event){
+                event.preventDefault();
+                console.log("form sent ", event.target[0].value);
+                const response = fetch("http://localhost:3000/ia-helper/answer-question", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        question: event.target[0].value
+                    })
+                })
+                console.log(response)
+            },
+            turnPerPage(){
+                let page1 = this.contenus[this.contenus.length - 1 - this.index];//.classList.add("BlankPage");
+                page1.classList.add("page");
+                page1.classList.remove("page-previous");
+                this.index ++;
+            },
+            checkHotspots() {
+                // getImageData obtient les pixels d'un element
+                const blendedData = this.blendContext.getImageData(0, 0, 50, 50);
+                let sum = 0;
+                const countPixels = blendedData.data.length / 4;
+                for (let i = 0; i < countPixels; i++) {
+                    sum += (blendedData.data[i*4] + blendedData.data[i*4 + 1] + blendedData.data[i*4 + 2]); 
+                }
+
+                const average = Math.round(sum / (3 * countPixels));  
+                
+                if(average >= 10/* && average < 7*/){
+                    if(this.firstPage === true){
+                        this.lumiere();
+                    }else{
+                        this.lumiere();
+                    }
+                //this.turnPerPage()
+                /*
+                this.firstPage = !this.firstPage;
+                console.log(this.firstPage)
+                
+                if(this.firstPage === true){
+                    this.lumiere();
+                }else{
+                    this.lumiere();
+                }
+                */
+                } else {
+                }
+            },
+            checkDiff(currentImage, lastImage, output) {
+                for (let i = 0; i < currentImage.length; i += 4) {    
+                    const average1 = (currentImage[i] + currentImage[i+1] + currentImage[i+2]) / 3;
+                    const average2 = (lastImage[i] + lastImage[i+1] + lastImage[i+2]) / 3;
+                    const diff = average1 - average2;
+                    output[i] = diff;
+                    output[i+1] = diff;
+                    output[i+2] = diff;
+                    output[i+3] = 0xff;
+                }
+            },
+            captureFrame() {
+                if (this.video.readyState === this.video.HAVE_ENOUGH_DATA) {
+                    this.videoContext.drawImage(this.video, 0, 0, this.videoCanvas.width, this.videoCanvas.height);
+                    const currentImageData = this.videoContext.getImageData(0, 0, this.videoCanvas.width, this.videoCanvas.height);
+                    //console.log(currentImageData.data.length);
+                    if (this.lastImageData) {
+                        const output = this.blendContext.createImageData(this.videoCanvas.width, this.videoCanvas.height);
+                        this.checkDiff(currentImageData.data, this.lastImageData.data, output.data);
+                        this.blendContext.putImageData(output, 0, 0);
+                        this.checkHotspots();
+                    }
+                    this.lastImageData = currentImageData;
+                }
+                requestAnimationFrame(this.captureFrame);
+            },
+            gotStream(stream) {
+                this.video.srcObject = stream;
+                this.video.play();
+                this.captureFrame();
+            },
+            noStream(error) {
+                console.log("error ", error);
+                alert(error);
+            }
+            ,
+            debut(){
+                this.canTurn = false;
+                this.firstPage = !this.firstPage;
                 let index = 0;
+
                 const interval = setInterval(() => {
                     if (index < this.contenus.length) {
-                        this.contenus[index].classList.remove("page");
-                        this.contenus[index].classList.add("page-previous");
+                        if(this.firstPage == true) {
+                            this.contenus[this.contenus.length -index - 1].classList.remove("page-previous");
+                            this.contenus[this.contenus.length -index - 1].classList.add("page");
+                        }else{
+                            this.contenus[index].classList.remove("page");
+                            this.contenus[index].classList.add("page-previous");
+                        }
                         index++;
                     } else {
                         clearInterval(interval);
                     }
                 }, 1000);
+                this.canTurn = true;
             },
             revelerTexte() {
-                const texteFinal = "Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite.";
+                let texteFinal = "<<Ton existence est significative à l'existence d'une chose>>           Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite.";
+                texteFinal = "<<Ton existence est significative à l'existence d'une chose>>";
                 let index = 0;
                 const interval = setInterval(() => {
                     if (index < texteFinal.length) {
@@ -197,6 +308,9 @@
 </script>
 
 <style>
+    .hide{
+        display: none;
+    }
     .description{
         width: 50%;
         position: absolute;
@@ -232,6 +346,7 @@
         text-align: center;
         overflow: scroll;
         border-left: 1px solid #c9cfcf;
+        border-radius: 0px 15px 15px 0px;
     }
     .contenu:hover{
         cursor: pointer;
