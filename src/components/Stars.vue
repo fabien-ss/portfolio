@@ -11,7 +11,8 @@ export default {
     name: "Stars",
     data(){
         return {
-            stars: []
+            stars: [],
+            hasClicked : false
         }
     },
     components:{
@@ -19,11 +20,14 @@ export default {
     },
     methods:{
         addStars(){
-            this.stars.push({
-                id: this.generateUniqueId(),
-                x: this.getRandomX(),
-                y: this.getRandomY()
-            });
+            if(!this.hasClicked){
+                this.stars.push({
+                    id: this.generateUniqueId(),
+                    x: this.getRandomX(),
+                    y: this.getRandomY()
+                });
+                this.hasClicked = true;
+            }
         },
         getRandomX(){
             return Math.floor(Math.random() * 600);
