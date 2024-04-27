@@ -30,10 +30,10 @@ export default {
 
 @keyframes sintiller {
     0%{
-        box-shadow: 0 0 100px #ffff, 0 0 500px #ffff, 0 0 100px #ffff, 0 0 100px #ffff;
+        box-shadow: 0 0 10px #ffff, 0 0 50px #ffff, 0 0 10px #ffff, 0 0 10px #ffff;
     }
     100%{
-        box-shadow: 0 0 40px #ffff, 0 0 20px #ffff, 0 0 30px #ffff, 0 0 40px #ffff;
+        box-shadow: 0 0 40px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow;
     }
 }
 </style>
