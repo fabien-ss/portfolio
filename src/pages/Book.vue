@@ -115,7 +115,7 @@
 
 <style>
 .open {
-    background-color: white;
+    background-color: transparent;
     color: #d18d64;
     border-radius: 50%;
     min-width: 70px;
@@ -123,12 +123,13 @@
     border: none;
     overflow: hidden;
     position: absolute;
-  transform: translate(300%, -120%);
+    transform: translate(300%, -120%);
 }
 
 .open img:hover {
     border: 5px solid #d18d64;
     border-radius: 50px;
+    background-color: white;
 }
 
 .hide {

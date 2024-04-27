@@ -3,10 +3,12 @@
 }
 
 body {
-    background-image: url("/freepik/Fond/planche.jpg");
+    /*background-image: url("/freepik/Fond/planche.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     aspect-ratio: 1/1;
+    */
+    background-color: rgb(37, 103, 112);;
     font-family: 'Courier New', Courier, monospace;
 }
 
