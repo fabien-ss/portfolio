@@ -1,6 +1,6 @@
 <script setup>
 //import Commune from "./page/user/Commune.vue";
-import Book from './components/Book.vue';
+import Book from './pages/Book.vue';
 
 </script>
 

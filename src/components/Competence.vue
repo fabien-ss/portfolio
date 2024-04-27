@@ -79,7 +79,7 @@
             </li>
         </ul>
         </p>
-        <img src="/gif/dev.gif" />
+        <img src="/gif/dev.gif" style="transform: translate(0, -20%)">
     </div>
 </template>
 

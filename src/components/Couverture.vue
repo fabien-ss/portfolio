@@ -9,9 +9,6 @@
             <h2 v-text="name"></h2>
             <hr>
             <p class="texte" v-text="texte"></p>
-            <Button class="open" @click="turn">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
         </div>
     </div>
 </template>
@@ -28,6 +25,9 @@ export default {
     mounted() {
     },
     methods: {
+        hello(){
+            console.log("Hello!");
+        },
         turn(){
             this.$emit("turnPage");
         }
@@ -82,18 +82,5 @@ export default {
             transform: rotate(360deg);
         }
     }
-    .open{
-        transform: translate(350%, -110%);
-        background-color: white;
-        color: #d18d64;
-        border-radius: 50%;
-        min-width: 70px;
-        min-height: 70px;
-        border: none;
-        overflow: hidden;
-    }
-    .open img:hover{
-        border: 5px solid #d18d64;
-        border-radius: 50px;
-    }
+    
 </style>
