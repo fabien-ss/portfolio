@@ -1,6 +1,5 @@
-<template>
+<template> 
     <div class="lumiere_container">
-
         <div class="lanterne" @click="lumiere" id="lumiere"
             style="display: flex; align-items: center; justify-content: center; gap: 10px;">
             <span v-if="!this.light" style="align-items: center; justify-content: center;">
@@ -21,8 +20,8 @@
                 </svg>
             </span>
         </div>
-
     </div>
+    <Stars />
     <div class="livre" id="livre">
         <div class="description">
             <p v-text="texte" style=""></p>
@@ -114,6 +113,7 @@
 </script>
 
 <style>
+
 .open {
     background-color: transparent;
     color: #d18d64;
