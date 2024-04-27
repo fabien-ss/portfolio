@@ -1,6 +1,8 @@
 <template>
     <div class="etoile" id="etoile">
-        <button @click="addStars" style="position: fixed">Add Star </button>
+        <button class="addStars" @click="addStars" style="position: fixed">
+            <img src="/star/star.png" />
+        </button>
         <Star v-for="star in stars" :key="star.id" :x="star.x" :y="star.y" />
     </div> 
 </template>
@@ -41,6 +43,31 @@ export default {
 </script>
 
 <style>
+
+.addStars img{
+    max-height : 30px;
+    max-width: 30px;   
+}
+.addStars{
+    background-color: transparent;
+    border-radius: 50px;
+    border :1px solid yellow;
+    animation: rotateStar 1s linear infinite;
+}
+
+.addStars:hover{
+    background-color: yellow
+}
+
+@keyframes rotateStar {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360de)
+    }
+}
+
 .etoile{
     transform: translate(0, -30px);
     position: absolute;

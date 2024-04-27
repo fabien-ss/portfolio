@@ -1,5 +1,5 @@
 <template>
-    <div class="shine" :style="{ transform: `translate(-${x}px, ${y}px)` }"></div>
+    <div class="shine" :style="shineStyle"></div>
 </template>
 
 <script>
@@ -13,6 +13,15 @@ export default {
         y: {
             type: Number,
             required: true
+        }
+    },
+    computed: {
+        shineStyle() {
+            return {
+                transform: `translate(-${this.x}px, ${this.y}px)`,
+                animation: 'sintiller 2s linear infinite',
+                transition: '1s'
+            };
         }
     }
 }
