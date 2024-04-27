@@ -157,7 +157,7 @@
 }
 
 :root {
-    --page-background-color: white;
+    --page-background-color: #31363F;
     ;
 }
 
@@ -171,7 +171,7 @@
     height: 100%;
     position: absolute;
     box-shadow: 0px 1px;
-    background-color: rgb(255, 255, 255);
+    background-color: #31363F;
     text-align: center;
     overflow: scroll;
     border-left: 1px solid #c9cfcf;
@@ -184,8 +184,6 @@
     animation: turnPage 0.5s linear;
     transform-origin: left;
     background-color: var(--page-background-color);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 @keyframes turnPage {
@@ -199,17 +197,14 @@
         transform: rotateY(90deg) skewY(-30deg);
         box-shadow: 0px 0px;
         opacity: 100%;
-        background-color: var(--page-background-color);
-        background-repeat: no-repeat;
-        background-size: cover;
+        
     }
 
     100% {
         transform: rotateY(180deg);
         box-shadow: 0px 0px;
         background-color: var(--page-background-color);
-        background-repeat: no-repeat;
-        background-size: cover;
+        
         opacity: 100%;
     }
 }

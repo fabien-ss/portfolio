@@ -38,9 +38,11 @@
     .presentation{
         width: 100%;
         height: 100%;
+
+        background-color: #76ABAE;/*
         background-image: url("/freepik/fond.jpeg");
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover;*/
     }
     .image_profil{
         text-align: center;

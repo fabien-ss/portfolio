@@ -40,6 +40,7 @@ export default {
 
     .image_profil{
         position: relative;
+        
         background-image: url("/freepik/Fond/cadre.jpeg");
         background-size: cover;
         width: 100%;
@@ -59,6 +60,8 @@ export default {
         width: 100%; 
         height: 100%; 
         overflow: hidden;
+        color: #31363F;
+        background-color: white;
     }
     .case{
         height: 15%;

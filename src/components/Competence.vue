@@ -100,7 +100,7 @@ export default {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: white;
+    background-color: #76ABAE;
     background-repeat: no-repeat;
     background-size: cover;
 }

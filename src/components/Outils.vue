@@ -54,7 +54,7 @@
         height: 100%;
         /*
         background-image: url("/freepik/tech.jpeg");*/
-        background-color: rgb(98, 143, 171);
+        background-color: #76ABAE;
         background-repeat: no-repeat;
         background-size: cover;
         text-align: left;

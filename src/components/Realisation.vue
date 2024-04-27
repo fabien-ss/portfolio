@@ -48,10 +48,8 @@
 <style>
    
     .realisation{
+        background-color: #76ABAE;
         overflow-y: scroll;
         height: 100%;
-        background-image: url("/freepik/fond.jpeg");
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 </style>
