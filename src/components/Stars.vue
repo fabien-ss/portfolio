@@ -20,14 +20,12 @@ export default {
     },
     methods:{
         addStars(){
-            if(!this.hasClicked){
                 this.stars.push({
                     id: this.generateUniqueId(),
                     x: this.getRandomX(),
                     y: this.getRandomY()
                 });
                 this.hasClicked = true;
-            }
         },
         getRandomX(){
             return Math.floor(Math.random() * 600);
