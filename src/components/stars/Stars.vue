@@ -22,15 +22,22 @@ export default {
     },
     methods:{
         addStars(){
+            console.log("le ", this.stars.length)
+         //   if(this.stars.length <= 5){
+          //      this.$emit("addStarts")
                 this.stars.push({
                     id: this.generateUniqueId(),
                     x: this.getRandomX(),
                     y: this.getRandomY()
                 });
-                this.hasClicked = true;
+         //   }else{
+          //      this.stars = []
+           //     this.$emit("addStarts")
+           // }
+            this.hasClicked = true;
         },
         getRandomX(){
-            return Math.floor(Math.random() * 600);
+            return Math.floor(Math.random() * 1200);
         },
         getRandomY(){
             return Math.floor(Math.random() * 30);
@@ -51,8 +58,7 @@ export default {
 .addStars{
     background-color: transparent;
     border-radius: 50px;
-    border :1px solid yellow;
-    animation: rotateStar 1s linear infinite;
+    animation: rotateStar 2s linear infinite;
 }
 
 .addStars:hover{
@@ -62,16 +68,22 @@ export default {
 @keyframes rotateStar {
     0%{
         transform: rotate(0deg);
+        background-color: yellow;
+        filter: grayscale(0%);
     }
     100%{
-        transform: rotate(360de)
+        transform: rotate(360deg)
     }
 }
 
 .etoile{
+    filter: grayscale(100%);
     transform: translate(0, -30px);
     position: absolute;
-    width: 100%;
+    width: 45%;
     max-height: 65px;
+}
+.etoile:hover{
+    filter: grayscale(0%);
 }
 </style>

@@ -2,6 +2,7 @@
     <div class="presentation">
         <div class="header">
             <br>
+            <h1>Presentation</h1>
             <h1>{{this.title}}</h1>
             <p style="font-style: italic;" v-text="position"></p>
             <p v-text="salutation"></p>
@@ -39,7 +40,7 @@
         width: 100%;
         height: 100%;
 
-        background-color: #76ABAE;/*
+        background-color: #EEEEEE;/*
         background-image: url("/freepik/fond.jpeg");
         background-repeat: no-repeat;
         background-size: cover;*/

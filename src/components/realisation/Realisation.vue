@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import Projet from "./competence/Projet.vue";
+    import Projet from "../projet/Projet.vue";
     import axios from 'axios';
 
     export default{

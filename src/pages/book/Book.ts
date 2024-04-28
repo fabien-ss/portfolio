@@ -1,22 +1,24 @@
 
-import BlankPage from "./BlankPage.vue";
-import Presentation from "../components/Presentation.vue";
-import Competence from "../components/Competence.vue";
-import Outils from "../components/Outils.vue";
-import Realisation from "../components/Realisation.vue";
-import Couverture from "../components/Couverture.vue";
-import Education from "../components/Education.vue";
-import Cv from "../components/cv/Cv.vue";
-import Stars from "@/components/Stars.vue";
+import BlankPage from "../BlankPage.vue";
+import Presentation from "../../components/presentation/Presentation.vue";
+import Competence from "../../components/competence/Competence.vue";
+import Outils from "../../components/Outils.vue";
+import Realisation from "../../components/realisation/Realisation.vue";
+import Couverture from "../../components/couverture/Couverture.vue";
+import Education from "../../components/education/Education.vue";
+import Cv from "../../components/cv/Cv.vue";
+import Stars from "../../components/stars/Stars.vue";
+import Bot from "../../components/bot/Bot.vue";
+
 export default {
     name: "Book",
     data() {
         return {
-            stars: 0,
             isMoving: false,
             scale: "30deg",
             light: false,
             texte: "Hello I'm an IT Student from Madagascar, I invite you to open the book.",
+            brigthness: 0.5
         }
     },
     mounted() {
@@ -40,16 +42,23 @@ export default {
         Couverture,
         Education,
         Cv,
-        Stars
+        Stars,
+        Bot
     },
     methods: {
-        
-        addStars(){
-            this.stars ++;
+        l(){
+            //console.log(this.brigthness)
+            if(this.brigthness <= 1.0){
+                this.brigthness += 0.1;
+                this.livre.style.filter = `brightness(${this.brigthness})`;
+            }else{
+                this.brigthness = 0.5;
+                this.livre.style.filter = `brightness(0.5)`;
+            }
         },
         sendForm(event) {
             event.preventDefault();
-            console.log("form sent ", event.target[0].value);
+            //console.log("form sent ", event.target[0].value);
             const response = fetch("http://localhost:3000/ia-helper/answer-question", {
                 method: "POST",
                 headers: {
@@ -59,7 +68,7 @@ export default {
                     question: event.target[0].value
                 })
             })
-            console.log(response)
+            //console.log(response)
         },
         turnPerPage() {
             let page1 = this.contenus[this.contenus.length - 1 - this.index];//.classList.add("BlankPage");
@@ -71,7 +80,6 @@ export default {
             this.canTurn = false;
             this.firstPage = !this.firstPage;
             let index = 0;
-
             const interval = setInterval(() => {
                 if (index < this.contenus.length) {
                     if (this.firstPage == true) {
@@ -116,8 +124,8 @@ export default {
             //if(!page1.classList.contains("page-previous")){
             //          this.canTurn = !this.canTurn;
             page1.removeEventListener("click", this.turn);
-            console.log(page1.classList.contains("page"))
-            console.log("turning");
+            //console.log(page1.classList.contains("page"))
+            //console.log("turning");
             page1.classList.add("page");
             page1.classList.remove("page-previous");
             this.livre.appendChild(page1);

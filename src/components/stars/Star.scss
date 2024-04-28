@@ -1,0 +1,21 @@
+.shine{
+    background-color: #ffff;
+    animation: sintiller 2s linear infinite;
+    margin: auto;
+    width: 3px;
+    height: 3px;
+    display: absolute;
+    border-radius: 50px;
+
+    *{
+        display: none;
+    }
+}
+@keyframes sintiller {
+    0%{
+        box-shadow: 0 0 10px #ffff;
+    }
+    100%{
+        box-shadow: 0 0 20px #ffff;
+    }
+}

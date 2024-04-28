@@ -7,8 +7,6 @@
             <p>Alors je suis plus à l'aise quand il s'agit metier, j'adore implémenter des algorithmes efficaces dans ce
                 que je fais, mais je suis aussi apte à m'occuper de la présentation de l'application et aussi de la
                 conception.</p>
-            <p>Je suis particulièrement attiré par le <em>Machine learning</em> et tout ce qui concerne l'Intelligence
-                artificielle.</p>
         </div>
         <p>
             <span class="bold">Languages les mieux maitriser</span>:

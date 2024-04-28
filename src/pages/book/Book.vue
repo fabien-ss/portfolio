@@ -21,11 +21,11 @@
             </span>
         </div>
     </div>
-    <Stars />
+    <Stars @addStarts="l()"/>
     <div class="livre" id="livre">
         <div class="description">
             <p v-text="texte" style=""></p>
-
+            <Bot />
         </div>
 
         <div class="contenu" @click="this.turn">
@@ -108,11 +108,12 @@
     </div>
 
 </template>
-<script src="./Book.js">
+<script src="./Book.ts">
 
 </script>
 
 <style>
+
 
 .open {
     background-color: transparent;
@@ -213,29 +214,6 @@
     animation: hideChildren 0.5s linear forwards;
 }
 
-.page .open{
-    opacity: 100%;
-}
-
-
-
-@keyframes noHideChildren {
-    0% {
-        opacity: 100%;
-    }
-
-    30% {
-        opacity: 100%;
-    }
-
-    31% {
-        opacity: 100%;
-    }
-
-    100% {
-        opacity: 100%;
-    }
-}
 
 @keyframes hideChildren {
     0% {
