@@ -40,7 +40,8 @@
                     divSend.innerHTML = message;
                     this.chat.appendChild(divSend)
                 }
-                document.getElementById("message").value = ""
+                document.getElementById("message").value = "";
+                
             },
             showBot(){
                 console.log("show");

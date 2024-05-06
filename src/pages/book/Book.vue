@@ -21,7 +21,10 @@
             </span>
         </div>
     </div>
+<!--
+
     <Stars @addStarts="l()"/>
+-->  
     <div class="livre" id="livre">
         <div class="description">
             <p v-text="texte" style=""></p>
