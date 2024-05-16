@@ -27,7 +27,6 @@
 -->  
     <div class="livre" id="livre">
         <div class="description">
-            <p v-text="texte" style="">HEY</p>
             <Bot />
         </div>
 
