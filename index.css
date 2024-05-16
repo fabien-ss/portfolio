@@ -1,13 +1,13 @@
 body {
-    background-color: #222831;
+    
     font-family: 'Courier New', Courier, monospace;
-    overflow: hidden;
+    background-color: #212730;
+    
     /*
-    background-image: url("/freepik/Fond/planche.jpg");
-    background-repeat: no-repeat;
+    background-image: url("/ia/futur.gif");
+    background-repeat: no-repeat;   
     background-size: cover;
     color: #31363F;
-    scale: 1/1;
     */
 }
 

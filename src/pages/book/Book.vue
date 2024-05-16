@@ -1,9 +1,7 @@
 <template>
 
-<!--
-
     <Stars @addStarts="l()"/>
--->
+
     <Lumiere @lumiere="lumiere()"/>
     <div class="livre" id="livre">
         <div class="description">

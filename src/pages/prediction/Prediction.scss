@@ -1,0 +1,88 @@
+
+.border{
+
+}
+.root{
+    max-width: 600px;
+    min-width: 324px;
+    height: 100%;
+    margin: auto;
+    .growImage{
+        background-image: url('/freepik/3.png');
+        margin: auto;
+        transition: 1s;
+        width: 100%;
+        img{
+            width: 100%;
+            opacity: 100%;
+        }
+        animation: right 0.5s;
+        border-bottom: 1px solid white;
+    }
+    .image{
+        margin: auto;
+        transition: 1s;
+        width: 0%;
+        img{
+            width: 100%;
+            opacity: 0;
+        }
+        transform: translate(0);
+        animation: right 0.5s;
+    }
+    .card{
+        transform: translate(0);
+        animation: right 0.5s;
+        * {
+            text-align: center;
+        }
+        overflow: hidden;
+    }
+    .title{
+        transform: translate(0);
+        animation: right 0.5s;
+        text-align: left    ;
+    }
+    .footer{
+        transform: translate(0);
+        animation: right 0.5s;
+        text-align: left;
+        align-items: left;
+        bottom: 0;
+        p{
+            font-size: 14px;
+        }
+        hr{
+            color: white;
+            width: 30%;
+            animation: hrSize 1s linear;
+        }
+    }
+}
+
+@keyframes right {
+    0%{
+        transform: translate(0,-1000px)
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes left {
+    0%{
+        transform: translate(0,1000px)
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes hrSize {
+    50%{
+        width: 100%;
+    }
+    100%{
+        width: 30%;
+    }
+}

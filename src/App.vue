@@ -10,7 +10,5 @@ import Loading from './components/loading/Loading.vue';
   </div>
 </template>
 <style>
-  #app{
-    cursor: url("/public/madagascar.jpg"), auto;
-  }
+
 </style>
