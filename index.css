@@ -1,14 +1,13 @@
 body {
+    /*
     background-color: #222831;
+    */
     font-family: 'Courier New', Courier, monospace;
     overflow: hidden;
-    /*
     background-image: url("/freepik/Fond/planche.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     color: #31363F;
-    scale: 1/1;
-    */
 }
 
 p {
