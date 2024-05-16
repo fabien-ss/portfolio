@@ -27,6 +27,7 @@
 -->  
     <div class="livre" id="livre">
         <div class="description">
+            <p v-text="texte"></p>
             <Bot />
         </div>
 
@@ -144,10 +145,9 @@ export default {
         this.firstPage = false;
         this.livre = document.getElementById("livre");
         this.texte = "",
-            this.lampe = document.getElementById("lumiere");
+        this.lampe = document.getElementById("lumiere");
         this.livre = document.getElementById("livre");
         this.lumiere();
-        this.revelerTexte();
         this.contenus = document.getElementsByClassName("contenu");
         this.index = 0;
     },
@@ -167,6 +167,7 @@ export default {
     methods: {
         handlePageLoaded() {
             this.isLoading = false; // Mettre isLoading à false lorsque la page est entièrement chargée
+            this.revelerTexte();
         },  
         loading(){
             setTimeout(function(){
