@@ -30,7 +30,7 @@
                         <ul>
                             <li>Adobe XD pour les maquettes</li>
                             <li>Adobe Photoshop</li>
-                            <li>Adobre premier</li>
+                            <li>Adobe premier</li>
                         </ul>
                     </li>
                 </ul>

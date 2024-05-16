@@ -40,6 +40,7 @@ export default {
 
     .image_profil{
         position: relative;
+        background-color: #514b4b;
         
         background-image: url("/freepik/Fond/cadre.jpeg");
         background-size: cover;

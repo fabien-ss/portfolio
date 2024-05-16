@@ -1,7 +1,7 @@
 <script setup>
 //import Commune from "./page/user/Commune.vue";
 import Book from './pages/book/Book.vue';
-
+import Loading from './components/loading/Loading.vue';
 </script>
 
 <template>

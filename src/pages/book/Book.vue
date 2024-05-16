@@ -1,30 +1,10 @@
-<template> 
-    <div class="lumiere_container">
-        <div class="lanterne" @click="lumiere" id="lumiere"
-            style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <span v-if="!this.light" style="align-items: center; justify-content: center;">
-                LIGHT -
-                <svg class="slider" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"
-                        style="fill: white;"></path>
-                </svg>
-            </span>
-            <span v-if="this.light"
-                style="color: black; font-weight: bold; align-items: center; justify-content: center;">
-                LIGHT -
-                <svg class="slider" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z">
-                    </path>
-                </svg>
-            </span>
-        </div>
-    </div>
+<template>
+
 <!--
 
     <Stars @addStarts="l()"/>
--->  
+-->
+    <Lumiere @lumiere="lumiere()"/>
     <div class="livre" id="livre">
         <div class="description">
             <p v-text="texte" style=""></p>
@@ -79,6 +59,13 @@
         </div>
 
         <div class="contenu" @click="this.turn">
+            <Experience />
+            <Button class="open">
+                <img src="/cursor/arrow.png" width="50px">
+            </Button>
+        </div>
+
+        <div class="contenu" @click="this.turn">
             <Outils />
             <Button class="open">
                 <img src="/cursor/arrow.png" width="50px">
@@ -110,8 +97,186 @@
         </div>
     </div>
 
+    <Loading v-if="isLoading" @isLoading = "isLoading = !isLoading"/>
 </template>
-<script src="./Book.ts">
+<script >
+
+import BlankPage from "../BlankPage.vue";
+import Presentation from "../../components/presentation/Presentation.vue";
+import Competence from "../../components/competence/Competence.vue";
+import Outils from "../../components/Outils.vue";
+import Realisation from "../../components/realisation/Realisation.vue";
+import Couverture from "../../components/couverture/Couverture.vue";
+import Education from "../../components/education/Education.vue";
+import Cv from "../../components/cv/Cv.vue";
+import Stars from "../../components/stars/Stars.vue";
+import Bot from "../../components/bot/Bot.vue";
+import Loading from "../../components/loading/Loading.vue";
+import Experience from "../../components/experience/Experience.vue";
+import Lumiere from "../../components/button/Lumiere.vue";
+
+export default {
+    name: "Book",
+    data() {
+        return {
+            isMoving: false,
+            scale: "30deg",
+            light: false,
+            texte: "Hello I'm an IT Student from Madagascar, I invite you to open the book.",
+            brigthness: 0.5,
+            isLoading: true,
+            myComponents: [Couverture, Presentation, Competence, Realisation, Education, Experience],
+            indexs: [ 0, 1, 2 ]
+        }
+    },
+    mounted() {
+        /*
+        const interval = setInterval(() => {
+            this.isLoading = !this.isLoading;
+        }, 2000);*/
+        this.canTurn = true;
+        this.firstPage = false;
+        this.livre = document.getElementById("livre");
+        this.texte = "",
+            this.lampe = document.getElementById("lumiere");
+        this.livre = document.getElementById("livre");
+        this.lumiere();
+        this.revelerTexte();
+        this.contenus = document.getElementsByClassName("contenu");
+        this.index = 0;
+    },
+    components: {
+        BlankPage,
+        Presentation,
+        Competence,
+        Outils,
+        Realisation,
+        Couverture,
+        Education,
+        Cv,
+        Stars,
+        Bot,
+        Loading,
+        Lumiere
+    },
+    methods: {
+        l(){
+            //console.log(this.brigthness)
+            if(this.brigthness <= 1.0){
+                this.brigthness += 0.1;
+                this.livre.style.filter = `brightness(${this.brigthness})`;
+            }else{
+                this.brigthness = 0.5;
+                this.livre.style.filter = `brightness(0.5)`;
+            }
+        },
+        sendForm(event) {
+            event.preventDefault();
+            //console.log("form sent ", event.target[0].value);
+            const response = fetch("http://localhost:3000/ia-helper/answer-question", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    question: event.target[0].value
+                })
+            })
+            //console.log(response)
+        },
+        turnPerPage() {
+            let page1 = this.contenus[this.contenus.length - 1 - this.index];//.classList.add("BlankPage");
+            page1.classList.add("page");
+            page1.classList.remove("page-previous");
+            this.index++;
+        },
+        debut() {
+            this.canTurn = false;
+            this.firstPage = !this.firstPage;
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < this.contenus.length) {
+                    if (this.firstPage == true) {
+                        this.contenus[this.contenus.length - index - 1].classList.remove("page-previous");
+                        this.contenus[this.contenus.length - index - 1].classList.add("page");
+                    } else {
+                        this.contenus[index].classList.remove("page");
+                        this.contenus[index].classList.add("page-previous");
+                    }
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 1000);
+            this.canTurn = true;
+        },
+        revelerTexte() {
+            let texteFinal = "<<Ton existence est significative à l'existence d'une chose>>           Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite.";
+            texteFinal = "<<Ton existence est significative à l'existence d'une chose>>";
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < texteFinal.length) {
+                    this.texte += texteFinal.charAt(index);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 25);
+        },
+        lumiere() {
+            this.light = !this.light;
+            if (this.light) {
+                this.livre.style.filter = "brightness(1)";
+                this.lampe.classList.add("lumiere");
+            } else {
+                this.livre.style.filter = "brightness(0.5)";
+                this.lampe.classList.remove("lumiere");
+            }
+        },
+        turn(event) {
+            var page1 = this.getContenu(event.target);
+            //if(!page1.classList.contains("page-previous")){
+            //          this.canTurn = !this.canTurn;
+            page1.removeEventListener("click", this.turn);
+            //console.log(page1.classList.contains("page"))
+            //console.log("turning");
+            page1.classList.add("page");
+            page1.classList.remove("page-previous");
+            this.livre.appendChild(page1);
+            //  this.canTurn = !this.canTurn;
+            page1.addEventListener("click", this.previous);
+
+            // }
+        },
+        previous(event) {
+            //     if(this.canTurn){
+            //        this.canTurn = !this.canTurn;
+            var page1 = this.getContenu(event.target);
+            page1.removeEventListener("click", this.previous);
+            page1.classList.add("page-previous");
+            page1.classList.remove("page");
+            this.livre.appendChild(page1);
+
+            //  this.canTurn = !this.canTurn;
+            page1.addEventListener("click", this.turn);
+            //      }
+        },
+        getContenu(element) {
+            if (element.classList.contains("contenu")) return element;
+            return this.getContenu(element.parentElement);
+        }
+        ,
+        afficherTexteProgressivement(texte, element, index = 0) {
+            if (index < texte.length) {
+                element.innerHTML += texte.charAt(index);
+                setTimeout(function () {
+                    this.afficherTexteProgressivement(texte, element, index + 1);
+                }, 100); // Ajustez le délai entre chaque caractère ici
+            }
+        }
+    }
+}
+
 
 </script>
 

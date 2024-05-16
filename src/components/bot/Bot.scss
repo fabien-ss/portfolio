@@ -56,7 +56,7 @@
                 margin-top: 5%;
                 min-width: 50%;
                 max-width: 90%;
-                transition: 0.5s;
+                transition: 1s;
                 border-radius: 10px;
                 padding: 10px;
                 animation:translation 0.1s ;
@@ -83,6 +83,10 @@
                 color: #222831;
                 
             }
+        }
+        .chat.scroll-bottom {
+            scroll-behavior: smooth; /* Pour une transition douce (facultatif) */
+            scroll-margin-bottom: auto; /* Décale le contenu vers le bas */
         }
         .boite_envoie{
             height: 10%;
