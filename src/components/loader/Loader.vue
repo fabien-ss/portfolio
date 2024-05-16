@@ -48,10 +48,10 @@ export default{
 
 <style>
 .loader {
-    --background: yellow;
-    --shadow: rgba(39, 94, 254, 0.28);
+    --background: blue;
+    --shadow: transparent;
     --text: #6C7486;
-    --page: white;
+    --page: #2f2d2d;
     --page-fold: gray;
     --duration: 3s;
     width: 200px;
