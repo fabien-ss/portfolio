@@ -38,14 +38,15 @@
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
-        
+        <!--
         <div class="contenu">
             <Experience />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
-        
+        -->
+
         <div class="contenu">
             <Education />
             <button class="open" >
@@ -59,12 +60,14 @@
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
+
         <div class="contenu">
             <Realisation />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
+
         <div class="contenu">
             <Competence :title="OK" />
             <button class="open" >
@@ -101,6 +104,7 @@ import Stars from "../../components/stars/Stars.vue";
 import Bot from "../../components/bot/Bot.vue";
 import Loader from "../../components/loader/Loader.vue";
 import Experience from "../../components/experience/Experience.vue";
+import Language from "../../components/language/Language.vue";
 
 export default {
     name: "Book",
@@ -139,7 +143,8 @@ export default {
         Cv,
         Stars,
         Bot,
-        Experience
+        Experience,
+        Language
     },
     methods: {
         handlePageLoaded() {
@@ -343,11 +348,6 @@ export default {
     border-radius: 0px 15px 15px 0px;
     transition: 0.5s;
     
-    height: 100%;
-    background: linear-gradient(#3f87a6 10%, #ebf8e1a2 10%),
-        linear-gradient(to right, #ebf8e100 10%, #c73030 10% 10.2%, #ebf8e100 10.5%);
-    background-size: 100% 25px, 100% 100%;
-    background-repeat: repeat, no-repeat;
 }
 
 .page {
@@ -451,21 +451,11 @@ export default {
 @keyframes turnPage-previous {
     0% {
         transform: rotateY(180deg);
-            height: 100%;
-        background: linear-gradient(#3f87a6 10%, #ebf8e1a2 10%),
-            linear-gradient(to right, #ebf8e100 10%, #c73030 10% 10.2%, #ebf8e100 10.5%);
-        background-size: 100% 25px, 100% 100%;
-        background-repeat: repeat, no-repeat;
+
     }
 
     30% {
         transform: rotateY(90deg) skewY(-30deg);
-    
-        height: 100%;
-        background: linear-gradient(#3f87a6 10%, #ebf8e1a2 10%),
-            linear-gradient(to right, #ebf8e100 10%, #c73030 10% 10.2%, #ebf8e100 10.5%);
-        background-size: 100% 25px, 100% 100%;
-        background-repeat: repeat, no-repeat;
     }
 
     100% {

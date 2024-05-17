@@ -1,6 +1,6 @@
 <template>
     <div class="realisation">
-        <h1 style="color: white">TOP PROJET</h1>
+        <h1 style="color: white">Projets</h1>
 
         <Projet
             v-for="projet in gitRepository"
@@ -29,7 +29,7 @@
         methods:
         {
             async getGitRepository(){
-                const token = "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";
+                const token = "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";
                 const response = await axios.get("https://api.github.com/users/fabien-ss/repos", {
                     headers: {
                         Authorization: `token ${token}`,
