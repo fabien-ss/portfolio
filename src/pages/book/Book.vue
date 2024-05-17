@@ -31,82 +31,57 @@
             <Bot />
         </div>
 
-        <div class="contenu" @click="this.turn">
-            <Education />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
-        </div>
 
-        <div class="contenu" @click="this.turn">
-            <Education />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
-        </div>
-
-        <div class="contenu" @click="this.turn">
-            <Education />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
-        </div>
-        <div class="contenu" @click="this.turn">
-            <Education />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
-        </div>
-        <div class="contenu" @click="this.turn">
-            <Education />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
-        </div>
-
-        <div class="contenu" @click="this.turn">
-            <BlankPage />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
-        </div>
-
-        <div class="contenu" @click="this.turn">
+        <div class="contenu">
             <Cv />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
+            <button class="open" >
+                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+            </button>
+        </div>
+        
+        <div class="contenu">
+            <Experience />
+            <button class="open" >
+                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+            </button>
+        </div>
+        
+        <div class="contenu">
+            <Education />
+            <button class="open" >
+                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+            </button>
         </div>
 
-        <div class="contenu" @click="this.turn">
+        <div class="contenu">
             <Outils />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
+            <button class="open" >
+                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+            </button>
         </div>
-        <div class="contenu" @click="this.turn">
+        <div class="contenu">
             <Realisation />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
+            <button class="open" >
+                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+            </button>
         </div>
-        <div class="contenu" @click="this.turn">
+        <div class="contenu">
             <Competence :title="OK" />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
+            <button class="open" >
+                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+            </button>
         </div>
-        <div class="contenu" @click="this.turn">
+        <div class="contenu">
             <Presentation />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
+            <button class="open" >
+                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+            </button>
         </div>
-        <div class="contenu" @click="this.turn">
+        <div class="contenu"  >
             <Couverture />
-            <Button class="open">
-                <img src="/cursor/arrow.png" width="50px">
-            </Button>
+            <button class="open" > 
+                <img src="/cursor/arrow.png" @click="this.turn"  width="50px">
+            </button>
         </div>
     </div>
 
@@ -125,6 +100,7 @@ import Cv from "../../components/cv/Cv.vue";
 import Stars from "../../components/stars/Stars.vue";
 import Bot from "../../components/bot/Bot.vue";
 import Loader from "../../components/loader/Loader.vue";
+import Experience from "../../components/experience/Experience.vue";
 
 export default {
     name: "Book",
@@ -162,7 +138,8 @@ export default {
         Education,
         Cv,
         Stars,
-        Bot
+        Bot,
+        Experience
     },
     methods: {
         handlePageLoaded() {
@@ -248,31 +225,32 @@ export default {
             }
         },
         turn(event) {
-            var page1 = this.getContenu(event.target);
-            //if(!page1.classList.contains("page-previous")){
-            //          this.canTurn = !this.canTurn;
-            page1.removeEventListener("click", this.turn);
-            //console.log(page1.classList.contains("page"))
-            //console.log("turning");
+            let page1 = this.getContenu(event.target);
+          //  console.log("event target mandeha ", event.target, page1)
+            event.target.removeEventListener("click", this.turn); // ito ilay button
             page1.classList.add("page");
             page1.classList.remove("page-previous");
+          //  console.log("page1 ", page1)
             this.livre.appendChild(page1);
             //  this.canTurn = !this.canTurn;
-            page1.addEventListener("click", this.previous);
-
+            event.target.addEventListener("click", this.previous);
             // }
+
         },
         previous(event) {
             //     if(this.canTurn){
             //        this.canTurn = !this.canTurn;
-            var page1 = this.getContenu(event.target);
-            page1.removeEventListener("click", this.previous);
+            //console.log("MIVERINAAA")
+            let page1 = this.getContenu(event.target);
+           // console.log("event target ", event.target, page1)
+            event.target.removeEventListener("click", this.previous);
+            
             page1.classList.add("page-previous");
             page1.classList.remove("page");
             this.livre.appendChild(page1);
 
             //  this.canTurn = !this.canTurn;
-            page1.addEventListener("click", this.turn);
+            event.target.addEventListener("click", this.turn);
             //      }
         },
         getContenu(element) {
@@ -364,6 +342,12 @@ export default {
     border-left: 1px solid #c9cfcf;
     border-radius: 0px 15px 15px 0px;
     transition: 0.5s;
+    
+    height: 100%;
+    background: linear-gradient(#3f87a6 10%, #ebf8e1a2 10%),
+        linear-gradient(to right, #ebf8e100 10%, #c73030 10% 10.2%, #ebf8e100 10.5%);
+    background-size: 100% 25px, 100% 100%;
+    background-repeat: repeat, no-repeat;
 }
 
 .page {
@@ -377,29 +361,45 @@ export default {
     0% {
         transform: rotateY(0deg);
         box-shadow: 0px 0px;
-        opacity: 100%;
     }
 
     30% {
         transform: rotateY(90deg) skewY(-30deg);
-        box-shadow: 0px 0px;
-        opacity: 100%;
-        
+      
     }
 
     100% {
         transform: rotateY(180deg);
-        box-shadow: 0px 0px;
         background-color: var(--page-background-color);
         
         opacity: 100%;
     }
 }
 
-.page * {
+.page div{
     animation: hideChildren 0.5s linear forwards;
 }
 
+.page .open{
+}
+
+@keyframes notHidingChildren {
+    0% {
+        opacity: 100%;
+    }
+
+    30% {
+        opacity: 100%;
+    }
+
+    31% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
 
 @keyframes hideChildren {
     0% {
@@ -451,19 +451,21 @@ export default {
 @keyframes turnPage-previous {
     0% {
         transform: rotateY(180deg);
-        box-shadow: 0px 0px;
-        background-color: var(--page-background-color);
-        background-repeat: no-repeat;
-        background-size: cover;
+            height: 100%;
+        background: linear-gradient(#3f87a6 10%, #ebf8e1a2 10%),
+            linear-gradient(to right, #ebf8e100 10%, #c73030 10% 10.2%, #ebf8e100 10.5%);
+        background-size: 100% 25px, 100% 100%;
+        background-repeat: repeat, no-repeat;
     }
 
     30% {
         transform: rotateY(90deg) skewY(-30deg);
-        box-shadow: 0px 0px;
-
-        background-color: var(--page-background-color);
-        background-repeat: no-repeat;
-        background-size: cover;
+    
+        height: 100%;
+        background: linear-gradient(#3f87a6 10%, #ebf8e1a2 10%),
+            linear-gradient(to right, #ebf8e100 10%, #c73030 10% 10.2%, #ebf8e100 10.5%);
+        background-size: 100% 25px, 100% 100%;
+        background-repeat: repeat, no-repeat;
     }
 
     100% {
