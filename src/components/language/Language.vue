@@ -1,8 +1,12 @@
 <template>
-    <div class="" style="width:100%; gap: 1%;">
+    <div class="" style="gap: 1%;
+    bottom: 0px;
+    position: absolute;
+  ">
         <div class="card" v-for="(svg, index) in svgData" :key="index">
             <div :class=svg.theme.cls>
                 <img :src=svg.img style="width: 100%">
+                <div class="banner">{{ svg.prct }}</div>
             </div>
             <div class="body">
                 <p class="text-p" v-text=svg.dcr></p>
@@ -16,12 +20,12 @@ export default{
     name: "Language",
     data(){
         return {
-            svgData: [ { img: "/public/language/dotnet.svg", dcr: "Connait, Système d'information", theme: { p: "#1574B8", s : "dark", cls:"four head" }, display: 1 },
-                       { img: "/public/language/java.svg", dcr: "Connait, Administration système", theme: { p: "#E76F00", s: "#5382A1", cls:"one head" }, display: 2 },
-                       { img: "/public/language/nest.svg", dcr: "Connait, API rest", theme: "red", theme: { p: "#FF586C", s: "#F7DF1E", cls:"nest head" }, display: 1 },
-                       { img: "/public/language/python.svg", dcr: "Connait, Modele d'apprentissage", theme: { p: "#366D9B;", s: "#FFD545", cls:"three head" }, display: 1 },
-                       { img: "/public/language/php.svg", dcr: "Connait, Système d'information", theme: { p: "#6F8FC8", s: "dark", cls:"two head" }, display: 2 },
-                       { img: "/public/language/vue.svg", dcr: "Connait, Flexibilité", theme: { p: "#42d392", s: "black", cls:"vue head" }, display: 1 },
+            svgData: [ { img: "/public/language/dotnet.svg", prct: 90, dcr: "Connait, Système d'information", theme: { p: "#1574B8", s : "dark", cls:"four head" }, display: 1 },
+                       { img: "/public/language/java.svg", prct: 90,dcr: "Connait, Administration système", theme: { p: "#E76F00", s: "#5382A1", cls:"one head" }, display: 2 },
+                       { img: "/public/language/nest.svg", prct: 90,dcr: "Connait, API rest", theme: "red", theme: { p: "#FF586C", s: "#F7DF1E", cls:"nest head" }, display: 1 },
+                       { img: "/public/language/python.svg", prct: 90,dcr: "Connait, Modele d'apprentissage", theme: { p: "#366D9B;", s: "#FFD545", cls:"three head" }, display: 1 },
+                       { img: "/public/language/php.svg", prct: 90,dcr: "Connait, Système d'information", theme: { p: "#6F8FC8", s: "dark", cls:"two head" }, display: 2 },
+                       { img: "/public/language/vue.svg", prct: 90,dcr: "Connait, Flexibilité", theme: { p: "#42d392", s: "black", cls:"vue head" }, display: 1 },
                        ]
         }
     },
@@ -43,10 +47,9 @@ export default{
 
 <style>
     .card{
-        display: absolute;
         transition: 1s;
-        width: 30%;
-        height: 30%;
+        max-width: 100px;
+        max-height: 100px;
         padding-top: 10%;
         float: left;
         margin-left: 3%;
@@ -58,42 +61,78 @@ export default{
             }
         }
         .head{
-            background-color: #fff;
+            background-color: white;
             transition: 1s;
-            border-radius: 500px;
             overflow: hidden;
+            max-height: 100px;
+            border-radius: 50px;
             animation: clignotant 1s linear infinite;
+
+            .banner{
+                background-color: rgb(38, 79, 16);
+                width:100px;
+                min-height: 100px;
+                transform: translate(0,-210px);
+                font-size: 60px;
+            }
+        }
+        .head:hover{
+            .banner{
+                background-color: rgb(38, 79, 16);
+                width:100px;
+                min-height: 100px;
+                transform: translate(0,-105px);
+                color: #e5e55b;
+            }
         }
     }
 
     .one{
-        margin-top: 50%;
+        margin-top: -50%;
     }
     .two{
-        margin-top: -1%;
-        transform: translate(-0px, 0%);
+        margin-top: -100%;
     }
     .three{
-        margin-top: 15%;
+        margin-top: -250%;
     }
     .four{
-        margin-top: -30%;
+        margin-top: -250%;
+    }
+    .vue{   
+        margin-top: -150%;
     }
     .nest{
-
+        background-image: url("/freepik/eclair.gif");
+        margin-top: -150%;
     }
-    .one:hover{
 
+    @keyframes instable{
+        0%{
+            transform: translate(-50px, -50px);
+        }
+        25%{
+            transform: translate(-5px, 0px);
+        }
+        50%{
+            transform: translate(-100px, -5px);
+        }
+        75%{
+            transform: translate(-10px, 0px);
+        }
+        100%{
+            transform: translate(-5px, -5px);   
+        }
     }
     @keyframes clignotant{
         0%{
-            box-shadow: 0 0 10px #e5e55b, 0 0 10px #e5e55b, 0 0 0px #e5e55b, 0 0 10px #e5e55b;
+            box-shadow: 0 0 0px white, 0 0 10px white, 0 0 0px white, 0 0 10px white;
         }
         50%{
-            box-shadow: 0 0 5px #e5e55b, 0 0 0px #e5e55b, 0 0 1px #e5e55b, 0 0 20px #e5e55b;
+            box-shadow: 0 0 5px white, 0 0 0px white, 0 0 0px white, 0 0 5px white;
         }
         100%{
-            box-shadow: 0 0 10px #e5e55b, 0 0 10px #e5e55b, 0 0 0px #e5e55b, 0 0 10px #e5e55b;
+            box-shadow: 0 0 0px white, 0 0 10px white, 0 0 0px white, 0 0 10px white;
         }
     }
 </style>

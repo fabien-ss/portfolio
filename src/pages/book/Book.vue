@@ -62,18 +62,19 @@
         </div>
 
         <div class="contenu">
-            <Realisation />
+            <Competence :title="OK" />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu">
-            <Competence :title="OK" />
+            <Realisation />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
+
         <div class="contenu">
             <Presentation />
             <button class="open" >
@@ -293,10 +294,11 @@ export default {
     border: none;
     overflow: hidden;
     position: absolute;
+    cursor: pointer;
     transform: translate(300%, -120%);
 }
 
-.open img:hover {
+.open img {
     border: 5px solid #d18d64;
     border-radius: 50px;
     background-color: white;
