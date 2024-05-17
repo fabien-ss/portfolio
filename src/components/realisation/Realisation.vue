@@ -29,7 +29,7 @@
         methods:
         {
             async getGitRepository(){
-                const token = "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";
+                const token = process.env.VUE_APP_GIT_SECRET;
                 const response = await axios.get("https://api.github.com/users/fabien-ss/repos", {
                     headers: {
                         Authorization: `token ${token}`,
@@ -51,5 +51,6 @@
         background-color: #76ABAE;
         overflow-y: scroll;
         height: 100%;
+        display: grid;
     }
 </style>

@@ -24,10 +24,8 @@
 <style>
     .projet{
         background-color: white;
-        width: 80%;
-        margin: auto;
+        width: 40%;
         margin-top: 10px;
-        text-align: center;
         .head {
 
             width: 100%;

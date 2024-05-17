@@ -1,8 +1,8 @@
 <template>
-    <div class="competence">
+    <div class="competence" >
         <br>
         <div class="header" style="height: auto;">
-            <h1>{{ this.title }}</h1>
+            <h1 style="color: white;">{{ this.title }}</h1>
 
             <p v-text="message"></p>
         </div>
@@ -37,7 +37,8 @@ export default {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    background-color: white;
+    background-color: black;
+    background-image: url("/freepik/shenron.png");
     background-repeat: no-repeat;
     background-size: cover;
 
