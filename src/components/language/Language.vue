@@ -20,12 +20,12 @@ export default{
     name: "Language",
     data(){
         return {
-            svgData: [ { img: "/public/language/dotnet.svg", prct: 90, dcr: "Connait, Système d'information", theme: { p: "#1574B8", s : "dark", cls:"four head" }, display: 1 },
-                       { img: "/public/language/java.svg", prct: 90,dcr: "Connait, Administration système", theme: { p: "#E76F00", s: "#5382A1", cls:"one head" }, display: 2 },
-                       { img: "/public/language/nest.svg", prct: 90,dcr: "Connait, API rest", theme: "red", theme: { p: "#FF586C", s: "#F7DF1E", cls:"nest head" }, display: 1 },
-                       { img: "/public/language/python.svg", prct: 90,dcr: "Connait, Modele d'apprentissage", theme: { p: "#366D9B;", s: "#FFD545", cls:"three head" }, display: 1 },
-                       { img: "/public/language/php.svg", prct: 90,dcr: "Connait, Système d'information", theme: { p: "#6F8FC8", s: "dark", cls:"two head" }, display: 2 },
-                       { img: "/public/language/vue.svg", prct: 90,dcr: "Connait, Flexibilité", theme: { p: "#42d392", s: "black", cls:"vue head" }, display: 1 },
+            svgData: [ { img: "/public/language/dotnet.svg", prct: "Connait", dcr: "SI", theme: { p: "#1574B8", s : "dark", cls:"four head" }, display: 1 },
+                       { img: "/public/language/java.svg", prct: "Connait",dcr: "Administration système", theme: { p: "#E76F00", s: "#5382A1", cls:"one head" }, display: 2 },
+                       { img: "/public/language/nest.svg", prct: "Connait",dcr: "API rest", theme: "red", theme: { p: "#FF586C", s: "#F7DF1E", cls:"nest head" }, display: 1 },
+                       { img: "/public/language/python.svg", prct: "Connait",dcr: "Machine learning", theme: { p: "#366D9B;", s: "#FFD545", cls:"three head" }, display: 1 },
+                       { img: "/public/language/php.svg", prct: "Connait",dcr: "SI", theme: { p: "#6F8FC8", s: "dark", cls:"two head" }, display: 2 },
+                       { img: "/public/language/vue.svg", prct: "Connait",dcr: "Front-end", theme: { p: "#42d392", s: "black", cls:"vue head" }, display: 1 },
                        ]
         }
     },
@@ -46,6 +46,10 @@ export default{
 </script>
 
 <style>
+    :root{
+        --bg: yellow;
+        --bg-rd: rgb(219, 219, 98);
+    }
     .card{
         transition: 1s;
         max-width: 100px;
@@ -55,13 +59,14 @@ export default{
         margin-left: 3%;
         .body {
             display: none;
-            color: white;
+            color: var(--bg);
             .text-p{
                 font-size: 15px;
             }
         }
         .head{
-            background-color: white;
+            cursor: pointer;
+            background-color:var(--bg-rd);
             transition: 1s;
             overflow: hidden;
             max-height: 100px;
@@ -73,10 +78,9 @@ export default{
                 width:100px;
                 min-height: 100px;
                 transform: translate(0,-210px);
-                font-size: 60px;
             }
         }
-        .head:hover{
+        /*.head:hover{
             .banner{
                 background-color: rgb(38, 79, 16);
                 width:100px;
@@ -84,6 +88,9 @@ export default{
                 transform: translate(0,-105px);
                 color: #e5e55b;
             }
+        }*/
+        .body{
+            text-align: center;
         }
     }
 
@@ -126,13 +133,13 @@ export default{
     }
     @keyframes clignotant{
         0%{
-            box-shadow: 0 0 0px white, 0 0 10px white, 0 0 0px white, 0 0 10px white;
+            box-shadow: 0 0 0px var(--bg), 0 0 10px var(--bg), 0 0 0px var(--bg), 0 0 10px var(--bg);
         }
         50%{
-            box-shadow: 0 0 5px white, 0 0 0px white, 0 0 0px white, 0 0 5px white;
+            box-shadow: 0 0 5px var(--bg), 0 0 0px var(--bg), 0 0 0px var(--bg), 0 0 5px var(--bg);
         }
         100%{
-            box-shadow: 0 0 0px white, 0 0 10px white, 0 0 0px white, 0 0 10px white;
+            box-shadow: 0 0 0px var(--bg), 0 0 10px var(--bg), 0 0 0px var(--bg), 0 0 10px var(--bg);
         }
     }
 </style>

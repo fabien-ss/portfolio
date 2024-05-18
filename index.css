@@ -1,15 +1,13 @@
-body {
-    /*
-    background-color: #222831;
-    */
-    font-family: 'Courier New', Courier, monospace;
-    overflow: hidden;
-    background-image: url("/freepik/Fond/planche.jpg");
- 
-    background-size: cover;
-    color: #31363F;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
+body {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+background-image: url("/freepik/Fond/planche.jpg");
+background-size: cover;
+}
 p {
     margin-left: 20px;
     text-align: left;
