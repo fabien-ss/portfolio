@@ -31,31 +31,33 @@
 <style>
     .projet{
         transition: 1s;
-        background-color: white;
+        background-color: transparent;
         width: 80%;
         margin: auto;
         min-height: 190px;
         position: relative;
         overflow: hidden;
-        border-radius: 20px;
+        border-radius: 5px;
+        border-bottom: 1px solid;
         .head {
             width: 100%;
-            background-color: rgb(104, 88, 88);
+            font-size: x-large;
             text-align: center;
-            height: 30px;
+            height: 40px;
+            padding: 2%;
         }
         .content{
             min-height: 100px;
-            text-align: left;
+            text-align: center;
             padding: 1%;
         }
         .footer{
             position: absolute;
-            bottom: 0;
+            bottom: 6px;
             height: 30px;
             width: 100%;
             text-align: center;
-            background-color: rgb(104, 88, 88);
+            
             .icon{
                 width: 30px;
             }

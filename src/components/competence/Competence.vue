@@ -38,6 +38,7 @@ export default {
     height: 100%;
     overflow-y: scroll;
     background-image: url("/freepik/shenron.png");
+    background-color: #f4ddcd;
 
     .body{
         width: 80%;

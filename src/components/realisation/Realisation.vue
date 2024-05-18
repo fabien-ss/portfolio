@@ -1,7 +1,6 @@
 <template>
     <div class="realisation">
-        <h1 style="color: white">Projets</h1>
-        <button @click="nextPage" :disabled="currentPage >= totalPages">Next</button>
+        <button @click="nextPage" :disabled="currentPage >= totalPages">>></button>
         <Projet v-for="(projet, key) in paginatedProjects" :-titre="projet.name" :-languages="[projet.language]"
             :-lien="projet.html_url" :-description="projet.description" />
     </div>
@@ -36,6 +35,12 @@ export default {
                     language: "DOTNET, Postgresql",
                     html_url: "https://github.com/fabien-ss/INVENTORY-MANAGEMENT",
                     description: "Gestion de stock avec Fifo&Lifo."
+                },
+                {
+                    name: "ENTREPRISE DE CONSTRUCTION",
+                    language: "DOTNET, Postgresql",
+                    html_url: "https://github.com/fabien-ss/INVENTORY-MANAGEMENT",
+                    description: "Application pour gérer les différentes actions."
                 },
                 {
                     name: "IMMOBILISATION",
@@ -300,5 +305,14 @@ export default {
     height: 100%;
     width: 100%;
     display: grid;
+    button{
+        border-radius: 50px;
+        min-height: 40px;
+        width: 10%;
+        cursor: pointer;
+        border: none;
+        margin: auto;
+    }
+    
 }
 </style>

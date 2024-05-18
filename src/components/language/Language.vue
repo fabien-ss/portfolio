@@ -6,7 +6,11 @@
         <div class="card" v-for="(svg, index) in svgData" :key="index">
             <div :class=svg.theme.cls>
                 <img :src=svg.img style="width: 100%">
-                <div class="banner">{{ svg.prct }}</div>
+                <div class="banner">
+                    <p>
+                        {{ svg.prct }}
+                    </p>
+                </div>
             </div>
             <div class="body">
                 <p class="text-p" v-text=svg.dcr></p>
@@ -20,12 +24,12 @@ export default{
     name: "Language",
     data(){
         return {
-            svgData: [ { img: "/public/language/dotnet.svg", prct: "Connait", dcr: "SI", theme: { p: "#1574B8", s : "dark", cls:"four head" }, display: 1 },
-                       { img: "/public/language/java.svg", prct: "Connait",dcr: "Administration système", theme: { p: "#E76F00", s: "#5382A1", cls:"one head" }, display: 2 },
-                       { img: "/public/language/nest.svg", prct: "Connait",dcr: "API rest", theme: "red", theme: { p: "#FF586C", s: "#F7DF1E", cls:"nest head" }, display: 1 },
-                       { img: "/public/language/python.svg", prct: "Connait",dcr: "Machine learning", theme: { p: "#366D9B;", s: "#FFD545", cls:"three head" }, display: 1 },
-                       { img: "/public/language/php.svg", prct: "Connait",dcr: "SI", theme: { p: "#6F8FC8", s: "dark", cls:"two head" }, display: 2 },
-                       { img: "/public/language/vue.svg", prct: "Connait",dcr: "Front-end", theme: { p: "#42d392", s: "black", cls:"vue head" }, display: 1 },
+            svgData: [ { img: "/public/language/dotnet.svg", prct: "Dotnet - 65%", dcr: "SI", theme: { p: "#1574B8", s : "dark", cls:"four head" }, display: 1 },
+                       { img: "/public/language/java.svg", prct: "Java - 70%",dcr: "Administration système", theme: { p: "#E76F00", s: "#5382A1", cls:"one head" }, display: 2 },
+                       { img: "/public/language/nest.svg", prct: "Nest - 50%",dcr: "API rest", theme: "red", theme: { p: "#FF586C", s: "#F7DF1E", cls:"nest head" }, display: 1 },
+                       { img: "/public/language/python.svg", prct: "Python - 70%",dcr: "Machine learning", theme: { p: "#366D9B;", s: "#FFD545", cls:"three head" }, display: 1 },
+                       { img: "/public/language/php.svg", prct: "PHP - 40%",dcr: "SI", theme: { p: "#6F8FC8", s: "dark", cls:"two head" }, display: 2 },
+                       { img: "/public/language/vue.svg", prct: "Vue - 70%",dcr: "Front-end", theme: { p: "#42d392", s: "black", cls:"vue head" }, display: 1 },
                        ]
         }
     },
@@ -48,13 +52,13 @@ export default{
 <style>
     :root{
         --bg: yellow;
-        --bg-rd: rgb(219, 219, 98);
+        --bg-rd: white;
     }
     .card{
         transition: 1s;
         max-width: 100px;
         max-height: 100px;
-        padding-top: 10%;
+        padding-top: 1%;
         float: left;
         margin-left: 3%;
         .body {
@@ -77,18 +81,30 @@ export default{
                 background-color: rgb(38, 79, 16);
                 width:100px;
                 min-height: 100px;
-                transform: translate(0,-210px);
+                transform: translate(0,210px);
             }
         }
-        /*.head:hover{
+        .head:hover{
             .banner{
-                background-color: rgb(38, 79, 16);
+                transition: 0.5s;
+                background-color: black;
                 width:100px;
                 min-height: 100px;
                 transform: translate(0,-105px);
-                color: #e5e55b;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                padding: 10%;
             }
-        }*/
+        }
+        @keyframes tourner {
+            0%{
+
+            }
+            100%{
+
+            }
+        }
         .body{
             text-align: center;
         }
@@ -107,11 +123,11 @@ export default{
         margin-top: -250%;
     }
     .vue{   
-        margin-top: -150%;
+        margin-top: -70%;
     }
     .nest{
         background-image: url("/freepik/eclair.gif");
-        margin-top: -150%;
+        margin-top: -300%;
     }
 
     @keyframes instable{

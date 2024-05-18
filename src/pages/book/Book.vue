@@ -1,5 +1,6 @@
 <template> 
     <Lumiere @lumiere="lumiere" />
+    <DropDown @chercher="tourner"/>
 
     <Stars @addStarts="l()"/>
 
@@ -10,13 +11,13 @@
         </div>
 
 
-        <div class="contenu">
+        <div class="contenu 8">
             <Cv />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
-        <div class="contenu">
+        <div class="contenu 7">
             <Experience />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
@@ -24,41 +25,41 @@
         </div>
      
 
-        <div class="contenu">
+        <div class="contenu 6">
             <Education />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu">
+        <div class="contenu 5">
             <Outils />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu">
+        <div class="contenu 4">
             <Competence :title="OK" />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu">
+        <div class="contenu 3">
             <Realisation />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu">
+        <div class="contenu 2">
             <Presentation />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
-        <div class="contenu"  >
+        <div class="contenu 1" >
             <Couverture />
             <button class="open" > 
                 <img src="/cursor/arrow.png" @click="this.turn"  width="50px">
@@ -84,6 +85,7 @@ import Loader from "../../components/loader/Loader.vue";
 import Experience from "../../components/experience/Experience.vue";
 import Language from "../../components/language/Language.vue";
 import Lumiere from "../../components/button/Lumiere.vue";
+import DropDown from "../../components/button/DropDown.vue";
 
 export default {
     name: "Book",
@@ -108,6 +110,7 @@ export default {
         this.livre = document.getElementById("livre");
         this.lumiere();
         this.contenus = document.getElementsByClassName("contenu");
+        this.pages = document.getElementsByClassName("contenu");
         this.index = 0;
     },
     components: {
@@ -124,9 +127,34 @@ export default {
         Bot,
         Experience,
         Language,
-        Lumiere
+        Lumiere,
+        DropDown
     },
     methods: {
+        targetPage(id){
+            console.log(this.pages)
+           // const target = this.pages.map(p => p.classList.constains(id));
+           // console.log(target)
+        },
+        tourner(id){
+            console.log(this.pages)
+            console.log(this.pages.length)
+            //this.targetPage(id)
+            let i = 7;
+            let find = false;
+            let action = "page";
+            let inc = -1;
+            while(!find){
+                if(i === 0) action = "page-previous"
+                if(i === 8) action = "page"
+                if(!this.pages[i].classList.contains(id+"")){
+                    this.pages[i].classList.add(action);
+                } else if (this.pages[i].classList.contains(id+"")){
+                    find = true
+                }   
+                i += inc
+            }
+        },
         handlePageLoaded() {
             this.isLoading = false; // Mettre isLoading à false lorsque la page est entièrement chargée
             this.revelerTexte();
@@ -264,9 +292,11 @@ export default {
     transform: translate(300%, -120%);
 }
 
+
 .open img {
     border: 5px solid #d18d64;
     border-radius: 50px;
+   
     background-color: white;
 }
 

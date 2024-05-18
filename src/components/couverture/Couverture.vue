@@ -53,7 +53,7 @@ export default {
         width: 56.5%;
         margin: auto;
         transform: translate(0, 38%);
-        background-image: url("/profil.jpg");
+        background-image: url("/profil.jpeg");
         background-size: cover;
     }
     .couverture{
