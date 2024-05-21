@@ -1,5 +1,6 @@
 <template>
-    <div class="presentation">
+    <div class="presentation" v-if="isActive">
+
         <div class="header">
             <br>
             <h1>Presentation</h1>
@@ -54,14 +55,19 @@
 </style>
 
 <script>
+    import MotherComponent from "../MotherComponent.vue";
     export default{
+        extends: MotherComponent,
         name: "Presentation",
+        props: {
+         
+        },
         mounted(){
-           
         }
         ,
         data(){
             return {
+                canLoad: true,
                 title: "RAKOTOMANANA Andriniaina Fabien",
                 intro: `
                     Pour une bref introduction, à l'obtention de mon baccalauréat en 2022 je ne pensais pas du tout attérrir dans le

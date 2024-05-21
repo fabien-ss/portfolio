@@ -1,9 +1,10 @@
 <template> 
     <Lumiere @lumiere="lumiere" />
     <DropDown @chercher="tourner"/>
+<!--
 
     <Stars @addStarts="l()"/>
-
+-->
     <div class="livre" id="livre">
         <div class="description">
             <p v-text="texte"></p>
@@ -12,13 +13,13 @@
 
 
         <div class="contenu 8">
-            <Cv />
+            <Cv :isActive=true  />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
         <div class="contenu 7">
-            <Experience />
+            <Experience :isActive=true />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
@@ -26,35 +27,35 @@
      
 
         <div class="contenu 6">
-            <Education />
+            <Education :isActive=true />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 5">
-            <Outils />
+            <Outils :isActive=true />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 4">
-            <Competence :title="OK" />
+            <Competence :title="OK" :isActive=true />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 3">
-            <Realisation />
+            <Realisation :isActive=true />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 2">
-            <Presentation />
+            <Presentation :isActive=true />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
@@ -344,13 +345,13 @@ export default {
     overflow: scroll;
     border-left: 1px solid #c9cfcf;
     border-radius: 0px 15px 15px 0px;
-    transition: 0.5s;
+    transition: 1s;
     
 }
 
 .page {
     transform: rotateY(180deg);
-    animation: turnPage 0.5s linear;
+    animation: turnPage 1s linear;
     transform-origin: left;
     background-color: var(--page-background-color);
 }
@@ -375,7 +376,7 @@ export default {
 }
 
 .page div{
-    animation: hideChildren 0.5s linear forwards;
+    animation: hideChildren 1s linear forwards;
 }
 
 .page .open{
@@ -419,12 +420,12 @@ export default {
 
 .page-previous {
     transform: rotateY(0deg);
-    animation: turnPage-previous 0.5s linear;
+    animation: turnPage-previous 1s linear;
     transform-origin: left;
 }
 
 .page-previous * {
-    animation: hideChildren-previous 0.5s linear forwards;
+    animation: hideChildren-previous 1s linear forwards;
 }
 
 @keyframes hideChildren-previous {
@@ -500,7 +501,7 @@ export default {
 
 #arrow {
     transform: translate(560px, -2px);
-    animation: arrowUp 0.5s infinite;
+    animation: arrowUp 1s infinite;
 }
 
 @keyframes arrowUp {

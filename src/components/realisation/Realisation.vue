@@ -1,6 +1,5 @@
 <template>
-    <div class="realisation">
-        <button @click="nextPage" :disabled="currentPage >= totalPages">>></button>
+    <div class="realisation" v-if="isActive">
         <Projet v-for="(projet, key) in paginatedProjects" :-titre="projet.name" :-languages="[projet.language]"
             :-lien="projet.html_url" :-description="projet.description" />
     </div>
@@ -11,8 +10,10 @@ import Projet from "../projet/Projet.vue";
 import axios from 'axios';
 import Next from "../button/Next.vue";
 import EducationCard from "../education/EducationCard.vue";
+import MotherComponent from "../MotherComponent.vue";
 
 export default {
+    extends: MotherComponent,
     name: "Realisation",
     components: { Next, EducationCard },
     computed: {
@@ -27,6 +28,7 @@ export default {
     },
     data() {
         return {
+            canLoad: true,
             pageSize: 3, // Nombre de projets par page
             currentPage: 1,
             gitRepository: [
@@ -34,7 +36,7 @@ export default {
                     name: "INVENTORY-MANAGEMENT",
                     language: "DOTNET, Postgresql",
                     html_url: "https://github.com/fabien-ss/INVENTORY-MANAGEMENT",
-                    description: "Gestion de stock avec Fifo&Lifo."
+                    description: "Gestion de stock Fifo&Lifo."
                 },
                 {
                     name: "ENTREPRISE DE CONSTRUCTION",
@@ -76,7 +78,7 @@ export default {
                     name: "Photo-math",
                     language: "Python, Php",
                     html_url: "#",
-                    description: "Entrainement d'un modele de prédication pour la lecture d'une équation du premier degré et résolution."
+                    description: "Entrainement d'un modele de prédication pour la lecture d'une équation du premier degré et sa résolution."
                 },
                 {
                     name: "SCAFFOLDING",
@@ -88,7 +90,7 @@ export default {
                     name: "SPY-MISSION",
                     language: "Python",
                     html_url: "https://github.com/fabien-ss/Spy-mission",
-                    description: "Entrainement sur conding contest, niveau 5"
+                    description: "Entrainement sur conding contest, niveau 5. Analyze de données saturées, Entrainement modèle, décryptage, algorithme du PCA."
                 },
                 {
                     name: "Huffman",
@@ -300,19 +302,27 @@ export default {
 
 <style>
 .realisation {
-    background-color: #76ABAE;
+    background-color: white;
     overflow-y: scroll;
     height: 100%;
     width: 100%;
     display: grid;
-    button{
-        border-radius: 50px;
-        min-height: 40px;
-        width: 10%;
-        cursor: pointer;
-        border: none;
-        margin: auto;
+
+    .next-previous{
+
+        max-height: 50%;
+
+        button{
+            border-radius: 10px;
+            min-height: 40px;
+            width: 10%;
+            cursor: pointer;
+            border: none;
+            margin: auto;
+            background-color: black;
+            color: white;
+            margin-top: 10px;
+        }
     }
-    
 }
 </style>

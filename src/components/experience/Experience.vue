@@ -1,15 +1,19 @@
 <template>
-    <div class="experience">
+    <div class="experience" v-if="isActive">
         <br>
         <h1>Expérience</h1>
     </div>
 </template>
 
 <script>
+    import MotherComponent from "../MotherComponent.vue";
 export default{
+    extends: MotherComponent,
     name: "Experience",
     data(){
-        return {}
+        return {
+            canLoad: true
+        }
     }
 }
 </script>

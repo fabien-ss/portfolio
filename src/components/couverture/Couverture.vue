@@ -1,5 +1,5 @@
 <template>
-    <div class="couverture">
+    <div class="couverture" >
         <div class="image_profil cadre">
             <div class="image_profil2"></div>
         </div>
@@ -19,7 +19,8 @@ export default {
     data() {
         return {
             texte: "PORTFOLIO 2024",
-            name: "RAKOTOMANANA Andriniaina Fabien"
+            name: "RAKOTOMANANA Andriniaina Fabien",
+            canLoad: true
         };
     },
     mounted() {

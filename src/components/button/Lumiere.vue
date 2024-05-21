@@ -1,7 +1,7 @@
 <template>
         <div class="lumiere_container">
         <div class="lanterne" @click="lumiere" id="lumiere"
-            style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            style="display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer;">
             <span v-if="!this.light" style="align-items: center; justify-content: center;">
                 LIGHT -
                 <svg class="slider" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg">

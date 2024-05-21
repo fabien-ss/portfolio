@@ -1,9 +1,8 @@
 <template>
-    <div class="outils">
+    <div class="outils" v-if="isActive">
         <br>
         <div class="header">
             <h1>Outils</h1>
-
             <p>
                 <ul>
                     <li ><span class="bold">Développement</span> 
@@ -40,7 +39,9 @@
 </template>
 
 <script>
+    import MotherParent from "./MotherComponent.vue";
     export default{
+        extends: MotherParent,
         name: "Outils",
         data(){
             return {}

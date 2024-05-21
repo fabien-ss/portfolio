@@ -1,5 +1,5 @@
 <template>
-    <div class="education">
+    <div class="education" v-if="isActive">
         <br>
         <h1>Education</h1>
         <EducationCard v-for="ed in educations" 
@@ -15,10 +15,13 @@
 
 <script>
     import EducationCard from "./EducationCard.vue";
+    import MotherComponent from "../MotherComponent.vue";
     export default{
+        extends: MotherComponent,
         name: "Education",
         data(){ 
             return {
+                canLoad: true,
                 educations: [
                     {
                         etablissement: "Lycée Fanoellie",

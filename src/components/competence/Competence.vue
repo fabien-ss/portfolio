@@ -1,5 +1,5 @@
 <template>
-    <div class="competence" >
+    <div class="competence" v-if="isActive">
         <br>
         <div class="header" style="height: auto;">
             <h1 style="color: white;">{{ this.title }}</h1>
@@ -17,12 +17,15 @@
 
 <script>
 import Language from "../language/Language.vue"
+import MotherComponent from "../MotherComponent.vue"
 export default {
+    extends: MotherComponent,
     name: "Competence",
     data() {
         return {
             title: "Compétences",
-            message: ""
+            message: "",
+            canLoad: true
         }
     },
     components: {

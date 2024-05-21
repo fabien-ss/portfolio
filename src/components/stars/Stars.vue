@@ -1,7 +1,6 @@
 <template>
     <div class="etoile" id="etoile">
-        <button class="addStars" @click="addStars" style="position: fixed">
-            <img src="/star/star.png" />
+        <button class="addStars" @click="addStars" style="position: fixed" width=50px height=50px>
         </button>
         <Star v-for="star in stars" :key="star.id" :x="star.x" :y="star.y" />
     </div> 
