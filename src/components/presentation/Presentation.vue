@@ -40,12 +40,14 @@
         font-size: 17px;
     }
     .presentation{
+        color: white;
         width: 100%;
         height: 100%;
         font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
-        background-color: #EEEEEE;/*
+      font-optical-sizing: auto;
+      font-style: normal;
+        background-color: #76ABAE;/*
+
         background-image: url("/freepik/fond.jpeg");
         background-repeat: no-repeat;
         background-size: cover;*/

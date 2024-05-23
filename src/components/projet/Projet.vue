@@ -70,13 +70,15 @@
                 width: 100%;
                 font-size: larger;
                 text-align: center;
-                height: 10%;
+                height: 29%;
                 padding: 2%;
             }
             .content{
                 text-align: center;
                 padding: 1%;
-                height: 60%;
+                height: 44%;
+                    font-size: 12px;
+
             }
             .footer{
                 height: 30px;
