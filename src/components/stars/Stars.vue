@@ -52,6 +52,8 @@ export default {
 <style>
 
 .addStars img{
+    border: 5px solid white;
+  border-radius: 50px;
     width: 100%;
     height: 100%;
 }

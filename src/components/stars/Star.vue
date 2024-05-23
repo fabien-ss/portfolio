@@ -1,6 +1,6 @@
 <template>
     <div class="shine" :style="shineStyle">
-        <img src="/public/language/dbz-1_ulluss_jeux-video.png" width="100%">
+        <img src="/public/language/dbz-1_ulluss_jeux-video.png" width="100%" >
     </div>
 </template>
 
