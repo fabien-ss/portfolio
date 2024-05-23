@@ -13,7 +13,7 @@
         <div class="contact">
             <p><span class="bold">Numéro: </span>+261 34 75 197 55</p>
             <p><span class="bold">Email: </span>fabrakoto0987@gmail.com</p>
-            <p><span class="bold">LiknDin: </span><a href=#>http://www.linkdIn.com</a></p>
+            <p><span class="bold">LinkeDin: </span><a href=https://www.linkedin.com/in/andriniaina-fabien-rakotomanana-b6b828231/>Andriniaina Fabien</a></p>
         </div>
    
     </div>

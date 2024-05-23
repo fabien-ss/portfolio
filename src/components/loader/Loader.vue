@@ -1,5 +1,4 @@
 <template>
-<div class="back" style="position: absolute; width:100%; height:100%; backdrop-filter: blur(50px); top:0; ">A</div>
 <div class="loader">
     <div>
         <ul>
