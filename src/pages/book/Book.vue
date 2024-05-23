@@ -70,7 +70,7 @@
         <div class="contenu 1" >
             <Couverture />
             <button class="open" > 
-                <img src="/language/banner.png" @click="this.turn"  width="50px">
+                <img src="/cursor/arrow.png" @click="this.turn"  width="50px">
             </button>
         </div>
     </div>
