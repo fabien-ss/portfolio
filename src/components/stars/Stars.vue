@@ -1,7 +1,8 @@
 <template>
     <div class="etoile" id="etoile">
-        <button class="addStars" @click="addStars" style="position: fixed" width=50px height=50px>
-        </button>
+        <div class="addStars" @click="addStars" style="position: fixed; border: none" width=50px height=50px>
+            <img src="/public/language/dbz-2_ulluss_jeux-video.png" width="100%"/>
+        </div>
         <Star v-for="star in stars" :key="star.id" :x="star.x" :y="star.y" />
     </div> 
 </template>
@@ -51,23 +52,22 @@ export default {
 <style>
 
 .addStars img{
-    max-height : 30px;
-    max-width: 30px;   
+    width: 100%;
+    height: 100%;
 }
 .addStars{
-    background-color: transparent;
-    border-radius: 50px;
-    animation: rotateStar 2s linear infinite;
+    width: 50px;
+    height: 50px;
+    background-color: none;
 }
 
 .addStars:hover{
-    background-color: yellow
+    transform: scale(1.1);
 }
 
 @keyframes rotateStar {
     0%{
         transform: rotate(0deg);
-        background-color: yellow;
         filter: grayscale(0%);
     }
     100%{
@@ -76,7 +76,6 @@ export default {
 }
 
 .etoile{
-    filter: grayscale(100%);
     transform: translate(0, -30px);
     position: absolute;
     width: 45%;

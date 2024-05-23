@@ -1,10 +1,9 @@
 <template> 
     <Lumiere @lumiere="lumiere" />
     <DropDown @chercher="tourner"/>
-<!--
 
     <Stars @addStarts="l()"/>
--->
+
     <div class="livre" id="livre">
         <div class="description">
             <p v-text="texte"></p>
@@ -369,9 +368,8 @@ export default {
     border-left: 1px solid #c9cfcf;
     border-radius: 0px 15px 15px 0px;
     transition: 0.5s;
-    box-shadow: 0 0 2px 0px white, 0 0 0px 0px white,  0 0 0px 0px white ,0 0 0px 0px white;
-    
 }
+
 
 .page {
     transform: rotateY(180deg);

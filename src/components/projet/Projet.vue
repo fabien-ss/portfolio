@@ -55,12 +55,14 @@
         overflow: hidden;
         border-radius: 5px;
         display: flex;
-        box-shadow: 0 0 1px 0 #bdbcbc;
         transform: scale(1.1);
+
+        background-color: #373737;
         .image-container{
             width: 35%;
+            border-right: 1px solid white;
             position: relative;
-            background-color: #31363f;
+            background-color: #282828;
             .image{
                 width: 100%;
             }
