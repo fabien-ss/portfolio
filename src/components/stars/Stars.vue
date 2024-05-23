@@ -1,7 +1,7 @@
 <template>
     <div class="etoile" id="etoile">
         <div class="addStars" @click="addStars" style="position: fixed; border: none" width=50px height=50px>
-            <img src="/public/language/dbz-2_ulluss_jeux-video.png" width="100%"/>
+            <img src="/language/dbz-2_ulluss_jeux-video.png" width="100%"/>
         </div>
         <Star v-for="star in stars" :key="star.id" :x="star.x" :y="star.y" />
     </div> 
