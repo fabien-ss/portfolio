@@ -1,6 +1,6 @@
 <template>
     <div class="realisation" v-if="isActive">
-        <h1>Realisations</h1>
+        <h1>Réalisations</h1>
         <Projet v-for="(projet, key) in paginatedProjects" :-titre="projet.name" :-languages="[projet.language]"
         :-lien="projet.html_url" :-description="projet.description" />
         <div class="next-previous">

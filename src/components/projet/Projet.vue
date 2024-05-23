@@ -55,7 +55,7 @@
         overflow: hidden;
         border-radius: 5px;
         display: flex;
-        box-shadow: 0 0 4px 0 black;
+        box-shadow: 0 0 1px 0 #bdbcbc;
         transform: scale(1.1);
         .image-container{
             width: 35%;
