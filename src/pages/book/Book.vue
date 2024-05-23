@@ -321,6 +321,7 @@ export default {
     border-radius: 50px;
     transform: scale(1.05);
     background-color: white;
+    filter: brightness(200px);
 }
 
 .hide {
@@ -367,13 +368,14 @@ export default {
     overflow: scroll;
     border-left: 1px solid #c9cfcf;
     border-radius: 0px 15px 15px 0px;
-    transition: 1s;
+    transition: 0.5s;
+    box-shadow: 0 0 2px 0px white, 0 0 0px 0px white,  0 0 0px 0px white ,0 0 0px 0px white;
     
 }
 
 .page {
     transform: rotateY(180deg);
-    animation: turnPage 1s linear;
+    animation: turnPage 0.5s linear;
     transform-origin: left;
     background-color: var(--page-background-color);
 }
@@ -398,7 +400,7 @@ export default {
 }
 
 .page div{
-    animation: hideChildren 1s linear forwards;
+    animation: hideChildren 0.5s linear forwards;
 }
 
 .page .open{
@@ -442,12 +444,12 @@ export default {
 
 .page-previous {
     transform: rotateY(0deg);
-    animation: turnPage-previous 1s linear;
+    animation: turnPage-previous 0.5s linear;
     transform-origin: left;
 }
 
 .page-previous * {
-    animation: hideChildren-previous 1s linear forwards;
+    animation: hideChildren-previous 0.5s linear forwards;
 }
 
 @keyframes hideChildren-previous {
@@ -523,7 +525,7 @@ export default {
 
 #arrow {
     transform: translate(560px, -2px);
-    animation: arrowUp 1s infinite;
+    animation: arrowUp 0.5s infinite;
 }
 
 @keyframes arrowUp {
