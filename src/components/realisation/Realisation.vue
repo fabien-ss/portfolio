@@ -308,7 +308,7 @@ export default {
 
 <style>
 .realisation {
-    background-color: white;
+    background-color: #76abae;
     overflow-y: scroll;
     height: 100%;
     width: 100%;

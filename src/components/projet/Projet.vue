@@ -46,6 +46,7 @@
         }
     }
     .projet{
+        color: white;
         margin-top: 20px;
         transition: 1s;
         width: 85%;
@@ -54,7 +55,7 @@
         overflow: hidden;
         border-radius: 5px;
         display: flex;
-        box-shadow: 1px 1px 1px 1px #d9d8d8;
+        box-shadow: 0 0 4px 0 black;
         transform: scale(1.1);
         .image-container{
             width: 35%;

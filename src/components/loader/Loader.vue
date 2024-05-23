@@ -46,6 +46,8 @@ export default{
 </script>
 
 <style>
+body{
+}
 .loader {
     --background: blue;
     --shadow: transparent;
@@ -53,8 +55,8 @@ export default{
     --page: #2f2d2d;
     --page-fold: gray;
     --duration: 3s;
-    width: 200px;
-    height: 140px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 40%;
     left: 45%;
