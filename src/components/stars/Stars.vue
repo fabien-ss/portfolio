@@ -58,6 +58,7 @@ export default {
     height: 100%;
 }
 .addStars{
+    cursor: pointer;
     width: 50px;
     height: 50px;
     background-color: none;
