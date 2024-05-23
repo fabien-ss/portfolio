@@ -308,6 +308,9 @@ export default {
 
 <style>
 .realisation {
+    h1{
+        color: white;
+    }
     background-color: #282828;
     overflow-y: scroll;
     height: 100%;

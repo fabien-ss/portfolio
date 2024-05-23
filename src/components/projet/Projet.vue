@@ -45,10 +45,17 @@
             tranform: scale(15.1)
         }
     }
+
+    .projet:hover{
+        transition: 0;
+        transform: scale(1.12);
+        border: 1px solid white;
+    }
+
     .projet{
         color: white;
         margin-top: 20px;
-        transition: 1s;
+        transition: 0.5s;
         width: 85%;
         height: 80%;
         margin: auto;
