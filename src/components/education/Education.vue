@@ -9,6 +9,7 @@
             :annee="ed.annee"
             :lieu="ed.lieu"
             :key="ed.etablissement"
+            :over="ed.over"
         />
     </div>
 </template>
@@ -28,14 +29,16 @@
                         diplome: "Baccalauréat série D",
                         mention: "Très bien",
                         annee: "2021 - 2022",
-                        lieu: "TALATAMATY" 
+                        lieu: "TALATAMATY",
+                        over: true
                     },
                     {
                         etablissement: "IT University",
                         diplome: "Licence en développemnt d'application web & mobile",
                         mention: "",
                         annee: "2022 - en cours",
-                        lieu: "ANDOHARANOFOTSY" 
+                        lieu: "ANDOHARANOFOTSY" ,
+                        over: false
                     },
                 ]
             }
@@ -50,6 +53,6 @@
     .education{
         width: 100%;
         height: 100%;
-        background-color: #9B345F;
+        background-color: white;
     }
 </style>

@@ -2,7 +2,7 @@
     <div class="projet" >
         <div class="image-container">
             <div class="image">
-                <img src="/freepik/ordi.jpeg" width=100% height=100%/>
+
             </div>
         </div>
         <div class="description-projet">
@@ -18,8 +18,8 @@
             </div>
             <div class="footer">
                 <a @click.stop="{}" :href="Lien" target="_blank">
-                    <img class="icon" src="/language/github.svg">
-                </a>
+                    <img src="/language/github.svg" width=80% height=100%/>
+                    </a>
             </div>
         </div>
     </div>
@@ -36,19 +36,30 @@
 </script>
 
 <style>
+
+    @keyframes inOut{
+        0%{
+            tranform: scale(041.1)
+        }
+        100%{
+            tranform: scale(15.1)
+        }
+    }
     .projet{
+        margin-top: 20px;
         transition: 1s;
-        width: 80%;
+        width: 85%;
+        height: 80%;
         margin: auto;
-        min-height: 190px;
         overflow: hidden;
         border-radius: 5px;
         display: flex;
         box-shadow: 1px 1px 1px 1px #d9d8d8;
+        transform: scale(1.1);
         .image-container{
             width: 35%;
             position: relative;
-           n-height: 190px;
+            background-color: #31363f;
             .image{
                 width: 100%;
             }
@@ -59,20 +70,21 @@
                 width: 100%;
                 font-size: larger;
                 text-align: center;
-                height: 40px;
+                height: 10%;
                 padding: 2%;
             }
             .content{
-                min-height: 100px;
                 text-align: center;
                 padding: 1%;
+                height: 60%;
             }
             .footer{
                 height: 30px;
                 float: center;
                 font-size: 11px;
+                height: 15%;
                 .icon{
-                    width: 30px;
+                    float: rigth;
                 }
                 .icon:hover{
                     cursor: pointer;

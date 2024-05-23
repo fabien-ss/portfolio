@@ -8,6 +8,7 @@
             <p style="font-style: italic;" v-text="position"></p>
             <p v-text="salutation"></p>
             <p v-text="intro"></p>
+            <p>Prénom: Fabien, Problème: trouver un stage</p>
         </div>
         <div class="contact">
             <p><span class="bold">Numéro: </span>+261 34 75 197 55</p>

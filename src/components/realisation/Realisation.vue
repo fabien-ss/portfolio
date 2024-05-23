@@ -1,7 +1,13 @@
 <template>
     <div class="realisation" v-if="isActive">
+        <h1>Realisations</h1>
         <Projet v-for="(projet, key) in paginatedProjects" :-titre="projet.name" :-languages="[projet.language]"
-            :-lien="projet.html_url" :-description="projet.description" />
+        :-lien="projet.html_url" :-description="projet.description" />
+        <div class="next-previous">
+            <button @click="prevPage"><<</button>
+            <button>{{ currentPage }}</button>
+            <button @click="nextPage">>></button>
+        </div>
     </div>
 </template>
 
@@ -309,9 +315,9 @@ export default {
     display: grid;
 
     .next-previous{
-
-        max-height: 50%;
-
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
         button{
             border-radius: 10px;
             min-height: 40px;
@@ -322,6 +328,7 @@ export default {
             background-color: black;
             color: white;
             margin-top: 10px;
+            margin-left: 5px;
         }
     }
 }

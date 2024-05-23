@@ -11,13 +11,20 @@
             <Bot />
         </div>
 
-
         <div class="contenu 8">
             <Cv :isActive=true  />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
         </div>
+
+        <div class="contenu 7">
+            <Certificat :isActive=true />
+            <button class="open" >
+                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+            </button>
+        </div>
+
         <div class="contenu 7">
             <Experience :isActive=true />
             <button class="open" >
@@ -55,7 +62,7 @@
         </div>
 
         <div class="contenu 2">
-            <Presentation :isActive=true />
+            <Presentation :isActive.sync=presentation />
             <button class="open" >
                 <img src="/cursor/arrow.png" @click="this.turn" width="50px">
             </button>
@@ -84,6 +91,7 @@ import Stars from "../../components/stars/Stars.vue";
 import Bot from "../../components/bot/Bot.vue";
 import Loader from "../../components/loader/Loader.vue";
 import Experience from "../../components/experience/Experience.vue";
+import Certificat from "../../components/certificat/Certificat.vue";
 import Language from "../../components/language/Language.vue";
 import Lumiere from "../../components/button/Lumiere.vue";
 import DropDown from "../../components/button/DropDown.vue";
@@ -97,7 +105,14 @@ export default {
             light: false,
             texte: "Hello I'm an IT Student from Madagascar, I invite you to open the book.",
             brigthness: 0.5,
-            isLoading: true
+            isLoading: true,
+            presentation: true,
+            realisation: true,
+            competence: true,
+            outils: true,
+            education: true,
+            experience: true,
+            cv: true
         }
     },
     mounted() {
@@ -129,7 +144,8 @@ export default {
         Experience,
         Language,
         Lumiere,
-        DropDown
+        DropDown,
+        Certificat
     },
     methods: {
         targetPage(id){

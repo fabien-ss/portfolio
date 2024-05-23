@@ -2,7 +2,7 @@
     <div class="competence" v-if="isActive">
         <br>
         <div class="header" style="height: auto;">
-            <h1 style="color: white;">{{ this.title }}</h1>
+            <h1 style="color: black;">{{ this.title }}</h1>
 
             <p v-text="message"></p>
         </div>
@@ -40,8 +40,7 @@ export default {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    background-image: url("/freepik/shenron.png");
-    background-color: #f4ddcd;
+    background-color: white;
 
     .body{
         width: 80%;

@@ -1,6 +1,8 @@
 <template>
     <br>
-    <div class="card-education">
+    <div class="card-education" :class="{ graduate: over}">
+        
+        <img src="/education/laptop.png" style="position: absolute; width: 100px; bottom: 0; left: 300px;"/>
         <div class="title">
             <p>{{annee}}, {{etablissement}} {{ lieu }}</p>
         </div>
@@ -11,7 +13,7 @@
         </div>
         <div class="footer">
             <p>
-                <span>
+                <span class="mention">
                     Mention: {{mention}}
                     
                 </span>
@@ -26,7 +28,7 @@
 <script>
     export default{
         name: "EducationCard",
-        props: ["etablissement", "diplome", "mention", "annee", "lieu"],
+        props: ["etablissement", "diplome", "mention", "annee", "lieu", "over"],
         data(){
             return {
             }
@@ -38,16 +40,21 @@
 :root{
     --p: black;
 }
+
+.graduate{
+    background-image: url("/education/graduate.png");
+    background-size: contain;
+}
+
 .card-education{
     font-family: monospace;
     margin: auto;
     border-radius: 10px;
     margin-top: 2%;
     width: 95%;
-    background-image: url("/freepik/paysage/4094511.jpg");
-    background-size: cover;
     position: relative;
-    color: white;
+    background-color: white;
+    color: black;
     div{
         text-align: left; 
     }
@@ -80,6 +87,11 @@
         }
         .diplome:hover{
             cursor: pointer;
+        }
+        .mention{
+            background-color: white;
+            color: black;
+            font-size: 20px;
         }
     }
 }
