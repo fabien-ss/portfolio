@@ -37,47 +37,54 @@ export default {
 </script>
 
 
-<style>
+<style lang="scss">
 
-    .image_profil{
-        position: relative;
-        
-        background-image: url("/freepik/Fond/cadre.jpeg");
-        background-size: cover;
-        width: 100%;
-        align-items: center; 
-        justify-content: center;
-        height: 75%;
-    }
-    .image_profil div{
-        height: 56.5%;
-        width: 56.5%;
-        margin: auto;
-        transform: translate(0, 38%);
-        background-image: url("/profil.jpeg");
-        background-size: cover;
-    }
+    $couverture-color: #31363F;
+    $background-color: white;
+    $profil-image: "/profil.jpeg";
+    $cadre-image: "/freepik/Fond/cadre.jpeg";
+
     .couverture{
-        width: 100%; 
-        height: 100%; 
+        width: 100%;
+        height: 100%;
         overflow: hidden;
-        color: #31363F;
-        background-color: white;
+        color: $couverture-color;
+        background-color: $background-color;
+
+        .image_profil{
+            position: relative;
+            background-image: url($cadre-image);
+            background-size: cover;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            height: 75%;
+
+            div {
+                height: 56.5%;
+                width: 56.5%;
+                margin: auto;
+                transform: translate(0, 38%);
+                background-image: url($profil-image);
+                background-size: cover;
+            }
+        }
+
+        .case{
+            height: 15%;
+            background-color: $background-color;
+            margin-bottom: 1%;
+            text-align: center;
+        }
+
+        .texte{
+            font-weight: lighter;
+            color: black;
+            filter: brightness(1);
+            text-align: center;
+        }
     }
-    .case{
-        height: 15%;
-        background-color: white;
-        margin-bottom: 1%;
-        text-align: center;
-    }
-    .texte{
-        font-weight:lighter;
-        color: black;
-        filter: brightness(1);
-        text-align: center;
-    }
-    .cadre{
-    }
+
     @keyframes rotateCadre {
         0%{
             transform: rotate(0deg);
@@ -86,5 +93,5 @@ export default {
             transform: rotate(360deg);
         }
     }
-    
+
 </style>

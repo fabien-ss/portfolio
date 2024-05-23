@@ -1,7 +1,7 @@
 <template>
     <div class="init" id="bot">
         <button class="up" @click="showBot()">
-            <img src="/public/chat.jpeg" width="100%" height="100%">
+            <img src="/language/banner.png" width="100%" height="100%">
         </button>
         <div class="boite_dialogue">
             <div class="chat" id="chat">

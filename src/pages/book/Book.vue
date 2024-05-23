@@ -14,21 +14,21 @@
         <div class="contenu 8">
             <Cv :isActive=true  />
             <button class="open" >
-                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+                <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 7">
             <Certificat :isActive=true />
             <button class="open" >
-                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+                <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 7">
             <Experience :isActive=true />
             <button class="open" >
-                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+                <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
      
@@ -36,41 +36,41 @@
         <div class="contenu 6">
             <Education :isActive=true />
             <button class="open" >
-                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+                <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 5">
             <Outils :isActive=true />
             <button class="open" >
-                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+                <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 4">
             <Competence :title="OK" :isActive=true />
             <button class="open" >
-                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+                <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 3">
             <Realisation :isActive=true />
             <button class="open" >
-                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+                <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 2">
             <Presentation :isActive.sync=presentation />
             <button class="open" >
-                <img src="/cursor/arrow.png" @click="this.turn" width="50px">
+                <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
         <div class="contenu 1" >
             <Couverture />
             <button class="open" > 
-                <img src="/cursor/arrow.png" @click="this.turn"  width="50px">
+                <img src="/language/banner.png" @click="this.turn"  width="50px">
             </button>
         </div>
     </div>
@@ -306,14 +306,20 @@ export default {
     overflow: hidden;
     position: absolute;
     cursor: pointer;
-    transform: translate(300%, -120%);
+    transform: translate(310%, -107%);
 }
 
 
 .open img {
-    border: 5px solid #d18d64;
     border-radius: 50px;
-   
+    -webkit-filter: grayscale(1);
+    background-color: white;
+}
+
+.open img:hover {
+    -webkit-filter: grayscale(0);
+    border-radius: 50px;
+    transform: scale(1.05);
     background-color: white;
 }
 

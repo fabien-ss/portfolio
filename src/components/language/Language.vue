@@ -1,7 +1,8 @@
 <template>
     <div class="targetLanguage">
-        <h2>{{ targetLanguage.prct }}</h2>
-        <p :class="{ show: !isLoading }">
+        <p style="font-weight: bold;">{{ targetLanguage.prct }}</p>
+        <p :class="{ show: !isLoading }" style="font-weight: inherit;
+        font-size: initial;">
             {{ targetLanguage.dcr }}
         </p>
         <img :src="targetLanguage.img" width="80%" />
@@ -144,7 +145,7 @@ export default {
     .head:hover {
       /*  animation: bright 1s linear infinite;
         */.banner {
-            transition: 500ms;
+            transition: 1s;
             background-color: black;
             width: 100px;
             min-height: 100px;
@@ -154,6 +155,7 @@ export default {
             text-align: center;
             padding: 2%;
         }
+
     }
 
     .body {

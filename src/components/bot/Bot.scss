@@ -19,10 +19,19 @@
         overflow: hidden;
         text-align: center;
         cursor: pointer;
+        background: transparent;
+        border: none;
         img{
             margin: auto;
+            width: 100%;
             display: block;
         }
+        img:hover{
+            transform: scale(1.1);
+            margin: auto;
+            width: 100%;
+            display: block;
+            }
     }
 }
 

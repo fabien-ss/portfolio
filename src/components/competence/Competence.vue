@@ -2,9 +2,8 @@
     <div class="competence" v-if="isActive">
         <br>
         <div class="header" style="height: auto;">
-            <h1 style="color: black;">{{ this.title }}</h1>
-
-            <p v-text="message"></p>
+            <h1 style="color: white;">{{ this.title }}</h1>
+            <p v-text="message" style="color: white;"></p>
         </div>
         <div class="body">
             <Language />
@@ -40,7 +39,7 @@ export default {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    background-color: white;
+    background-color: #76ABAE;
 
     .body{
         width: 80%;
