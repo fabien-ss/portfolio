@@ -1,8 +1,8 @@
-<template> 
+<template>
     <Lumiere @lumiere="lumiere" />
-    <DropDown @chercher="tourner"/>
+    <DropDown @chercher="tourner" />
 
-    <Stars @addStarts="l()"/>
+    <Stars @addStarts="l()" />
 
     <div class="livre" id="livre">
         <div class="description">
@@ -11,71 +11,76 @@
         </div>
 
         <div class="contenu 8">
-            <Cv :isActive=true  />
-            <button class="open" >
+            <Cv :isActive=true />
+            <button class="open">
                 <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 7">
             <Certificat :isActive=true />
-            <button class="open" >
+            <button class="open">
                 <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 5">
             <Outils :isActive=true />
-            <button class="open" >
+            <button class="open">
                 <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 4">
             <Competence :title="OK" :isActive=true />
-            <button class="open" >
+            <button class="open">
                 <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 6">
             <Education :isActive=true />
-            <button class="open" >
+            <button class="open">
                 <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 7">
             <Experience :isActive=true />
-            <button class="open" >
+            <button class="open">
                 <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 3">
             <Realisation :isActive=true />
-            <button class="open" >
+            <button class="open">
                 <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 2">
             <Presentation :isActive.sync=presentation />
-            <button class="open" >
+            <button class="open">
                 <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
-        <div class="contenu 1" >
+        <div class="contenu 1" style="" id="couverture">
             <Couverture />
-            <button class="open" > 
-                <img src="/cursor/arrow.png" @click="this.turn"  width="50px">
+            <button class="open">
+                <img src="/cursor/arrow.png" @click="this.turn" width="50px;" style="border: 5px solid white;">
             </button>
+        </div>
+
+        <div class="brown" id="verou" @click="open">
+            <img src="/language/verou.png" width="100%"/>
         </div>
     </div>
 
-    <Loader v-if="isLoading"/>
+
+    <Loader v-if="isLoading" />
 </template>
-<script >
+<script>
 
 import BlankPage from "../BlankPage.vue";
 import Presentation from "../../components/presentation/Presentation.vue";
@@ -114,13 +119,13 @@ export default {
         }
     },
     mounted() {
-        window.addEventListener('load', this.handlePageLoaded);     
+        window.addEventListener('load', this.handlePageLoaded);
         this.loading();
         this.canTurn = true;
         this.firstPage = false;
         this.livre = document.getElementById("livre");
         this.texte = "",
-        this.lampe = document.getElementById("lumiere");
+            this.lampe = document.getElementById("lumiere");
         this.livre = document.getElementById("livre");
         this.lumiere();
         this.contenus = document.getElementsByClassName("contenu");
@@ -146,12 +151,24 @@ export default {
         Certificat
     },
     methods: {
-        targetPage(id){
-            console.log(this.pages)
-           // const target = this.pages.map(p => p.classList.constains(id));
-           // console.log(target)
+        open(){
+            let couverture = document.getElementById("couverture");
+            let verou = document.getElementById("verou");
+/*            if(verou.classList.contains("brown-open")){
+    verou.classList.remove("brown-open");
+}else{
+}
+                */
+                verou.classList.add("brown-open");
+                couverture.classList.add("oriente");
+//                if(couverture.classList.contains("oriente")){}
         },
-        tourner(id){
+        targetPage(id) {
+            console.log(this.pages)
+            // const target = this.pages.map(p => p.classList.constains(id));
+            // console.log(target)
+        },
+        tourner(id) {
             console.log(this.pages)
             console.log(this.pages.length)
             //this.targetPage(id)
@@ -159,32 +176,32 @@ export default {
             let find = false;
             let action = "page";
             let inc = -1;
-            while(!find){
-                if(i === 0) action = "page-previous"
-                if(i === 8) action = "page"
-                if(!this.pages[i].classList.contains(id+"")){
+            while (!find) {
+                if (i === 0) action = "page-previous"
+                if (i === 8) action = "page"
+                if (!this.pages[i].classList.contains(id + "")) {
                     this.pages[i].classList.add(action);
-                } else if (this.pages[i].classList.contains(id+"")){
+                } else if (this.pages[i].classList.contains(id + "")) {
                     find = true
-                }   
+                }
                 i += inc
             }
         },
         handlePageLoaded() {
             this.isLoading = false; // Mettre isLoading à false lorsque la page est entièrement chargée
             this.revelerTexte();
-        },  
-        loading(){
-            setTimeout(function(){
+        },
+        loading() {
+            setTimeout(function () {
                 this.isLoading = false
             }, 2000);
         },
-        l(){
+        l() {
             //console.log(this.brigthness)
-            if(this.brigthness <= 1.0){
+            if (this.brigthness <= 1.0) {
                 this.brigthness += 0.1;
                 this.livre.style.filter = `brightness(${this.brigthness})`;
-            }else{
+            } else {
                 this.brigthness = 0.5;
                 this.livre.style.filter = `brightness(0.5)`;
             }
@@ -254,6 +271,9 @@ export default {
         },
         turn(event) {
             let page1 = this.getContenu(event.target);
+            if(page1.classList.contains("oriente")){
+                page1.classList.remove("oriente");
+            }
             event.target.removeEventListener("click", this.turn); // ito ilay button
             page1.classList.add("page");
             page1.classList.remove("page-previous");
@@ -262,6 +282,9 @@ export default {
         },
         previous(event) {
             let page1 = this.getContenu(event.target);
+            if(page1.classList.contains("oriente")){
+                page1.classList.remove("oriente");
+            }
             event.target.removeEventListener("click", this.previous);
             page1.classList.add("page-previous");
             page1.classList.remove("page");
@@ -277,7 +300,7 @@ export default {
             if (index < texte.length) {
                 element.innerHTML += texte.charAt(index);
                 setTimeout(function () {
-                //   this.afficherTexteProgressivement(texte, element, index + 1);
+                    //   this.afficherTexteProgressivement(texte, element, index + 1);
                 }, 100); // Ajustez le délai entre chaque caractère ici
             }
         }
@@ -293,6 +316,32 @@ export default {
 
 <style>
 
+.oriente {
+    transform-origin: left;
+    transform: rotateY(10deg)
+}
+
+.brown {
+    background-color: #5c4545;
+    width: 100px;
+    height: 100px;
+    left: 86%;
+    position: fixed;
+    top: 43%;
+    border-radius: 10px 0px 0px 10px;
+    border: 4px solid rgb(39, 38, 38);
+    border-right-width: 4px;
+    border-right-style: solid;
+    border-right-color: rgb(39, 38, 38);
+  border-right: 0px;
+    transition: 500ms;
+    transform-origin: right;
+    cursor: pointer;
+}
+
+.brown-open {
+    transform: rotateY(-80deg);
+}
 
 .open {
     background-color: transparent;
@@ -385,23 +434,22 @@ export default {
 
     30% {
         transform: rotateY(90deg) skewY(-30deg);
-      
+
     }
 
     100% {
         transform: rotateY(180deg);
         background-color: var(--page-background-color);
-        
+
         opacity: 100%;
     }
 }
 
-.page div{
+.page div {
     animation: hideChildren 0.5s linear forwards;
 }
 
-.page .open{
-}
+.page .open {}
 
 @keyframes notHidingChildren {
     0% {
@@ -488,7 +536,7 @@ export default {
     position: relative;
     width: 600px;
     margin: auto;
-    height: 800px;
+    height: 50pc;
     margin-top: 4vh;
     filter: brightness(0.5);
     transform: translate(50%, 0);

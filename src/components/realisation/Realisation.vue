@@ -42,7 +42,7 @@ export default {
                     name: "JAVA FRAMEWORK",
                     language: "JAVA",
                     html_url: "https://github.com/fabien-ss/JAVA-FRAMEWORK",
-                    description: "Framework fait en java."
+                    description: "Framework fait en java, facilitant le développement de projet web sur java."
                 },
                 {
                     name: "ENTREPRISE DE CONSTRUCTION",
@@ -67,9 +67,20 @@ export default {
                     name: "DATABASE ACCESS OBJECT",
                     language: "JAVA",
                     html_url: "https://github.com/fabien-ss/DATABASE-ACCESS-OBJECT",
-                    description: "Librairie pour mapper une entité à une classe."
+                    description: "Utilitaire java permettant faire une liaison entre objet et table pour de petits projets."
                 },
-               
+                {
+                    name: "CLUSTERING",
+                    language: "Java, php",
+                    html_url: "#",
+                    description: "Projet d'optimisation de serveur permettant: la synchronisation de session entre application php et application java, la synchornisation en temps réel de base de donnée supportant MYSQL. Sous haproxy"
+                },
+                {
+                    name: "DEPLOIEMMENT DE SERVEUR",
+                    language: "Java",
+                    html_url: "#",
+                    description: "Projet permettant de déployer à distance un projet Java sur plusieurs serveurs distants."
+                },
                 {
                     name: "PATTERSON&SARDINAS Entrained modele",
                     language: "Typescript, Python, Vuejs",
