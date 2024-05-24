@@ -491,7 +491,7 @@ export default {
     height: 800px;
     margin-top: 4vh;
     filter: brightness(0.5);
-    transform: translate(50%, 0);
+    transform: translate(55%, 0);
 }
 
 @keyframes loadBook {
