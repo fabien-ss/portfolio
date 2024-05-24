@@ -337,6 +337,7 @@ export default {
     transition: 500ms;
     transform-origin: right;
     cursor: pointer;
+    border-right: 10px solid white;
 }
 
 .brown-open {
