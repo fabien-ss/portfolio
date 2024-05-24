@@ -79,10 +79,11 @@ export default {
 }
 
 .etoile{
-    transform: translate(0, -30px);
     position: absolute;
     width: 45%;
     max-height: 65px;
+    top: 10px;
+    left: 10px;
 }
 .etoile:hover{
     filter: grayscale(0%);

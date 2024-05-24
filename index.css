@@ -5,8 +5,10 @@ body {
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
     font-style: normal;
+    overflow: hidden;
     background-color: #3f333e;
 }
+
 p {
     margin-left: 20px;
     text-align: left;

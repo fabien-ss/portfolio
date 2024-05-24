@@ -5,13 +5,13 @@
             <img src="/language/banner.png" width="100%" height="100%">
         </button>
             <div class="boite_dialogue">
-                <wy-chat :uid="wyuidchat"></wy-chat>
             <!--
+                <wy-chat :uid="wyuidchat"></wy-chat>
+            -->
 
                 <div class="chat" id="chat">
                     <div class="left response">Hello</div>
                 </div>
-            -->
             <div class="boite_envoie">
 
                 <input class="message" type="text" id="message" value="Who is Fabien?">

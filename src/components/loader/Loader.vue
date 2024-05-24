@@ -1,6 +1,6 @@
 <template>
 <div class="loader">
-    <div>
+    <div class="livre-loader">
         <ul>
             <li>
                 <svg fill="currentColor" viewBox="0 0 90 120">
@@ -52,14 +52,20 @@ body{
     --background: blue;
     --shadow: transparent;
     --text: #6C7486;
-    --page: #2f2d2d;
-    --page-fold: gray;
+    --page: rgb(218, 209, 209);
+    --page-fold: rgb(248, 235, 235);
     --duration: 3s;
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 40%;
-    left: 45%;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(500px);
+    .livre-loader{
+        top: 40%;
+        margin: auto;
+        width: 10%;
+    }
 }
 
 .loader:before, .loader:after {

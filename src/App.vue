@@ -9,11 +9,10 @@ import Book from './pages/book/Book.vue';
 <template>
   <div id="app">
     
-      <Book />
+        <Book />
+
   </div>
 </template>
-<style>
-  #app{
-    cursor: url("/public/madagascar.jpg"), auto;
-  }
+<style lang="scss" >
+ 
 </style>

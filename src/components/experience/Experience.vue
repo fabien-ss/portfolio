@@ -3,7 +3,7 @@
     <br>
     <h1>Expérience</h1>
     <div class="experience-item">
-        <h3>WEBCUP 2024</h3>
+        <h3>WEBCUP 4-5 Mai 2024</h3>
         <p>
             Concours de développement où j'ai acquis de nouvelles compétences malgré les imprévus.
         </p>
@@ -14,7 +14,7 @@
         </ul>
     </div>
     <div class="experience-item">
-        <h3>HIU 2024</h3>
+        <h3>HIU Mars 2024</h3>
         <p>Première expérience de mise en situation dans un concours de développement.</p>
         <ul>
             <li>Développeur back-end</li>
@@ -44,14 +44,13 @@ export default {
 <style>
 .experience {
     height: 100%;
-    background-color: #f9f9f9;
-    border-radius: 10px;
+    color: white;
+    background-color: #76ABAE;
 }
 
 .experience h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
 }
 
 .experience-item {
@@ -60,13 +59,13 @@ export default {
 
 .experience-item h3 {
     font-size: 20px;
-    color: #555;
     margin-bottom: 10px;
 }
 
 .experience-item p {
-    color: #777;
+    color: white;
     margin-bottom: 10px;
+    font-size: 16px;
 }
 
 .experience-item ul {
@@ -77,6 +76,6 @@ export default {
 .experience-item ul li {
     list-style: none;
     margin-bottom: 5px;
-    color: #888;
+    color: #fff;
 }
 </style>

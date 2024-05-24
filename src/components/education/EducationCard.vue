@@ -38,12 +38,16 @@
 
 <style>
 :root{
-    --p: black;
+    --p: white;
 }
 
 .graduate{
     background-image: url("/education/graduate.png");
     background-size: contain;
+}
+
+.card-education:hover{
+    border: 1px solid white;
 }
 
 .card-education{
@@ -53,8 +57,8 @@
     margin-top: 2%;
     width: 95%;
     position: relative;
-    background-color: white;
-    color: black;
+    background-color: #373737;
+    color: white;
     div{
         text-align: left; 
     }
@@ -69,6 +73,7 @@
             border-radius: 50px;
             margin: auto;
             width: 80%;
+            font-size: large;
         }
     }
     .body{
@@ -83,14 +88,13 @@
             margin-right: 5%;
             float: right;
             padding: 2%;
-            color: black;
+            color: white;
         }
         .diplome:hover{
             cursor: pointer;
         }
         .mention{
-            background-color: white;
-            color: black;
+            color: white;
             font-size: 20px;
         }
     }

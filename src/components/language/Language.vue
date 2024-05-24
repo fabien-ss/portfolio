@@ -23,7 +23,7 @@
             <div :class=svg.theme.cls @mouseover="changeTargetLanguage(svg)">
                 <img :src=svg.img style="width: 100%">
                 <div class="banner">
-                    <p>
+                    <p style="color: white;">
                         {{ svg.prct }}
                     </p>
                 </div>

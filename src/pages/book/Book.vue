@@ -24,21 +24,6 @@
             </button>
         </div>
 
-        <div class="contenu 7">
-            <Experience :isActive=true />
-            <button class="open" >
-                <img src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
-        </div>
-     
-
-        <div class="contenu 6">
-            <Education :isActive=true />
-            <button class="open" >
-                <img src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
-        </div>
-
         <div class="contenu 5">
             <Outils :isActive=true />
             <button class="open" >
@@ -48,6 +33,20 @@
 
         <div class="contenu 4">
             <Competence :title="OK" :isActive=true />
+            <button class="open" >
+                <img src="/language/banner.png" @click="this.turn" width="50px">
+            </button>
+        </div>
+
+        <div class="contenu 6">
+            <Education :isActive=true />
+            <button class="open" >
+                <img src="/language/banner.png" @click="this.turn" width="50px">
+            </button>
+        </div>
+
+        <div class="contenu 7">
+            <Experience :isActive=true />
             <button class="open" >
                 <img src="/language/banner.png" @click="this.turn" width="50px">
             </button>
@@ -311,7 +310,6 @@ export default {
 
 .open img {
     border-radius: 50px;
-    -webkit-filter: grayscale(1);
     background-color: white;
 }
 
@@ -328,7 +326,7 @@ export default {
 }
 
 .description {
-    width: 50%;
+    width: 100%;
     position: absolute;
     transform: translate(-100%, 0);
     height: 800px;
@@ -358,7 +356,7 @@ export default {
 }
 
 .contenu {
-    width: 50%;
+    width: 100%;
     height: 100%;
     position: absolute;
     box-shadow: 0px 1px;
@@ -487,7 +485,7 @@ export default {
 
 .livre {
     position: relative;
-    width: 1200px;
+    width: 600px;
     margin: auto;
     height: 800px;
     margin-top: 4vh;

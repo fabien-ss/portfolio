@@ -39,10 +39,10 @@ export default {
             currentPage: 1,
             gitRepository: [
                 {
-                    name: "INVENTORY-MANAGEMENT",
-                    language: "DOTNET, Postgresql",
-                    html_url: "https://github.com/fabien-ss/INVENTORY-MANAGEMENT",
-                    description: "Gestion de stock Fifo&Lifo."
+                    name: "JAVA FRAMEWORK",
+                    language: "JAVA",
+                    html_url: "https://github.com/fabien-ss/JAVA-FRAMEWORK",
+                    description: "Framework fait en java."
                 },
                 {
                     name: "ENTREPRISE DE CONSTRUCTION",
@@ -51,29 +51,25 @@ export default {
                     description: "Application pour gérer les différentes actions."
                 },
                 {
+                    name: "PLAQUE SOLAIRE",
+                    language: "Java, Postgresql",
+                    html_url: "https://github.com/fabien-ss/Gestion-plaque-solaire.",
+                    description: "Prédiction coupure au sein d'un établissament utilisant des panneaux solaires."
+                },
+                {
                     name: "IMMOBILISATION",
                     language: "JAVA, Postgresql",
                     html_url: "https://github.com/fabien-ss/IMMOBILISATION",
                     description: "Gestion des immobilisations d'une entreprise."
                 },
-                {
-                    name: "JAVA FRAMEWORK",
-                    language: "JAVA",
-                    html_url: "https://github.com/fabien-ss/JAVA-FRAMEWORK",
-                    description: "Framework fait en java."
-                },
+            
                 {
                     name: "DATABASE ACCESS OBJECT",
                     language: "JAVA",
                     html_url: "https://github.com/fabien-ss/DATABASE-ACCESS-OBJECT",
                     description: "Librairie pour mapper une entité à une classe."
                 },
-                {
-                    name: "Plaque solaire",
-                    language: "Java, Postgresql",
-                    html_url: "https://github.com/fabien-ss/Gestion-plaque-solaire.",
-                    description: "Prédiction coupure au sein d'un établissament utilisant des panneaux solaires."
-                },
+               
                 {
                     name: "PATTERSON&SARDINAS Entrained modele",
                     language: "Typescript, Python, Vuejs",

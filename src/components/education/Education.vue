@@ -53,6 +53,7 @@
     .education{
         width: 100%;
         height: 100%;
-        background-color: white;
+        color: white;
+        background-color: #282828;
     }
 </style>
