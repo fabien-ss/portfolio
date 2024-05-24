@@ -2,7 +2,7 @@
     <div class="targetLanguage">
         <p style="font-weight: bold;">{{ targetLanguage.prct }}</p>
         <p :class="{ show: !isLoading }" style="font-weight: inherit;
-        font-size: initial;">
+        font-size: initial; color: white;">
             {{ targetLanguage.dcr }}
         </p>
         <img :src="targetLanguage.img" width="80%" />

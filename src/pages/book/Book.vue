@@ -304,7 +304,8 @@ export default {
     overflow: hidden;
     position: absolute;
     cursor: pointer;
-    transform: translate(310%, -107%);
+    top: 45%;
+    right: 0;
 }
 
 

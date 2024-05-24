@@ -10,6 +10,7 @@
                 {{ Titre }}
             </div>
             <div class="content">{{ Description }}
+                
                 <ul>
                     <li v-for="item in Languages" :key="item">
                         {{ item }}
