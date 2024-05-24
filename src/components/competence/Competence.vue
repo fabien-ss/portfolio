@@ -44,23 +44,6 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-.context {
-    width: 100%;
-    position: absolute;
-    top: 50vh;
-}
-
-.context h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-}
-
 .area {
     background: #4e54c8;
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
