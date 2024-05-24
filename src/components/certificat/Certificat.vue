@@ -3,6 +3,7 @@
     <div class="certificat" v-if="isActive">
         <br>
         <h1 style="color: white;">Certificats</h1>
+        <img src="/certificat/c#.png" />
         <img src="/certificat/java.png" />
         <img src="/certificat/javascript.png" />
         <img src="https://cdn01.alison-static.net/parchment-previews/7009cb226d813d5b411966522f2bdbf0.jpg" alt="Java, Alison certificat"/>
