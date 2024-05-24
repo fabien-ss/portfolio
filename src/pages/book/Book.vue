@@ -302,7 +302,7 @@ export default {
     min-height: 70px;
     border: none;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     top: 45%;
     right: 0;
