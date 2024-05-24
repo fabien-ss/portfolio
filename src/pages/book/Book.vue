@@ -369,6 +369,9 @@ export default {
     transform: scale(1.05);
     background-color: white;
     filter: brightness(200px);
+
+    border: 1px solid #0087ff;
+  box-shadow: 0 0 17px 2px white;
 }
 
 .hide {
