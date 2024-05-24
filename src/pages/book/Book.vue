@@ -322,10 +322,10 @@ export default {
 }
 
 .brown {
-    background-color: #5c4545;
+    background-color: #3f333e;
     width: 100px;
     height: 100px;
-    left: 86%;
+    left: 84%;
     position: fixed;
     top: 43%;
     border-radius: 10px 0px 0px 10px;
