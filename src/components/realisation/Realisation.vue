@@ -73,7 +73,7 @@ export default {
                     name: "CLUSTERING",
                     language: "Java, php",
                     html_url: "#",
-                    description: "Projet d'optimisation de serveur permettant: la synchronisation de session entre application php et application java, la synchornisation en temps réel de base de donnée supportant MYSQL. Sous haproxy"
+                    description: "Projet d'optimisation permettant: la synchronisation de serveur d'application et de base donnée mysql."
                 },
                 {
                     name: "DEPLOIEMMENT DE SERVEUR",
@@ -325,9 +325,10 @@ export default {
     display: grid;
 
     .next-previous{
-        position: absolute;
         bottom: 10px;
+        right: 0px;
         width: 100%;
+        margin-bottom: 5px;
         button{
             border-radius: 10px;
             min-height: 40px;
