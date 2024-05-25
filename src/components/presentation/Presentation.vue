@@ -73,7 +73,7 @@
                 canLoad: true,
                 title: "RAKOTOMANANA Andriniaina Fabien",
                 intro: `
-                    Pour une bref introduction, à l'obtention de mon baccalauréat en 2022 je ne pensais pas du tout attérrir dans le
+                    Pour une bref introduction, à l'obtention de mon baccalauréat en 2021 je ne pensais pas du tout attérrir dans le
                     monde où je suis aujourd'hui. Mes idées n'étaient pas claires, on m'a suggéré alors l'informatique à 
                     l'IT University. Après quelques cours, je réalise que c'était un bon choix.
                 `,
