@@ -68,7 +68,7 @@
         <div class="contenu 1" style="" id="couverture">
             <Couverture />
             <button class="open">
-                <img src="/cursor/arrow.png" @click="this.turn" width="50px;" style="border: 5px solid white;">
+                <img src="/language/banner.png" @click="this.turn" width="50px;" style="">
             </button>
         </div>
 
@@ -318,7 +318,7 @@ export default {
 
 .oriente {
     transform-origin: left;
-    transform: rotateY(10deg)
+    transform: rotateY(10deg) skewY(1deg);
 }
 
 .brown {
@@ -333,11 +333,29 @@ export default {
     border-right-width: 4px;
     border-right-style: solid;
     border-right-color: rgb(39, 38, 38);
-  border-right: 0px;
+    border-right: 0px;
     transition: 500ms;
     transform-origin: right;
     cursor: pointer;
-    border-right: 10px solid #e4cba4
+    border-right: 10px solid #e4cba4;
+    animation: clignottant 2s linear infinite;
+}
+
+.brown:hover {
+    filter: brightness(1.5)
+}
+
+@keyframes clignottant {
+    0%{
+        filter: brightness(0.5)
+    }
+    50%{
+        filter: brightness(1);
+        box-shadow: 0 0 10px 00px white;
+    }
+    100%{
+        filter: brightness(0.5)
+    }
 }
 
 .brown-open {
@@ -345,35 +363,36 @@ export default {
 }
 
 .open {
-    background-color: transparent;
+    background-color: yellow;
     color: #d18d64;
     border-radius: 50%;
-    min-width: 70px;
-    min-height: 70px;
+    min-width: 50px;
+    min-height: 50px;
     border: none;
-    overflow: hidden;
     position: fixed;
     cursor: pointer;
     top: 45%;
-    right: 0;
+    right: 1%;
+    img {
+        border-radius: 50px;
+        transform: translateY(-4px)
+    }
+    img:active {
+        -webkit-filter: grayscale(0);
+        border-radius: 50px;
+        transform: scale(1.05);
+        background-color: white;
+        
+        border: 1px solid #0087ff;
+        
+    }
+    img:hover{
+        filter: brightness(1.4);
+    }
+
 }
 
 
-.open img {
-    border-radius: 50px;
-    background-color: white;
-}
-
-.open img:hover {
-    -webkit-filter: grayscale(0);
-    border-radius: 50px;
-    transform: scale(1.05);
-    background-color: white;
-    filter: brightness(200px);
-
-    border: 1px solid #0087ff;
-  box-shadow: 0 0 17px 2px white;
-}
 
 .hide {
     display: none;
@@ -437,7 +456,7 @@ export default {
     }
 
     30% {
-        transform: rotateY(90deg) skewY(-30deg);
+        transform: rotateY(90deg) skewY(20deg);
 
     }
 
@@ -527,7 +546,7 @@ export default {
     }
 
     30% {
-        transform: rotateY(90deg) skewY(-30deg);
+        transform: rotateY(90deg) skewY(20deg);
     }
 
     100% {

@@ -4,9 +4,9 @@
         <Projet v-for="(projet, key) in paginatedProjects" :-titre="projet.name" :-languages="[projet.language]"
         :-lien="projet.html_url" :-description="projet.description" />
         <div class="next-previous">
-            <button @click="prevPage"><<</button>
+            <button @click="prevPage" style="border: 3px solid white;"><<</button>
             <button>{{ currentPage }}</button>
-            <button @click="nextPage">>></button>
+            <button @click="nextPage" style="border: 3px solid white;">></button>
         </div>
     </div>
 </template>

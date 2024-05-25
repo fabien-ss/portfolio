@@ -78,7 +78,7 @@
                     l'IT University. Après quelques cours, je réalise que c'était un bon choix.
                 `,
                 position: "Etudiant en informatique, actuellement en 3eme année.",
-                salutation: "Bonjour, je suis Fabien, je vous remercie de m'accorder un peu de votre temps pour en savoir un peu plus sur moi et mes compétences."
+                salutation: "Bonjour, je suis Fabien, Bienvenue sur mon portfolio."
             }
         }
     }

@@ -65,7 +65,13 @@ export default {
 }
 
 .addStars:hover{
-    transform: scale(1.1);
+    filter: brightness(1.5);
+}
+
+.addStars:active{
+    img{
+        transform: scale(1.1);
+    }
 }
 
 @keyframes rotateStar {
