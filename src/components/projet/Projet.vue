@@ -72,7 +72,6 @@
         background-color: #373737;
         .image-container{
             width: 35%;
-            border-right: 1px solid white;
             position: relative;
             background-color: #222;
             .image{

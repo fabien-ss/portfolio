@@ -215,7 +215,7 @@ export default {
         },
         revelerTexte() {
             let texteFinal = "<<Ton existence est significative à l'existence d'une chose>>           Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite.";
-            texteFinal = "<<Ton existence est significative à l'existence d'une chose>>";
+            texteFinal = "RAKOTOMANANA Andriniaina Fabien - 3eme Annnée en informatique. ";
             let index = 0;
             const interval = setInterval(() => {
                 if (index < texteFinal.length) {

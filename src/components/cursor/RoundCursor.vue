@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       scale: 1,
-      width: 70,
+      width: 100,
       canMove: false
     }
   },
@@ -59,7 +59,7 @@ export default {
   pointer-events: none;
   z-index: 9999;
   display: none;
-  backdrop-filter: brightness(1.5);
+  backdrop-filter: brightness(1.1);
   border: none;
 }
 </style>

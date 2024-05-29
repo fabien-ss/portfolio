@@ -72,14 +72,14 @@ export default {
                 {
                     name: "CLUSTERING",
                     language: "Java, php",
-                    html_url: "#",
-                    description: "Projet d'optimisation permettant: la synchronisation de serveur d'application et de base donnée mysql."
+                    html_url: "https://github.com/MamyAndry/Session-Manager",
+                    description: "Collaboration, projet d'optimisation permettant: la synchronisation de serveur d'application et de base donnée mysql."
                 },
                 {
                     name: "DEPLOIEMMENT DE SERVEUR",
                     language: "Java",
-                    html_url: "#",
-                    description: "Projet permettant de déployer à distance un projet Java sur plusieurs serveurs distants."
+                    html_url: "https://github.com/MamyAndry/DynamicWebAutomation",
+                    description: "Collaboration, projet permettant de déployer à distance un projet Java sur plusieurs serveurs distants."
                 },
                 {
                     name: "PATTERSON&SARDINAS Entrained modele",
