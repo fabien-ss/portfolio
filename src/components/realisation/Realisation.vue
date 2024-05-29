@@ -62,7 +62,12 @@ export default {
                     html_url: "https://github.com/fabien-ss/IMMOBILISATION",
                     description: "Gestion des immobilisations d'une entreprise."
                 },
-            
+                {
+                    name: "Modele de machine learning pour la classification de code",
+                    language: "Python, Typescript, VueJs",
+                    html_url: "https://github.com/fabien-ss/MODEL-LANGUAGE-PREDICATION",
+                    description: "Project using the algorithme of Patterson and Sardinas with a trained model of machine learning to predict if a laungage is a code. "
+                },
                 {
                     name: "DATABASE ACCESS OBJECT",
                     language: "JAVA",
