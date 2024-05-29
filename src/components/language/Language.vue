@@ -21,7 +21,7 @@
   ">
         <div class="card" v-for="(svg, index) in svgData" :key="index">
             <div :class=svg.theme.cls @mouseover="changeTargetLanguage(svg)">
-                <img :src=svg.img style="width: 100%">
+                <img :src=svg.img class="bt" style="width: 100%">
                 <div class="banner">
                     <p style="color: white;">
                         {{ svg.prct }}
@@ -141,11 +141,11 @@ export default {
 
         }
     }
-
+/*
     .head:hover {
-      /*  animation: bright 1s linear infinite;
-        */.banner {
-            transition: 1s;
+      //  animation: bright 1s linear infinite;
+        .banner {
+            transition: 0.5s;
             background-color: black;
             width: 100px;
             min-height: 100px;
@@ -157,7 +157,7 @@ export default {
         }
 
     }
-
+*/
     .body {
         text-align: center;
     }

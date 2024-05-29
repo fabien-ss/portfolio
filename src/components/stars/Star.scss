@@ -5,7 +5,9 @@
     height: 20px;
     display: absolute;
     border-radius: 50px;
-  
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: #fca448;
 }
 @keyframes sintiller {
     0%{

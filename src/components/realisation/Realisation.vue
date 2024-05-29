@@ -135,7 +135,7 @@ export default {
                     name: "Gestion de stock",
                     language: "Java, Postgresql",
                     html_url: "https://github.com/fabien-ss/Gestion-de-stock",
-                    description: "Gestion de stock utilisant un framework créer avec java."
+                    description: "Gestion de stock utilisant un framework crée avec java."
                 }
                 ,
                 {

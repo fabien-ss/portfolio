@@ -2,7 +2,7 @@
 
     <div class="init" id="bot">
         <button class="up" @click="showBot()">
-            <img src="/language/banner.png" width="100%" height="100%">
+            <img src="/language/banner.png" class="bt" width="100%" @mouseover="this.buttonData" height="100%">
         </button>
             <div class="boite_dialogue">
             <!--
@@ -36,6 +36,10 @@
             this.chat = document.getElementById("chat")
         },
         methods:{
+            buttonData(event){
+              console.log("test")
+                this.$emit("test", event)
+            },
             send(){
                 const message = document.getElementById("message").value;
                 console.log(message)

@@ -1,7 +1,7 @@
 <template>
     <div class="etoile" id="etoile">
         <div class="addStars" @click="addStars" style="position: fixed; border: none" width=50px height=50px>
-            <img src="/language/dbz-2_ulluss_jeux-video.png" width="100%"/>
+            <img class="bt" src="/language/dbz-2_ulluss_jeux-video.png" />
         </div>
         <Star v-for="star in stars" :key="star.id" :x="star.x" :y="star.y" />
     </div> 
@@ -21,6 +21,10 @@ export default {
         Star
     },
     methods:{
+        buttonData(event){
+            console.log("test")
+            this.$emit("test", event)
+        },
         addStars(){
             console.log("le ", this.stars.length)
          //   if(this.stars.length <= 5){

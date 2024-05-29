@@ -1,10 +1,6 @@
 <template>
     <div class="projet" >
-        <div class="image-container">
-            <div class="image">
-
-            </div>
-        </div>
+        
         <div class="description-projet">
             <div class="head">
                 {{ Titre }}
@@ -23,6 +19,14 @@
                 </a>
             </div>
         </div>
+        
+        <div class="image-container">
+            <a style="cursor: pointer;" @click.stop="{}" :href="Lien" target="_blank">
+                <div class="image">
+                    
+                </div>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -40,10 +44,10 @@
 
     @keyframes inOut{
         0%{
-            tranform: scale(041.1)
+            transform: scale(041.1)
         }
         100%{
-            tranform: scale(15.1)
+            transform: scale(15.1)
         }
     }
 
@@ -70,7 +74,7 @@
             width: 35%;
             border-right: 1px solid white;
             position: relative;
-            background-color: #282828;
+            background-color: #222;
             .image{
                 width: 100%;
             }

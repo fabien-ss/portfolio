@@ -11,6 +11,11 @@ export default {
             
         }
     },
-    name: "MotherComponent"
+    name: "MotherComponent",
+    methods: {
+        mouseOver(event){
+            this.$emit("test")
+        }
+    }
 }
 </script>

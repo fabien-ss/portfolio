@@ -1,79 +1,78 @@
 <template>
+    <RoundCursor />
     <Lumiere @lumiere="lumiere" />
     <DropDown @chercher="tourner" />
 
-    <Stars @addStarts="l()" />
+    <Stars @addStarts="l()" @test="this.buttonData"/>
 
     <div class="livre" id="livre">
         <div class="description">
             <p v-text="texte"></p>
-            <Bot />
+            <Bot @test="this.buttonData"/>
         </div>
 
         <div class="contenu 8">
             <Cv :isActive=true />
-            <button class="open">
-                <img src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
         </div>
 
         <div class="contenu 7">
             <Certificat :isActive=true />
             <button class="open">
-                <img src="/language/banner.png" @click="this.turn" width="50px">
+                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 5">
             <Outils :isActive=true />
             <button class="open">
-                <img src="/language/banner.png" @click="this.turn" width="50px">
+                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 4">
             <Competence :title="OK" :isActive=true />
             <button class="open">
-                <img src="/language/banner.png" @click="this.turn" width="50px">
+                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 6">
             <Education :isActive=true />
             <button class="open">
-                <img src="/language/banner.png" @click="this.turn" width="50px">
+                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 7">
             <Experience :isActive=true />
             <button class="open">
-                <img src="/language/banner.png" @click="this.turn" width="50px">
+                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 3">
             <Realisation :isActive=true />
             <button class="open">
-                <img src="/language/banner.png" @click="this.turn" width="50px">
+                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 2">
             <Presentation :isActive.sync=presentation />
             <button class="open">
-                <img src="/language/banner.png" @click="this.turn" width="50px">
+                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
+
         <div class="contenu 1" style="" id="couverture">
             <Couverture />
-            <button class="open">
-                <img src="/language/banner.png" @click="this.turn" width="50px;" style="">
+            <button class="open" >
+                <img class="bt" src="/cursor/arrow.png" @click="this.turn" @mouseover="this.buttonData" width="50px">
             </button>
         </div>
 
         <div class="brown" id="verou" @click="open">
-            <img src="/language/verou.png" width="100%"/>
+            <img class="bt" src="/language/verou.png" width="100%"/>
         </div>
     </div>
 
@@ -98,6 +97,8 @@ import Certificat from "../../components/certificat/Certificat.vue";
 import Language from "../../components/language/Language.vue";
 import Lumiere from "../../components/button/Lumiere.vue";
 import DropDown from "../../components/button/DropDown.vue";
+import Cristal from "../../components/button/Cristal.vue";
+import RoundCursor from "@/components/cursor/RoundCursor.vue";
 
 export default {
     name: "Book",
@@ -125,12 +126,13 @@ export default {
         this.firstPage = false;
         this.livre = document.getElementById("livre");
         this.texte = "",
-            this.lampe = document.getElementById("lumiere");
+        this.lampe = document.getElementById("lumiere");
         this.livre = document.getElementById("livre");
         this.lumiere();
         this.contenus = document.getElementsByClassName("contenu");
         this.pages = document.getElementsByClassName("contenu");
         this.index = 0;
+        this.cursor = document.getElementById("cursor");
     },
     components: {
         Loader,
@@ -148,44 +150,24 @@ export default {
         Language,
         Lumiere,
         DropDown,
-        Certificat
+        Certificat,
+        Cristal,
+        RoundCursor
     },
     methods: {
+        buttonData(event){
+            this.cursor.style = event.target.style;
+        },
         open(){
             let couverture = document.getElementById("couverture");
             let verou = document.getElementById("verou");
-/*            if(verou.classList.contains("brown-open")){
-    verou.classList.remove("brown-open");
-}else{
-}
-                */
+            if(!verou.classList.contains("brown-open")){
                 verou.classList.add("brown-open");
                 couverture.classList.add("oriente");
-//                if(couverture.classList.contains("oriente")){}
-        },
-        targetPage(id) {
-            console.log(this.pages)
-            // const target = this.pages.map(p => p.classList.constains(id));
-            // console.log(target)
-        },
-        tourner(id) {
-            console.log(this.pages)
-            console.log(this.pages.length)
-            //this.targetPage(id)
-            let i = 7;
-            let find = false;
-            let action = "page";
-            let inc = -1;
-            while (!find) {
-                if (i === 0) action = "page-previous"
-                if (i === 8) action = "page"
-                if (!this.pages[i].classList.contains(id + "")) {
-                    this.pages[i].classList.add(action);
-                } else if (this.pages[i].classList.contains(id + "")) {
-                    find = true
-                }
-                i += inc
-            }
+            }/*else if(verou.classList.contains("brown-open")){
+                verou.classList.remove("brown-open");
+                couverture.classList.remove("oriente");
+            }*/
         },
         handlePageLoaded() {
             this.isLoading = false; // Mettre isLoading à false lorsque la page est entièrement chargée
@@ -197,7 +179,6 @@ export default {
             }, 2000);
         },
         l() {
-            //console.log(this.brigthness)
             if (this.brigthness <= 1.0) {
                 this.brigthness += 0.1;
                 this.livre.style.filter = `brightness(${this.brigthness})`;
@@ -206,21 +187,7 @@ export default {
                 this.livre.style.filter = `brightness(0.5)`;
             }
         },
-        sendForm(event) {
-            event.preventDefault();
-            //console.log("form sent ", event.target[0].value);
-            const response = fetch("http://localhost:3000/ia-helper/answer-question", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    question: event.target[0].value
-                })
-            })
-            //console.log(response)
-        },
-        turnPerPage() {
+                turnPerPage() {
             let page1 = this.contenus[this.contenus.length - 1 - this.index];//.classList.add("BlankPage");
             page1.classList.add("page");
             page1.classList.remove("page-previous");
@@ -295,19 +262,6 @@ export default {
             if (element.classList.contains("contenu")) return element;
             return this.getContenu(element.parentElement);
         }
-        ,
-        afficherTexteProgressivement(texte, element, index = 0) {
-            if (index < texte.length) {
-                element.innerHTML += texte.charAt(index);
-                setTimeout(function () {
-                    //   this.afficherTexteProgressivement(texte, element, index + 1);
-                }, 100); // Ajustez le délai entre chaque caractère ici
-            }
-        }
-    }
-    ,
-    beforeDestroy() {
-        window.removeEventListener('load', this.handlePageLoaded);
     }
 }
 
@@ -361,37 +315,6 @@ export default {
 .brown-open {
     transform: rotateY(-80deg);
 }
-
-.open {
-    background-color: yellow;
-    color: #d18d64;
-    border-radius: 50%;
-    min-width: 50px;
-    min-height: 50px;
-    border: none;
-    position: fixed;
-    cursor: pointer;
-    top: 45%;
-    right: 1%;
-    img {
-        border-radius: 50px;
-        transform: translateY(-4px)
-    }
-    img:active {
-        -webkit-filter: grayscale(0);
-        border-radius: 50px;
-        transform: scale(1.05);
-        background-color: white;
-        
-        border: 1px solid #0087ff;
-        
-    }
-    img:hover{
-        filter: brightness(1.4);
-    }
-
-}
-
 
 
 .hide {
@@ -471,8 +394,6 @@ export default {
 .page div {
     animation: hideChildren 0.5s linear forwards;
 }
-
-.page .open {}
 
 @keyframes notHidingChildren {
     0% {
@@ -565,44 +486,4 @@ export default {
     transform: translate(50%, 0);
 }
 
-@keyframes loadBook {
-    0% {
-
-        transform: translate(-1000px, 0);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-.test {
-    width: 100%;
-    height: 950px;
-    background-color: transparent;
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(0, 56px);
-    border: 1px solid white;
-}
-
-.test_child {
-    position: relative;
-    transform: translate(0, 950px);
-}
-
-#arrow {
-    transform: translate(560px, -2px);
-    animation: arrowUp 0.5s infinite;
-}
-
-@keyframes arrowUp {
-    0% {
-        transform: translate(551px, -50px);
-    }
-
-    100% {
-        transform: translate(551px, -2px);
-    }
-}
 </style>

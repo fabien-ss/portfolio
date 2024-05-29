@@ -5,7 +5,7 @@
     <div class="experience-item">
         <h3>WEBCUP 4-5 Mai 2024</h3>
         <p>
-            Concours de développement où j'ai acquis de nouvelles compétences malgré les imprévus.
+            Concours annuel de développement web, Océan Indien.
         </p>
         <ul>
             <li>Développeur back-end</li>
@@ -14,8 +14,8 @@
         </ul>
     </div>
     <div class="experience-item">
-        <h3>HIU Mars 2024</h3>
-        <p>Première expérience de mise en situation dans un concours de développement.</p>
+        <h3>Sélection d'équipe HIU Mars 2024</h3>
+        <p>Première expérience de mise en situation dans un concours de développement web pour représenter l'université.</p>
         <ul>
             <li>Développeur back-end</li>
             <li>Intégration d'API pour l'intelligence artificielle</li>
@@ -23,7 +23,7 @@
     </div>
     <div class="experience-item">
         <h3>Maintenance d'ordinateur de bureau</h3>
-        <p>Installation de l'OS et maintenance matérielle.</p>
+        <p>Installation d'OS et maintenance matérielle.</p>
     </div>
 </div>
 </template>
