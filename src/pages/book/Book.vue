@@ -11,62 +11,62 @@
             <Bot @test="this.buttonData" />
         </div>
 
-        <div class="contenu 8">
+        <div class="contenu 8" v-if="cv" >
             <Cv :isActive=true />
         </div>
 
-        <div class="contenu 7">
+        <div class="contenu 7" v-if="certificat">
             <Certificat :isActive=true />
-            <button class="open">
+            <button class="open" @click="cv = true" >
                 <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu 5">
+        <div class="contenu 5" v-if="outils">
             <Outils :isActive=true />
-            <button class="open">
+            <button class="open" @click="certificat = true">
                 <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu 4">
+        <div class="contenu 4" v-if="competence">
             <Competence :title="OK" :isActive=true />
-            <button class="open">
+            <button class="open" @click="outils = true" >
                 <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu 6">
+        <div class="contenu 6" v-if="education">
             <Education :isActive=true />
-            <button class="open">
+            <button class="open" @click="competence = true" >
                 <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu 7">
+        <div class="contenu 7" v-if="experience">
             <Experience :isActive=true />
-            <button class="open">
+            <button class="open" @click="education = true">
                 <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu 3">
+        <div class="contenu 3" v-if="realisation">
             <Realisation :isActive=true />
-            <button class="open">
+            <button class="open" @click="experience = true" >
                 <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
-        <div class="contenu 2">
+        <div class="contenu 2" v-if="presentation">
             <Presentation :isActive.sync=presentation />
-            <button class="open">
+            <button class="open" @click="realisation = true">
                 <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
 
         <div class="contenu 1" style="" id="couverture">
             <Couverture />
-            <button class="open">
+            <button class="open" @click="presentation = true">
                 <img class="bt" src="/cursor/arrow.png" @click="this.turn" @mouseover="this.buttonData" width="50px">
             </button>
         </div>
@@ -108,13 +108,14 @@ export default {
             texte: "Hello I'm an IT Student from Madagascar, I invite you to open the book.",
             brigthness: 0.5,
             isLoading: true,
-            presentation: true,
-            realisation: true,
-            competence: true,
-            outils: true,
-            education: true,
-            experience: true,
-            cv: true,
+            presentation: false,
+            realisation: false,
+            competence: false,
+            outils: false,
+            education: false,
+            experience: false,
+            cv: false,
+            certificat: false,
             componentPage: [
                 /*
                 , <Certificat />
@@ -431,7 +432,6 @@ export default {
     }
 
     31% {
-        
         opacity: 0;
     }
 
