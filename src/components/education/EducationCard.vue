@@ -2,7 +2,6 @@
     <br>
     <div class="card-education" :class="{ graduate: over}">
         
-        <img src="/education/laptop.png" style="position: absolute; width: 100px; bottom: 0; left: 300px;"/>
         <div class="title">
             <p>{{annee}}, {{etablissement}} {{ lieu }}</p>
         </div>
