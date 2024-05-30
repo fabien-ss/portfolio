@@ -1,85 +1,6 @@
-<template>
-    <RoundCursor />
-    <Lumiere @lumiere="lumiere" />
-    <DropDown @chercher="tourner" />
 
-    <Stars @addStarts="l()" @test="this.buttonData" />
 
-    <div class="livre" id="livre">
-        <div class="description">
-            <p v-text="texte"></p>
-            <Bot @test="this.buttonData" />
-        </div>
-
-        <div class="contenu 8">
-            <Cv :isActive=true />
-        </div>
-
-        <div class="contenu 7">
-            <Certificat :isActive=true />
-            <button class="open">
-                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
-        </div>
-
-        <div class="contenu 5">
-            <Outils :isActive=true />
-            <button class="open">
-                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
-        </div>
-
-        <div class="contenu 4">
-            <Competence :title="OK" :isActive=true />
-            <button class="open">
-                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
-        </div>
-
-        <div class="contenu 6">
-            <Education :isActive=true />
-            <button class="open">
-                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
-        </div>
-
-        <div class="contenu 7">
-            <Experience :isActive=true />
-            <button class="open">
-                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
-        </div>
-
-        <div class="contenu 3">
-            <Realisation :isActive=true />
-            <button class="open">
-                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
-        </div>
-
-        <div class="contenu 2">
-            <Presentation :isActive.sync=presentation />
-            <button class="open">
-                <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
-            </button>
-        </div>
-
-        <div class="contenu 1" style="" id="couverture">
-            <Couverture />
-            <button class="open">
-                <img class="bt" src="/cursor/arrow.png" @click="this.turn" @mouseover="this.buttonData" width="50px">
-            </button>
-        </div>
-
-        <div class="brown" id="verou" @click="open">
-            <img class="bt" src="/language/verou.png" width="100%" />
-        </div>
-    </div>
-
-    <Loader v-if="isLoading" />
-</template>
-<script>
-
+import BlankPage from "../BlankPage.vue";
 import Presentation from "../../components/presentation/Presentation.vue";
 import Competence from "../../components/competence/Competence.vue";
 import Outils from "../../components/Outils.vue";
@@ -116,14 +37,13 @@ export default {
             experience: true,
             cv: true,
             componentPage: [
-                /*
                 , <Certificat />
                 , <Outils />
                 , <Presentation />
                 , <Competence />
                 , <Education />
                 , <Experience />
-                , <Realisation />*/
+                , <Realisation />
             ]
         }
     },
@@ -144,6 +64,7 @@ export default {
     },
     components: {
         Loader,
+        BlankPage,
         Presentation,
         Competence,
         Outils,
@@ -195,7 +116,7 @@ export default {
             }
         },
         turnPerPage() {
-            let page1 = this.contenus[this.contenus.length - 1 - this.index];
+            let page1 = this.contenus[this.contenus.length - 1 - this.index];//.classList.add("BlankPage");
             page1.classList.add("page");
             page1.classList.remove("page-previous");
             this.index++;
@@ -206,7 +127,7 @@ export default {
             let index = 0;
             const interval = setInterval(() => {
                 if (index < this.contenus.length) {
-                    if (this.firstPage) {
+                    if (this.firstPage == true) {
                         this.contenus[this.contenus.length - index - 1].classList.remove("page-previous");
                         this.contenus[this.contenus.length - index - 1].classList.add("page");
                     } else {
@@ -222,7 +143,7 @@ export default {
         },
         revelerTexte() {
             let texteFinal = "<<Ton existence est significative à l'existence d'une chose>>           Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite.";
-            texteFinal = "RAKOTOMANANA Andriniaina Fabien - 3eme Annnée en informatique. Ivato Antananarivo";
+            texteFinal = "RAKOTOMANANA Andriniaina Fabien - 3eme Annnée en informatique. ";
             let index = 0;
             const interval = setInterval(() => {
                 if (index < texteFinal.length) {
@@ -273,224 +194,3 @@ export default {
 }
 
 
-</script>
-
-<style>
-.oriente {
-    transform-origin: left;
-    transform: rotateY(10deg) skewY(1deg);
-}
-
-.brown {
-    background-color: #3f333e;
-    width: 100px;
-    height: 100px;
-    left: 84%;
-    position: fixed;
-    top: 43%;
-    border-radius: 10px 0px 0px 10px;
-    border: 4px solid rgb(39, 38, 38);
-    border-right-width: 4px;
-    border-right-style: solid;
-    border-right-color: rgb(39, 38, 38);
-    border-right: 0px;
-    transition: 500ms;
-    transform-origin: right;
-    cursor: pointer;
-    border-right: 10px solid #e4cba4;
-    animation: clignottant 2s linear infinite;
-}
-
-.brown:hover {
-    filter: brightness(1.5)
-}
-
-@keyframes clignottant {
-    0% {
-        filter: brightness(0.5)
-    }
-
-    50% {
-        filter: brightness(1);
-        box-shadow: 0 0 10px 00px white;
-    }
-
-    100% {
-        filter: brightness(0.5)
-    }
-}
-
-.brown-open {
-    transform: rotateY(-80deg);
-}
-
-
-.hide {
-    display: none;
-}
-
-.description {
-    width: 100%;
-    position: absolute;
-    transform: translate(-100%, 0);
-    height: 800px;
-    color: white;
-    text-align: left;
-    align-items: center;
-    justify-content: center;
-}
-
-.description p {
-    margin-right: 15%;
-}
-
-.next {
-    position: fixed;
-    transform: translate(266px, -32px);
-}
-
-:root {
-    --page-background-color: #31363F;
-    ;
-}
-
-.image {
-    width: 100%;
-    height: 100%;
-}
-
-.contenu {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    box-shadow: 0px 1px;
-    background-color: #31363F;
-    text-align: center;
-    overflow: scroll;
-    border-left: 1px solid #c9cfcf;
-    border-radius: 0px 15px 15px 0px;
-    transition: 0.5s;
-}
-
-
-.page {
-    transform: rotateY(180deg);
-    animation: turnPage 0.5s linear;
-    transform-origin: left;
-    background-color: var(--page-background-color);
-}
-
-@keyframes turnPage {
-    0% {
-        transform: rotateY(0deg);
-        box-shadow: 0px 0px;
-    }
-
-    30% {
-        transform: rotateY(90deg) skewY(20deg);
-
-    }
-
-    100% {
-        transform: rotateY(180deg);
-        background-color: var(--page-background-color);
-
-        opacity: 100%;
-    }
-}
-
-.page div {
-    animation: hideChildren 0.5s linear forwards;
-}
-
-@keyframes notHidingChildren {
-    0% {
-        opacity: 100%;
-    }
-
-    30% {
-        opacity: 100%;
-    }
-
-    31% {
-        opacity: 100%;
-    }
-
-    100% {
-        opacity: 100%;
-    }
-}
-
-@keyframes hideChildren {
-    0% {
-        opacity: 100%;
-    }
-
-    30% {
-        opacity: 100%;
-    }
-
-    31% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-.page-previous {
-    transform: rotateY(0deg);
-    animation: turnPage-previous 0.5s linear;
-    transform-origin: left;
-}
-
-.page-previous * {
-    animation: hideChildren-previous 0.5s linear forwards;
-}
-
-@keyframes hideChildren-previous {
-    0% {
-        opacity: 0%;
-    }
-
-    30% {
-        opacity: 0%;
-    }
-
-    31% {
-        opacity: 100%;
-    }
-
-    100% {
-        opacity: 100%;
-    }
-}
-
-
-@keyframes turnPage-previous {
-    0% {
-        transform: rotateY(180deg);
-
-    }
-
-    30% {
-        transform: rotateY(90deg) skewY(20deg);
-    }
-
-    100% {
-        transform: rotateY(0deg);
-        box-shadow: 0px 0px;
-    }
-}
-
-.livre {
-    position: relative;
-    width: 600px;
-    margin: auto;
-    height: 50pc;
-    margin-top: 4vh;
-    filter: brightness(0.5);
-    transform: translate(50%, 0);
-}
-</style>

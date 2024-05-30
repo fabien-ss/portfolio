@@ -59,7 +59,8 @@ export default {
   pointer-events: none;
   z-index: 9999;
   display: none;
-  backdrop-filter: brightness(1.1);
+  backdrop-filter: brightness(1.2);
+  
   border: none;
 }
 </style>

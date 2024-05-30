@@ -26,6 +26,7 @@
     export default{
         name: "Lumiere",
         mouted(){
+            
             this.lumiere();
         }
         ,data(){ 
