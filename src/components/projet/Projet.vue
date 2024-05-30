@@ -15,7 +15,7 @@
             </div>
             <div class="footer" >
                 <a @click.stop="{}" :href="Lien" target="_blank">
-                    <img src="/language/github.svg" width=80% height=100%/>
+                    Code >>
                 </a>
             </div>
         </div>
@@ -104,6 +104,9 @@
                 }
                 .icon:hover{
                     cursor: pointer;
+                }
+                a{
+                    color: white;
                 }
             }
             .footer:hover{

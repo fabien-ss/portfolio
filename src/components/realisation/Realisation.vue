@@ -1,12 +1,14 @@
 <template>
     <div class="realisation" v-if="isActive">
-        <h1>Réalisations</h1>
-        <Projet v-for="(projet, key) in paginatedProjects" :-titre="projet.name" :-languages="[projet.language]"
-        :-lien="projet.html_url" :-description="projet.description" />
+        <h1>Réalisation</h1>
         <div class="next-previous">
-            <button @click="prevPage" style="border: 3px solid white;"><<</button>
+            <button @click="prevPage" style="border: 3px solid white;">PREV</button>
             <button>{{ currentPage }}</button>
-            <button @click="nextPage" style="border: 3px solid white;">></button>
+            <button @click="nextPage" style="border: 3px solid white;">NEXT</button>
+        </div>
+        <div class="grid">
+            <Projet v-for="(projet, key) in paginatedProjects" :-titre="projet.name" :-languages="[projet.language]"
+            :-lien="projet.html_url" :-description="projet.description" />
         </div>
     </div>
 </template>
@@ -327,13 +329,12 @@ export default {
     overflow-y: scroll;
     height: 100%;
     width: 100%;
-    display: grid;
-
+    .grid{
+        display: grid;
+        height: 80%;
+    }
     .next-previous{
-        bottom: 10px;
-        right: 0px;
-        width: 100%;
-        margin-bottom: 5px;
+        height: 5%;
         button{
             border-radius: 10px;
             min-height: 40px;
@@ -343,7 +344,6 @@ export default {
             margin: auto;
             background-color: black;
             color: white;
-            margin-top: 10px;
             margin-left: 5px;
         }
     }

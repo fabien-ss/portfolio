@@ -53,17 +53,22 @@ export default {
 
         .image_profil{
             position: relative;
+            /*  
             background-image: url($cadre-image);
+            */
+            background-color: #21222b;
             background-size: cover;
             width: 100%;
             align-items: center;
             justify-content: center;
             height: 75%;
 
-            div {
+            .image_profil2 {
                 height: 56.5%;
                 width: 56.5%;
                 margin: auto;
+                border: 2px solid rgb(204, 200, 200);//;rgb(192, 121, 28);
+                border-radius: 5px;
                 transform: translate(0, 38%);
                 background-image: url($profil-image);
                 background-size: cover;
