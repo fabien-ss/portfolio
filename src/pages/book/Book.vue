@@ -224,7 +224,7 @@ export default {
         },
         revelerTexte() {
             let texteFinal = "<<Ton existence est significative à l'existence d'une chose>>           Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite.";
-            texteFinal = "RAKOTOMANANA Andriniaina Fabien - 3eme Année en informatique. Ivato Antananarivo";
+            texteFinal = "Bienvenue sur mon portfolio, RAKOTOMANANA Andriniaina Fabien - 3eme Année en informatique. Ivato Antananarivo Madagascar. A votre service!";
             let index = 0;
             const interval = setInterval(() => {
                 if (index < texteFinal.length) {
@@ -379,7 +379,7 @@ export default {
     transform: rotateY(180deg);
     animation: turnPage 0.5s linear;
     transform-origin: left;
-    background-color: var(--page-background-color);
+    
 }
 
 @keyframes turnPage {
@@ -390,13 +390,11 @@ export default {
 
     30% {
         transform: rotateY(90deg) skewY(20deg);
-
     }
 
     100% {
         transform: rotateY(180deg);
         background-color: var(--page-background-color);
-
         opacity: 100%;
     }
 }
@@ -478,6 +476,7 @@ export default {
 
     30% {
         transform: rotateY(90deg) skewY(20deg);
+        
     }
 
     100% {

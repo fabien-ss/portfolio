@@ -1,15 +1,16 @@
 <template>
-    <a href="/cv/CV de Andriniaina Fabien RAKOTOMANANA.pdf" target="_blank">
-        <button class="cv-down">
-            View CV
-        </button>
-    </a>
     <!--
 
+        <a href="/cv/CV de Andriniaina Fabien RAKOTOMANANA.pdf" target="_blank">
+            <button class="cv-down">
+                View CV
+            </button>
+        </a>
+    --> 
+
         <div class="cv" v-if="isActive">
-            <iframe src="/cv/CV de Andriniaina Fabien RAKOTOMANANA.pdf" width="100%" height="1000px" style="border: none;"></iframe>
+            <iframe src="/cv/CV et lettre de motivation stage.pdf" width="100%" height="1000px" style="border: none;"></iframe>
         </div>
-    -->
 </template>
 <script>
 import MotherComponent from "../MotherComponent.vue";

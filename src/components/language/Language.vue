@@ -4,8 +4,8 @@
         <p :class="{ show: !isLoading }" style="font-weight: inherit;
         font-size: initial; color: white;">
             {{ targetLanguage.dcr }}
-        </p>
-        <img :src="targetLanguage.img" width="80%" />
+            </p>
+            <img :src="targetLanguage.img" width="80%" />
     </div>
 
     <div v-if="canLoad" class="" style="
@@ -46,9 +46,9 @@ export default {
                 { img: "/language/dotnet.svg", prct: "DOTNET", dcr: "Idéal pour créer des applications robustes, évolutives et sécurisées au niveau des entreprises, surtout celles nécessitant une intégration avec des fonctionnalités spécifiques à Windows.", theme: { p: "#1574B8", s: "dark", cls: "four head" }, display: 1 },
                 { img: "/language/java.svg", prct: "JAVA", dcr: "Fréquemment utilisé pour développer des applications d'entreprise à grande échelle grâce à sa scalabilité, sa portabilité et ses caractéristiques de sécurité.", theme: { p: "#E76F00", s: "#5382A1", cls: "one head" }, display: 2 },
                 { img: "/language/nest.svg", prct: "NEST JS", dcr: "Meilleur choix pour construire des applications côté serveur hautement testables, évolutives et maintenables, particulièrement dans une architecture de microservices.", theme: "red", theme: { p: "#FF586C", s: "#F7DF1E", cls: "nest head" }, display: 1 },
-                { img: "/language/python.svg", prct: "PYTHON", dcr: "Populaire pour l'analyse de données, l'apprentissage automatique, l'intelligence artificielle, les calculs scientifiques et les tâches d'automatisation grâce à sa simplicité et à un large soutien bibliothèque.", theme: { p: "#366D9B;", s: "#FFD545", cls: "three head" }, display: 1 },
-               /* { img: "/language/php.svg", prct: "PHP", dcr: "Principallement utilisé pour le développement web côté serveur afin de produire des pages web dynamiques. Il est connu pour sa facilité d'utilisation et une large gamme de fonctionnalités, le rendant idéal pour le développement rapide d'applications.", theme: { p: "#6F8FC8", s: "dark", cls: "two head" }, display: 2 },
+                /* { img: "/language/php.svg", prct: "PHP", dcr: "Principallement utilisé pour le développement web côté serveur afin de produire des pages web dynamiques. Il est connu pour sa facilité d'utilisation et une large gamme de fonctionnalités, le rendant idéal pour le développement rapide d'applications.", theme: { p: "#6F8FC8", s: "dark", cls: "two head" }, display: 2 },
                 */{ img: "/language/vue.svg", prct: "VUE JS", dcr: "Idéal pour construire des applications mono-pages où vous avez besoin d'une interface utilisateur rapide et flexible. Il est également excellent pour ajouter des interfaces utilisateur interactives à des sites statiques.", theme: { p: "#42d392", s: "black", cls: "vue head" }, display: 1 },
+                { img: "/language/python.svg", prct: "PYTHON", dcr: "Populaire pour l'analyse de données, l'apprentissage automatique, l'intelligence artificielle, les calculs scientifiques et les tâches d'automatisation grâce à sa simplicité et à un large soutien bibliothèque.", theme: { p: "#366D9B;", s: "#FFD545", cls: "three head" }, display: 1 },
             ]
 
         }
@@ -59,6 +59,7 @@ export default {
         changeTargetLanguage(target) {    
             this.isLoading = true; // Commencez l'animation de chargement
             //await new Promise(resolve => setTimeout(resolve, 1000)); // Simule le temps de chargement
+            this.$emit("image", target.img)
             this.targetLanguage = target; // Change la langue cible
             this.isLoading = false; // Termine l'animation de chargement
         },

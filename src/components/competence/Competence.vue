@@ -1,7 +1,7 @@
 <template>
     <div class="competence area" v-if="isActive">
         <br>
-        <ul class="circles">
+        <ul class="circles" id="li_image">
             <li></li>
             <li></li>
             <li></li>
@@ -18,7 +18,7 @@
             <p v-text="message" style="color: white;"></p>
         </div>
         <div class="body">
-            <Language />
+            <Language @image="showImage"/>
         </div>
     </div>
 </template>
@@ -39,13 +39,23 @@ export default {
     },
     components: {
         Language
+    },
+    methods:{
+        showImage(image){
+            let liste = document.getElementById("li_image");
+            let childs = liste.childNodes;
+            childs.forEach(element => {   
+                console.log(element.style)
+                element.style.backgroundImage = image;
+            }); 
+        }
     }
 }
 </script>
 
 <style lang="scss">
 .area {
-    background: #4e54c8;
+    background: #bec0d8;
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
     width: 100%;
     height: 100vh;
@@ -165,7 +175,7 @@ export default {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    background-color: #6f74d1;
+    background-color: #2c2e4e;
 
     .body {
         width: 80%;
