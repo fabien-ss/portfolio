@@ -48,15 +48,17 @@ export default {
         width: 100%;
         height: 100%;
         overflow: hidden;
+        
         color: $couverture-color;
         background-color: $background-color;
 
         .image_profil{
+            
             position: relative;
-            /*  
             background-image: url($cadre-image);
-            */
+            /*  
             background-color: #21222b;
+            */
             background-size: cover;
             width: 100%;
             align-items: center;
