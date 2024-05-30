@@ -167,6 +167,7 @@ export default {
             this.cursor.style = event.target.style;
         },
         open() {
+            this.presentation = true
             let couverture = document.getElementById("couverture");
             let verou = document.getElementById("verou");
             if (!verou.classList.contains("brown-open")) {
