@@ -10,11 +10,10 @@
             -->
 
                 <div class="chat" id="chat">
-                    <div class="left response">Hello</div>
                 </div>
             <div class="boite_envoie">
 
-                <input class="message" type="text" id="message" value="Hello!">
+                <input class="message" type="text" id="message" value="how are you?">
                 <button class="submit" @click="send()">
                     Send
                 </button>
@@ -32,6 +31,7 @@
             }
         },
         mounted(){
+            this.askBrainShop("hello")
             this.bot = document.getElementById("bot")
             this.chat = document.getElementById("chat")
         },
