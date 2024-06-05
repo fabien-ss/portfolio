@@ -37,12 +37,10 @@
         },
         methods:{
             buttonData(event){
-              console.log("test")
                 this.$emit("test", event)
             },
             send(){
                 const message = document.getElementById("message").value;
-                console.log(message)
                 if(message !== ""){
                     let divSend = document.createElement("div");
                     divSend.classList.add("right");
@@ -58,7 +56,6 @@
                 fetch(apiUrl+"/brainshop/"+message)
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data)
                         let divSend = document.createElement("div");
                         divSend.classList.add("left");
                         divSend.classList.add("response");
@@ -67,7 +64,6 @@
                     })
             },
             showBot(){
-                console.log("show");
                 if(!this.show){
                     this.bot.classList.add("bot");
                     this.bot.classList.remove("init");
