@@ -13,6 +13,7 @@
         <div class="contact">
             <p><span class="bold">Numéro: </span>+261 34 75 197 55</p>
             <p><span class="bold">Email: </span>rakotomanana.andriniaina.fabien@gmail.com</p>
+            <p><span class="bold">Github: </span><a href="https://github.com/fabien-ss" target="_blank">fabien-ss</a></p>
             <p><span class="bold">LinkeDin: </span><a href="https://www.linkedin.com/in/andriniaina-fabien-rakotomanana-b6b828231/" target="_blank">Andriniaina Fabien</a></p>
         </div>
    
