@@ -14,7 +14,7 @@
                 </div>
             <div class="boite_envoie">
 
-                <input class="message" type="text" id="message" value="Who is Fabien?">
+                <input class="message" type="text" id="message" value="Hello!">
                 <button class="submit" @click="send()">
                     Send
                 </button>
@@ -49,9 +49,22 @@
                     divSend.classList.add("response");
                     divSend.innerHTML = message;
                     this.chat.appendChild(divSend)
+                    this.askBrainShop(message)
                 }
                 document.getElementById("message").value = "";
-                
+            },
+            askBrainShop(message){
+                let apiUrl = "https://brain-shop-3.onrender.com"
+                fetch(apiUrl+"/brainshop/"+message)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        let divSend = document.createElement("div");
+                        divSend.classList.add("left");
+                        divSend.classList.add("response");
+                        divSend.innerHTML = data.message.cnt;
+                        this.chat.appendChild(divSend)
+                    })
             },
             showBot(){
                 console.log("show");
