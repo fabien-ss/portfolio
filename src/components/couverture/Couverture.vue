@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
 
-    $couverture-color: #31363F;
+    $couverture-color: #15171a;
     $background-color: white;
     $profil-image: "/volo.png";
     $cadre-image: "/freepik/Fond/cadre.jpeg";
@@ -57,7 +57,7 @@ export default {
             position: relative;
             //background-image: url($cadre-image);
             
-            background-color: #21222b;
+            background-color: $couverture-color;
             background-size: cover;
             width: 100%;
             align-items: center;

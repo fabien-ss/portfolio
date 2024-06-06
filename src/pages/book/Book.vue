@@ -368,7 +368,7 @@ export default {
     box-shadow: 0px 1px;
     background-color: #31363F;
     text-align: center;
-    overflow: scroll;
+    overflow-y: scroll;
     border-left: 1px solid #c9cfcf;
     border-radius: 0px 15px 15px 0px;
     transition: 0.5s;
@@ -489,9 +489,10 @@ export default {
     position: relative;
     width: 600px;
     margin: auto;
-    height: 85vh;
-    margin-top: 4vh;
+    height: 80vh;
+    min-height: 800px;
     filter: brightness(0.5);
     transform: translate(50%, 0);
 }
+
 </style>

@@ -4,8 +4,8 @@
         <p :class="{ show: !isLoading }" style="font-weight: inherit;
         font-size: initial; color: white;">
             {{ targetLanguage.dcr }}
-            </p>
-            <img :src="targetLanguage.img" width="80%" />
+        </p>
+        <img :src="targetLanguage.img" width="80%" />
     </div>
 
     <div v-if="canLoad" class="" style="
@@ -56,7 +56,7 @@ export default {
     mounted() {
     },
     methods: {
-        changeTargetLanguage(target) {    
+        changeTargetLanguage(target) {
             this.isLoading = true; // Commencez l'animation de chargement
             //await new Promise(resolve => setTimeout(resolve, 1000)); // Simule le temps de chargement
             this.$emit("image", target.img)
@@ -133,7 +133,7 @@ export default {
         overflow: hidden;
         max-height: 100px;
         border-radius: 50px;
-        
+
         .banner {
             width: 100px;
             min-height: 100px;
@@ -142,7 +142,8 @@ export default {
 
         }
     }
-/*
+
+    /*
     .head:hover {
       //  animation: bright 1s linear infinite;
         .banner {
