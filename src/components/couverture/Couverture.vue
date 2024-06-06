@@ -55,10 +55,9 @@ export default {
         .image_profil{
             
             position: relative;
-            background-image: url($cadre-image);
-            /*  
+            //background-image: url($cadre-image);
+            
             background-color: #21222b;
-            */
             background-size: cover;
             width: 100%;
             align-items: center;

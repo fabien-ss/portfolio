@@ -224,7 +224,7 @@ export default {
         },
         revelerTexte() {
             let texteFinal = "<<Ton existence est significative à l'existence d'une chose>>           Bienvenue, c'est un plaisir de vous accueillir sur mon portfolio. Je suis étudiant en informatique à Madagascar. Je vous invite à en découvrir un peu plus en cliquant sur le livre à droite.";
-            texteFinal = "Bienvenue sur mon portfolio, RAKOTOMANANA Andriniaina Fabien - 3eme Année en informatique. ✈️ 🇲🇬 Ivato Antananarivo Madagascar. A votre service!";
+            texteFinal = "Bienvenue, RAKOTOMANANA Andriniaina Fabien - 3eme Année en informatique. ✈️ 🇲🇬 Ivato Antananarivo Madagascar. A votre service!";
             let index = 0;
             const interval = setInterval(() => {
                 if (index < texteFinal.length) {
@@ -489,7 +489,7 @@ export default {
     position: relative;
     width: 600px;
     margin: auto;
-    height: 50pc;
+    height: 85vh;
     margin-top: 4vh;
     filter: brightness(0.5);
     transform: translate(50%, 0);

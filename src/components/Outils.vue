@@ -15,19 +15,20 @@
                             </ul>
                         </li>
                         <li>PHIND</li>
-                        <li>Rider de JetBrains</li>
-                        <li>IntelliJ de JetBrains</li>
+                        <li>Rider</li>
                         <li>NetBeans</li>
+                        <li>IntelliJ</li>
                         <li>Visual studio code</li>
                         <li>DataGrip</li>
-                        <li>Pencil: dessin d'écran</li>
-                        <li>Looping: pour la conception de modele mcd </li>
+                        <li>Pencil</li>
+                        <li>Looping</li>
                     </ul>
                 </li>
                 <li>
                     <span class="bold">Autre</span>
                     <ul>
                         <li>Figma</li>
+                        <li>Canva</li>
                         <li>Adobe XD</li>
                         <li>Adobe Photoshop</li>
                         <li>Adobre Premier Pro</li>

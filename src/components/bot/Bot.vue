@@ -31,9 +31,9 @@
             }
         },
         mounted(){
-            this.askBrainShop("hello")
             this.bot = document.getElementById("bot")
             this.chat = document.getElementById("chat")
+            this.askBrainShop("hello")
         },
         methods:{
             buttonData(event){
@@ -52,15 +52,17 @@
                 document.getElementById("message").value = "";
             },
             askBrainShop(message){
-                let apiUrl = "https://brain-shop-3.onrender.com"
+                let divSend = document.createElement("div");
+                divSend.classList.add("left");
+                divSend.classList.add("response");
+                divSend.innerHTML = "...";
+                this.chat.appendChild(divSend);
+                let apiUrl = "https://brain-shop-3.onrender.com";
+             //   apiUrl = "http://localhost:3000";
                 fetch(apiUrl+"/brainshop/"+message)
                     .then(response => response.json())
                     .then(data => {
-                        let divSend = document.createElement("div");
-                        divSend.classList.add("left");
-                        divSend.classList.add("response");
                         divSend.innerHTML = data.message.cnt;
-                        this.chat.appendChild(divSend)
                     })
             },
             showBot(){
