@@ -62,7 +62,16 @@
                 fetch(apiUrl+"/brainshop/"+message)
                     .then(response => response.json())
                     .then(data => {
-                        divSend.innerHTML = data.message.cnt;
+                        let index = 0;
+                        const interval = setInterval(() => {
+                        if (index < data.message.cnt.length) {
+                            divSend.innerHTML += data.message.cnt.charAt(index);
+                            index++;
+                        } else {
+                            clearInterval(interval);
+                        }
+                    }, 25);
+                    //    divSend.innerHTML = data.message.cnt;
                     })
             },
             showBot(){
