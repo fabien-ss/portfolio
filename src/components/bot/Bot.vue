@@ -62,6 +62,7 @@
                 fetch(apiUrl+"/brainshop/"+message)
                     .then(response => response.json())
                     .then(data => {
+                        divSend.innerHTML = "";
                         let index = 0;
                         const interval = setInterval(() => {
                         if (index < data.message.cnt.length) {
