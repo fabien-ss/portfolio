@@ -60,7 +60,7 @@ body{
     position: absolute;
     left: 0;
     top: 0;
-    backdrop-filter: blur(500px);
+    background-color: black;
     .livre-loader{
         top: 40%;
         margin: auto;
