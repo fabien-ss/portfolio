@@ -74,9 +74,10 @@
                 canLoad: true,
                 title: "RAKOTOMANANA Andriniaina Fabien",
                 intro: `
-                    Etudiant en informatique passionné par les nouvelles technologies, désireux d'acquérir de nouvelles compétences.
+                    Chevronné de nouvelles technologies, désireux d'acquérir de nouvelles compétences.
+                    Je suis actuellement ouvert à une eventuelle opportunité d'emploi dans le domaine de l'IT.
                 `,
-                position: "Etudiant en informatique, actuellement en 3eme année.",
+                position: "Etudiant en informatique, développeur C# | Java | Node | Vuejs, actuellement en 3eme année.",
                 salutation: "Bonjour, je suis Fabien, Bienvenue sur mon portfolio."
             }
         }
