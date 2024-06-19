@@ -117,14 +117,6 @@ export default {
             cv: false,
             certificat: false,
             componentPage: [
-                /*
-                , <Certificat />
-                , <Outils />
-                , <Presentation />
-                , <Competence />
-                , <Education />
-                , <Experience />
-                , <Realisation />*/
             ]
         }
     },
@@ -135,7 +127,7 @@ export default {
         this.firstPage = false;
         this.livre = document.getElementById("livre");
         this.texte = "",
-            this.lampe = document.getElementById("lumiere");
+        this.lampe = document.getElementById("lumiere");
         this.livre = document.getElementById("livre");
         this.lumiere();
         this.contenus = document.getElementsByClassName("contenu");
