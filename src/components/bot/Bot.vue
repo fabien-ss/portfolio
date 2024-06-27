@@ -78,7 +78,8 @@
                             clearInterval(interval);
                         }
                     }, 25);
-                    })
+                    });
+                this.call = this.call + 1;
             },
             showBot(){
                 if(!this.show){
