@@ -11,9 +11,11 @@
             <Bot @test="this.buttonData" />
         </div>
 
-        <div class="contenu 8" v-if="cv" >
+        <div class="contenu 9" v-if="cv" >
             <Cv :isActive=true />
         </div>
+
+<div><Bot @test="this.buttonData" /></div>
 
         <div class="contenu 7" v-if="certificat">
             <Certificat :isActive=true />
