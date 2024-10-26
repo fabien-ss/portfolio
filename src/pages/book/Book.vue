@@ -15,11 +15,14 @@
             <Cv :isActive=true />
         </div>
 
-<div><Bot @test="this.buttonData" /></div>
+<div>
+<Bot @test="this.buttonData" v-if="bot"/>
+<button class="open" @click="cv = true" />
+</div>
 
         <div class="contenu 7" v-if="certificat">
             <Certificat :isActive=true />
-            <button class="open" @click="cv = true" >
+            <button class="open" @click="bot = true" >
                 <img class="bt" src="/language/banner.png" @click="this.turn" width="50px">
             </button>
         </div>
