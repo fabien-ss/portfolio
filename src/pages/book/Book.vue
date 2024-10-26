@@ -16,7 +16,7 @@
         </div>
 
 <div>
-<Bot @test="this.buttonData" v-if="bot"/>
+<Bot @test="this.buttonData" :isActive=true v-if="bot"/>
 <button class="open" @click="cv = true" />
 </div>
 
