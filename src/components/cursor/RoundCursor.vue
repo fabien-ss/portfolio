@@ -14,11 +14,11 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("mousemove", this.handleMouseMove);
+//    window.addEventListener("mousemove", this.handleMouseMove);
     this.cursor = document.getElementById("cursor");
   },
   beforeUnmount() {
-    window.removeEventListener("mousemove", this.handleMouseMove);
+//    window.removeEventListener("mousemove", this.handleMouseMove);
   },
   methods: {
     handleMouseMove(event) {
