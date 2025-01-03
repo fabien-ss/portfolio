@@ -1,6 +1,6 @@
 <template>
     <div class="realisation" v-if="isActive">
-        <h1>Réalisation</h1>
+        <h1>Projets</h1>
         <div class="next-previous">
             <button @click="prevPage" style="border: 3px solid white;">PREV</button>
             <button>{{ currentPage }}</button>
