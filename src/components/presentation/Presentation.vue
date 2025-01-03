@@ -77,7 +77,7 @@
                     Chevronné de nouvelles technologies, désireux d'acquérir de nouvelles compétences.
                     Je suis actuellement ouvert à une eventuelle opportunité d'emploi dans le domaine de l'IT.
                 `,
-                position: "Etudiant en informatique, développeur C# | Java | Node | Vuejs, actuellement en 3eme année.",
+                position: "Développeur C# | Java | Node | Vuejs.",
                 salutation: "Bonjour, je suis Fabien, Bienvenue sur mon portfolio."
             }
         }
