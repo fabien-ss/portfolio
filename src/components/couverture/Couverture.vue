@@ -41,7 +41,7 @@ export default {
 
     $couverture-color: #15171a;
     $background-color: white;
-    $profil-image: "/volo.png";
+    $profil-image: "https://th.bing.com/th/id/OIP.hYNEZU4S_-pX_SS_7qZ1egHaFy?rs=1&pid=ImgDetMain";
     $cadre-image: "/freepik/Fond/cadre.jpeg";
 
     .couverture{
