@@ -1,7 +1,11 @@
 <template>
     <div class="experience" v-if="isActive">
         <br>
-        <h1>Expérience</h1>
+        <h1>Expériences</h1>
+        <div class="experience-item">
+            <h3>DevOps - EasyTech Madagascar - 17 Juillet 2024 - Maintenant</h3>
+            <p>En tant que DevOps, j'ai participé activement à l'automatisation, la sécurisation et l'amélioration continue des processus de développement et de déploiement des applications au sein de l'entreprise.</p>
+        </div>
         <div class="experience-item">
             <h3>Participation WEBCUP 4-5 Mai 2024</h3>
             <p>
@@ -13,19 +17,7 @@
                 <li>Responsable du déploiement</li>
             </ul>
         </div>
-        <div class="experience-item">
-            <h3>Sélection d'équipe HIU Mars 2024</h3>
-            <p>Première expérience de mise en situation dans un concours de développement web pour représenter
-                l'université.</p>
-            <ul>
-                <li>Développeur back-end</li>
-                <li>Intégration d'API pour l'intelligence artificielle</li>
-            </ul>
-        </div>
-        <div class="experience-item">
-            <h3>Maintenance d'ordinateur de bureau</h3>
-            <p>Installation d'OS et maintenance matérielle.</p>
-        </div>
+        
     </div>
 </template>
 
