@@ -3,8 +3,12 @@
         <br>
         <h1>Expériences</h1>
         <div class="experience-item">
-            <h3>DevOps - EasyTech Madagascar - 17 Juillet 2024 - Maintenant</h3>
-            <p>En tant que DevOps, j'ai participé activement à l'automatisation, la sécurisation et l'amélioration continue des processus de développement et de déploiement des applications au sein de l'entreprise.</p>
+            <h3>Développeur Easytech Madagascar - 17 Juillet 2024 - Maintenant</h3>
+            <p>En tant que développeur je concois des applications utilisées par la production.</p>
+            <ul>
+                <li>Développeur fullstack C#</li>
+                <li>DevOps</li>
+            </ul>
         </div>
         <div class="experience-item">
             <h3>Participation WEBCUP 4-5 Mai 2024</h3>
