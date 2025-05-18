@@ -69,7 +69,7 @@ export default {
                 width: 56.5%;
                 margin: auto;
                 border: 2px solid rgb(204, 200, 200);//;rgb(192, 121, 28);
-                border-radius: 5px;
+                // border-radius: 5px;
                 transform: translate(0, 38%);
                 background-image: url($profil-image);
                 background-size: cover;
