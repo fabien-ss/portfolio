@@ -55,7 +55,7 @@ export default {
         .image_profil{
             
             position: relative;
-            //background-image: url($cadre-image);
+            background-image: url($cadre-image);
             
             background-color: $couverture-color;
             background-size: cover;
