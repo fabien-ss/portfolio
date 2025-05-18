@@ -8,7 +8,7 @@
             <p style="font-style: italic;" v-text="position"></p>
             <p v-text="salutation"></p>
             <p v-text="intro"></p>
-            <p>Prénom: Fabien, Problème: trouver un stage</p>
+            <p>Prénom: Fabien, Problème: Passez 1300 élo</p>
         </div>
         <div class="contact">
             <p><span class="bold">Numéro: </span>+261 34 75 197 55</p>
@@ -75,7 +75,6 @@
                 title: "RAKOTOMANANA Andriniaina Fabien",
                 intro: `
                     Chevronné de nouvelles technologies, désireux d'acquérir de nouvelles compétences.
-                    Je suis actuellement ouvert à une eventuelle opportunité d'emploi dans le domaine de l'IT.
                 `,
                 position: "Développeur C# | Java | Node | Vuejs.",
                 salutation: "Bonjour, je suis Fabien, Bienvenue sur mon portfolio."
