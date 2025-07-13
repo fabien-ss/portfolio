@@ -10,18 +10,36 @@
                         <li>
                             Système d'exploitation
                             <ul>
-                                <li>Linux</li>
-                                <li>Windows</li>
+                                <li>Linux (WSL, MicroK8s)</li>
+                                <li>Windows (Docker Desktop)</li>
                             </ul>
                         </li>
-                        <li>PHIND</li>
-                        <li>Rider</li>
+                        <li>Visual Studio</li>
+                        <li>Visual Studio Code</li>
+                        <li>JetBrains Rider</li>
                         <li>NetBeans</li>
-                        <li>IntelliJ</li>
-                        <li>Visual studio code</li>
+                        <li>IntelliJ IDEA</li>
                         <li>DataGrip</li>
-                        <li>Pencil</li>
-                        <li>Looping</li>
+                        <li>Git</li>
+                        <li>Bash / Shell (sh, dash)</li>
+                        <li>Docker</li>
+                        <li>Docker Compose</li>
+                        <li>Kubernetes (kubeadm, MicroK8s)</li>
+                        <li>Helm</li>
+                        <li>Systemd</li>
+                        <li>Nginx</li>
+                        <li>CI/CD (GitHub Actions)</li>
+                        <li>Apache Kafka</li>
+                        <li>Kafka Connect</li>
+                        <li>Apache Flink</li>
+                        <li>StarRocks</li>
+                        <li>PostgreSQL</li>
+                        <li>Redis</li>
+                        <li>SQLite (ancien usage)</li>
+                        <li>Vue.js</li>
+                        <li>Flask</li>
+                        <li>ASP.NET Core</li>
+                        <li>Entity Framework</li>
                     </ul>
                 </li>
                 <li>
@@ -31,7 +49,9 @@
                         <li>Canva</li>
                         <li>Adobe XD</li>
                         <li>Adobe Photoshop</li>
-                        <li>Adobre Premier Pro</li>
+                        <li>Adobe Premiere Pro</li>
+                        <li>Pencil</li>
+                        <li>Looping</li>
                     </ul>
                 </li>
             </ul>
@@ -55,19 +75,12 @@ export default {
 .outils {
     width: 100%;
     height: 100%;
-    /*
-        background-image: url("/freepik/tech.jpeg");*/
     background-color: #76ABAE;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: left;
     color: black;
 
-    height: 100%;
-    color: black;
-    background-color: #76ABAE;
-    width: 100%;
-    height: 100%;
     background: rgb(235, 233, 233);
     background-image: linear-gradient(90deg,
             transparent 50px,
@@ -76,9 +89,9 @@ export default {
             transparent 52px),
         linear-gradient(#e1e1e1 0.1em, transparent 0.1em);
     background-size: 100% 30px;
-    .header{
-        margin-left: 50px;
-    }
+}
+.header {
+    margin-left: 50px;
 }
 
 .bold {
