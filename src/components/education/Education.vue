@@ -25,7 +25,7 @@
                 canLoad: true,
                 educations: [
                     {
-                        etablissement: "Lycée Fanoellie",
+                        etablissement: "Lycée Fanoellie Talatamaty",
                         diplome: "Baccalauréat série D",
                         mention: "Très bien",
                         annee: "2021 - 2022",
@@ -33,12 +33,12 @@
                         over: true
                     },
                     {
-                        etablissement: "IT University",
+                        etablissement: "IT University Andoharanofotsy",
                         diplome: "Licence en développemnt d'application web & mobile",
-                        mention: "",
-                        annee: "2022 - en cours",
+                        mention: "Très bien",
+                        annee: "2022 - 2025",
                         lieu: "ANDOHARANOFOTSY" ,
-                        over: false
+                        over: true
                     },
                 ]
             }
