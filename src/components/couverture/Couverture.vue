@@ -41,7 +41,7 @@ export default {
 
     $couverture-color: #15171a;
     $background-color: white;
-    $profil-image: "https://scontent.ftnr2-2.fna.fbcdn.net/v/t39.30808-6/492000935_2119898588518475_295846276559082903_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGcXCEUcIk2jQn17x_pNEKPBsiUKjGtoZsGyJQqMa2hmzqR0T1ObIkXAYXxuPyH3beutdLbK2KLznRTNf5UtfrA&_nc_ohc=vzYF5DCGJw0Q7kNvwGkIA-r&_nc_oc=AdnWIQi21eJE7DHZl6j9D32jb7GF8ve49_S4A-3r88Ci4Mh6aC-DIGNIov8ajCB2xwU&_nc_zt=23&_nc_ht=scontent.ftnr2-2.fna&_nc_gid=Efy4VQmHEHXjSYRx8qIZ_g&oh=00_AfKurEuRE-DaIw4QIYCJNeZN-y_YrCmGqjH4DJeElKdCPw&oe=682FD895";
+    $profil-image: "https://avatars.githubusercontent.com/u/118507618?v=4";
     $cadre-image: "/freepik/Fond/cadre.jpeg";
 
     .couverture{
